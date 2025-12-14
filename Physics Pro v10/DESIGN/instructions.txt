@@ -1,0 +1,103 @@
+PHYSICS A-LEVEL REVISION - DESIGN SYSTEM
+
+VISUAL TONE:
+- Premium, minimal, Apple-style aesthetic
+- Clean lines with generous white space
+- Frosted glass panels with subtle transparency
+- Rounded corners (16px standard, 24px for cards)
+- Soft shadows with subtle depth
+
+COLOR PALETTE:
+Light Mode Base:
+- Background: Pure white (#FFFFFF)
+- Foreground: Dark slate (#1E293B)
+- Muted: Light gray (#F8FAFC)
+- Accent: Electric blue (#3B82F6) - RECOMMENDED CHOICE
+
+Dark Mode Base:
+- Background: Deep slate (#0F172A)
+- Foreground: Off-white (#F1F5F9)
+- Muted: Dark gray (#334155)
+- Accent: Electric blue (#3B82F6) - maintains consistency
+
+Alternative Accent Options:
+- Teal (#14B8A6) - for a more scientific feel
+- Coral (#F97316) - for warmth and energy
+
+TYPOGRAPHY:
+- Font Family: Inter (Google Fonts)
+- Headings: 700-900 weight, tight leading
+- Body: 400-500 weight, relaxed leading (1.6)
+- Small text: 400 weight, compact leading (1.4)
+
+Size Scale:
+- Hero Title: 4rem (64px) desktop, 3rem (48px) mobile
+- Section Headers: 2.5rem (40px) desktop, 2rem (32px) mobile
+- Card Titles: 1.25rem (20px)
+- Body Text: 1rem (16px)
+- Small Text: 0.875rem (14px)
+
+MOTION PRINCIPLES:
+- Smooth, subtle animations (300ms duration standard)
+- Ease-out timing for entrances, ease-in for exits
+- Hover lifts: 4px transform with soft shadow increase
+- Page transitions: 600ms fade with slight vertical movement
+- Loading states: gentle pulse animations
+- Respect reduced motion preferences
+
+GLASSMORPHISM EFFECTS:
+- Background blur: 20px backdrop-filter
+- Glass panels: rgba(255,255,255,0.1) light, rgba(15,23,42,0.8) dark
+- Border: 1px rgba(255,255,255,0.2) light, rgba(71,85,105,0.3) dark
+- Subtle inner glow on interactive elements
+
+COMPONENT SPECIFICATIONS:
+
+Navigation:
+- Sticky positioning with blur background
+- Height: 64px
+- Logo: 24px font-size, accent color
+- Links: 16px, hover color transition
+- CTA buttons: pill-shaped, 8px vertical padding
+
+Hero 3D Element:
+- Low-poly aesthetic for performance
+- Gradient background: Blue to purple to cyan
+- Particle systems: white dots with float animation
+- Central element: rotating wireframe sphere
+- Fallback: Lottie animation or static SVG
+
+Cards and Panels:
+- Background: Glass effect with backdrop blur
+- Padding: 24px for large cards, 16px for small
+- Border radius: 16px standard
+- Hover: -2px Y transform, enhanced shadow
+- Text contrast: Ensure 4.5:1 minimum ratio
+
+Buttons:
+- Primary: Accent background, white text, pill shape
+- Secondary: Transparent with accent border
+- Hover: Soft glow effect (box-shadow)
+- Focus: 2px accent outline
+- Disabled: 50% opacity, no interactions
+
+ACCESSIBILITY REQUIREMENTS:
+- High contrast text (minimum 4.5:1 ratio)
+- Keyboard focus indicators (2px accent outline)
+- aria-label attributes for interactive elements
+- alt text: "image placeholder" for all images
+- Screen reader friendly animations
+- Reduced motion media query compliance
+
+RESPONSIVE BREAKPOINTS:
+- Mobile: 0-767px (single column layouts)
+- Tablet: 768-1023px (adapted grid systems)
+- Desktop: 1024px+ (full multi-column layouts)
+- Max width: 1280px with centered content
+
+3D HERO SPECIFICATIONS:
+- WebGL with Three.js for modern browsers
+- Canvas size: Square aspect ratio, max 600px
+- Fallback hierarchy: Lottie → SVG → Static image
+- Performance: 60fps target, graceful degradation
+- Toggle control: Allow users to disable 3D effects

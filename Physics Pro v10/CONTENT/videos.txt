@@ -1,0 +1,44 @@
+VIDEO TUTORIALS CONTENT
+
+Page Title: Video Tutorials - Expert Physics Explanations
+
+Overview: Access our comprehensive library of high-quality physics video tutorials, featuring expert explanations, real laboratory demonstrations, and step-by-step problem solving. All videos include captions, transcripts, and accompanying notes.
+
+Featured Video Section:
+- Hero video: "Introduction to A-Level Physics" (12:34)
+- Synopsis: Overview of the A-Level Physics curriculum, study strategies, and exam preparation tips
+- Thumbnail: "video thumb here" → Professional presenter with physics equipment background
+
+Search and Filter Instructions:
+- Search bar: Find videos by topic, keyword, or difficulty level
+- Filters: Topic area, video length, difficulty (Foundation/Advanced), exam board
+- Sort options: Most recent, most popular, alphabetical, duration
+
+Video Categories:
+
+Particles and Radiation (15 videos)
+- "Atomic Structure Fundamentals" (8:45) - Thumbnail: "video thumb here"
+- "Radioactive Decay Explained" (11:20) - Thumbnail: "video thumb here"
+- "Particle Physics Introduction" (14:15) - Thumbnail: "video thumb here"
+
+Waves (18 videos)
+- "Wave Properties and Equations" (9:30) - Thumbnail: "video thumb here"
+- "Interference and Diffraction" (12:10) - Thumbnail: "video thumb here"
+- "Electromagnetic Spectrum Overview" (7:55) - Thumbnail: "video thumb here"
+
+Mechanics and Materials (22 videos)
+- "Newton's Laws in Action" (10:25) - Thumbnail: "video thumb here"
+- "Energy Conservation Problems" (13:40) - Thumbnail: "video thumb here"
+- "Materials Under Stress" (8:15) - Thumbnail: "video thumb here"
+
+Newsletter Callout:
+"Stay updated with new video releases and exclusive content"
+Email input: "write email here"
+Button: "Subscribe to Video Updates"
+
+Playlist Features:
+- Save videos to custom playlists
+- Track watching progress
+- Download for offline viewing (premium feature)
+- Adjustable playback speed
+- Interactive transcripts with time-stamped navigation

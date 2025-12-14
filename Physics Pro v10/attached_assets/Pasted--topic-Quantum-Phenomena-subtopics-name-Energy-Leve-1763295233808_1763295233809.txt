@@ -1,0 +1,597 @@
+[
+  {
+    "topic": "Quantum Phenomena",
+    "subtopics": [
+      {
+        "name": "Energy Levels & Spectra",
+        "video_title": "Energy Levels & Line Spectra (A-Level)",
+        "url": "https://youtu.be/0zBU6zszbm0"
+      },
+      {
+        "name": "Wave-Particle Duality",
+        "video_title": "Wave-Particle Duality & de Broglie",
+        "url": "https://youtu.be/k8m0pCvfcRo"
+      },
+      {
+        "name": "Photon Energy",
+        "video_title": "Photon Energy & E=hf",
+        "url": "https://youtu.be/zJ4yj1Ts_4k"
+      },
+      {
+        "name": "Photoelectric Effect",
+        "video_title": "Photoelectric Effect Graphs & Stopping Potential",
+        "url": "https://youtu.be/0_BdZtHgZAM"
+      }
+    ]
+  },
+  {
+    "topic": "Waves",
+    "subtopics": [
+      {
+        "name": "Wave Basics",
+        "video_title": "Basics of Waves (A-Level)",
+        "url": "https://youtu.be/9DEIxt0dcHE"
+      },
+      {
+        "name": "Wave Equation & Phase Difference",
+        "video_title": "Wave Calculations & Phase",
+        "url": "https://youtu.be/YQSpFGR9G7w"
+      },
+      {
+        "name": "Superposition & Interference",
+        "video_title": "Superposition & Interference",
+        "url": "https://youtu.be/bVG9hEHpW2w"
+      },
+      {
+        "name": "Standing Waves",
+        "video_title": "Standing Waves Explained",
+        "url": "https://youtu.be/ywX1eUs61fA"
+      },
+      {
+        "name": "Young’s Double Slit",
+        "video_title": "Young’s Double Slit Experiment",
+        "url": "https://youtu.be/k2AJn7o5JkE"
+      },
+      {
+        "name": "Polarisation",
+        "video_title": "Polarisation in Waves",
+        "url": "https://youtu.be/PTm_Lsyd-OY"
+      }
+    ]
+  },
+  {
+    "topic": "Mechanics",
+    "subtopics": [
+      {
+        "name": "Scalars and Vectors",
+        "video_title": "Scalars vs Vectors (A-Level Physics)",
+        "url": "https://youtu.be/gVdW8BrQ-5k"
+      },
+      {
+        "name": "Distance, Displacement, Speed & Velocity",
+        "video_title": "Speed, Velocity & Displacement",
+        "url": "https://youtu.be/6AVwRBYZz0w"
+      },
+      {
+        "name": "Acceleration & SUVAT Equations",
+        "video_title": "SUVAT Equations Explained",
+        "url": "https://youtu.be/KPZvs0pD4nU"
+      },
+      {
+        "name": "Projectile Motion",
+        "video_title": "Projectile Motion - A Level Physics",
+        "url": "https://youtu.be/yJH4m48OYg4"
+      },
+      {
+        "name": "Forces & Free Body Diagrams",
+        "video_title": "Forces & Free Body Diagrams",
+        "url": "https://youtu.be/MToPjPUHBaQ"
+      },
+      {
+        "name": "Newton’s Laws of Motion",
+        "video_title": "Newton's Laws (1st, 2nd, 3rd)",
+        "url": "https://youtu.be/78k7S-YsGP4"
+      },
+      {
+        "name": "Weight, Normal Reaction & Friction",
+        "video_title": "Friction & Normal Forces",
+        "url": "https://youtu.be/KH0JHfMIRBQ"
+      },
+      {
+        "name": "Resultant Forces & Equilibrium",
+        "video_title": "Resultant Forces & Equilibrium",
+        "url": "https://youtu.be/wvXLbNVFfgE"
+      },
+      {
+        "name": "Moments & Torque",
+        "video_title": "Moments & Principle of Moments",
+        "url": "https://youtu.be/jKJ3PMbvHKo"
+      },
+      {
+        "name": "Centre of Mass",
+        "video_title": "Centre of Mass Explained",
+        "url": "https://youtu.be/vdyLukp2URU"
+      },
+      {
+        "name": "Work, Energy & Power",
+        "video_title": "Work, Energy & Power",
+        "url": "https://youtu.be/Tj1OYlQ4s3I"
+      },
+      {
+        "name": "Kinetic & Potential Energy",
+        "video_title": "Kinetic & Gravitational Potential Energy",
+        "url": "https://youtu.be/6hpsBvWxrWg"
+      },
+      {
+        "name": "Conservation of Energy",
+        "video_title": "Conservation of Energy - A Level",
+        "url": "https://youtu.be/8Gdcij07oXk"
+      },
+      {
+        "name": "Momentum & Impulse",
+        "video_title": "Momentum & Impulse Explained",
+        "url": "https://youtu.be/i9hTs-4zXPc"
+      },
+      {
+        "name": "Collisions & Conservation of Momentum",
+        "video_title": "Elastic & Inelastic Collisions",
+        "url": "https://youtu.be/z2kzNioOW3M"
+      },
+      {
+        "name": "Circular Motion",
+        "video_title": "Introduction to Circular Motion",
+        "url": "https://youtu.be/n2PrUZlA8DY"
+      },
+      {
+        "name": "Centripetal Force & Acceleration",
+        "video_title": "Centripetal Force Explained",
+        "url": "https://youtu.be/MBO3eqe9pcb"
+      },
+      {
+        "name": "Newton’s Third Law & Reaction Pairs",
+        "video_title": "Newton's Third Law Explained",
+        "url": "https://www.youtube.com/watch?v=rS8IcRgZ5l8"
+      },
+      {
+        "name": "Free-Body Diagrams",
+        "video_title": "How to Draw Free Body Diagrams",
+        "url": "https://www.youtube.com/watch?v=kKKM8Y-u7ds"
+      },
+      {
+        "name": "Equilibrium of Forces",
+        "video_title": "Forces in Equilibrium",
+        "url": "https://www.youtube.com/watch?v=PVk00x9Yjkc"
+      },
+      {
+        "name": "Couples & Torque Systems",
+        "video_title": "Couples and Torque Explained",
+        "url": "https://www.youtube.com/watch?v=J0eZl5XWcPo"
+      },
+      {
+        "name": "Work Done (WD = Fd)",
+        "video_title": "Work Done, Force and Displacement",
+        "url": "https://www.youtube.com/watch?v=Qn8l0bL4_08"
+      },
+      {
+        "name": "Kinetic Energy (KE)",
+        "video_title": "Kinetic Energy Explained",
+        "url": "https://www.youtube.com/watch?v=QVzaw4dxdfk"
+      },
+      {
+        "name": "Gravitational Potential Energy (GPE)",
+        "video_title": "Gravitational Potential Energy",
+        "url": "https://www.youtube.com/watch?v=zjTOcPu9bks"
+      },
+      {
+        "name": "Power (P=W/t)",
+        "video_title": "Power in Physics",
+        "url": "https://www.youtube.com/watch?v=t-y7bqAEv6E"
+      },
+      {
+        "name": "Efficiency",
+        "video_title": "Efficiency Made Easy",
+        "url": "https://www.youtube.com/watch?v=w1pT1XZefJQ"
+      },
+      {
+        "name": "Impulse (Ft)",
+        "video_title": "Impulse and Momentum",
+        "url": "https://www.youtube.com/watch?v=5fC9SvwZ0x8"
+      },
+      {
+        "name": "Momentum Conservation",
+        "video_title": "Conservation of Momentum",
+        "url": "https://www.youtube.com/watch?v=_CMeIEZpZ54"
+      }
+    ]
+  },
+  {
+    "topic": "Materials",
+    "subtopics": [
+      {
+        "name": "Density",
+        "video_title": "Density & Material Properties",
+        "url": "https://youtu.be/9B5w4sM2u9U"
+      },
+      {
+        "name": "Hooke’s Law",
+        "video_title": "Hooke's Law - A Level Physics",
+        "url": "https://youtu.be/DFUs_HT_8Y0"
+      },
+      {
+        "name": "Stress, Strain & Young's Modulus",
+        "video_title": "Stress, Strain & Young Modulus Explained",
+        "url": "https://youtu.be/2IYH2kZbTNs"
+      },
+      {
+        "name": "Stress-Strain Graphs",
+        "video_title": "Interpreting Stress-Strain Graphs",
+        "url": "https://youtu.be/yOZo2Qz8o2c"
+      },
+      {
+        "name": "Elastic & Plastic Deformation",
+        "video_title": "Elastic and Plastic Behaviour",
+        "url": "https://youtu.be/7BD1d6iA_7U"
+      },
+      {
+        "name": "Limit of Proportionality & Elastic Limit",
+        "video_title": "Limit of Proportionality vs Elastic Limit",
+        "url": "https://youtu.be/7kXJAj0oR-Q"
+      },
+      {
+        "name": "Energy Stored in a Spring",
+        "video_title": "Energy in a Stretched Spring (½kx²)",
+        "url": "https://youtu.be/ZfFG3xAG1dY"
+      },
+      {
+        "name": "Force-Extension Graphs",
+        "video_title": "Force Extension Graphs Explained",
+        "url": "https://youtu.be/cQ9C3QzNhPc"
+      },
+      {
+        "name": "Brittle, Ductile, and Polymeric Materials",
+        "video_title": "Brittle, Ductile, and Polymer Behaviour",
+        "url": "https://youtu://www.youtube.com/watch?v=5GhsGf5NcwE"
+      },
+      {
+        "name": "Tensile Testing & Experiments",
+        "video_title": "Young Modulus Experiment Tutorial",
+        "url": "https://youtu.be/Da8jUb4UxE8"
+      }
+    ]
+  },
+  {
+    "topic": "Electricity",
+    "subtopics": [
+      {
+        "name": "Charge & Current",
+        "video_title": "Electric Charge & Current (A-Level Basics)",
+        "url": "https://youtu.be/5nW9HTaZKbo"
+      },
+      {
+        "name": "Potential Difference & Voltage",
+        "video_title": "Voltage & Potential Difference Explained",
+        "url": "https://youtu.be/QGhbKwLSKxg"
+      },
+      {
+        "name": "Resistance & Ohm’s Law",
+        "video_title": "Ohm's Law & Resistance",
+        "url": "https://youtu.be/5HvdM6A6sSs"
+      },
+      {
+        "name": "IV Characteristics",
+        "video_title": "IV Graphs: Filament, Diode, Ohmic Conductor",
+        "url": "https://youtu.be/5dKWfloT1tE"
+      },
+      {
+        "name": "Resistivity",
+        "video_title": "Resistivity & Material Properties",
+        "url": "https://youtu.be/LR-rjDjT80E"
+      },
+      {
+        "name": "Power & Energy in Circuits",
+        "video_title": "Electrical Power & Energy (P=IV, E=VIt)",
+        "url": "https://youtu.be/Wsb_LKJJN_4"
+      },
+      {
+        "name": "Series & Parallel Circuits",
+        "video_title": "Series vs Parallel Circuits",
+        "url": "https://youtu.be/qhupOvm1aEA"
+      },
+      {
+        "name": "Kirchhoff’s Laws",
+        "video_title": "Kirchhoff’s Current & Voltage Laws",
+        "url": "https://youtu.be/YzytZbUKU8c"
+      },
+      {
+        "name": "EMF & Internal Resistance",
+        "video_title": "EMF, Terminal PD & Internal Resistance",
+        "url": "https://youtu.be/klQkPCwImQI"
+      },
+      {
+        "name": "Potential Dividers",
+        "video_title": "Potential Dividers (LDRs & Thermistors)",
+        "url": "https://youtu.be/D04VjF7t390"
+      }
+    ]
+  },
+  {
+    "topic": "Further Mechanics & Thermal Physics",
+    "subtopics": [
+      {
+        "name": "Circular Motion (Advanced)",
+        "video_title": "Advanced Circular Motion (Centripetal Force & Acceleration)",
+        "url": "https://youtu.be/n2PrUZlA8DY"
+      },
+      {
+        "name": "Simple Harmonic Motion (SHM) Basics",
+        "video_title": "Simple Harmonic Motion Explained",
+        "url": "https://youtu.be/zE4v2E7Z7cM"
+      },
+      {
+        "name": "SHM Equations & Energy",
+        "video_title": "SHM Equations, Energy & Phase",
+        "url": "https://youtu.be/Ej9Uje1Zqaw"
+      },
+      {
+        "name": "Resonance & Damping",
+        "video_title": "Resonance, Damping & Natural Frequency",
+        "url": "https://youtu.be/DS5GIPqTPp8"
+      },
+      {
+        "name": "Internal Energy & Temperature",
+        "video_title": "Internal Energy & Temperature (A-Level)",
+        "url": "https://youtu.be/KYdeZRVzQIk"
+      },
+      {
+        "name": "Specific Heat Capacity (SHC)",
+        "video_title": "Specific Heat Capacity Explained",
+        "url": "https://youtu.be/KfQUvxoQ09k"
+      },
+      {
+        "name": "Specific Latent Heat (SLH)",
+        "video_title": "Latent Heat & Phase Change",
+        "url": "https://youtu.be/R85QZmC2CEc"
+      },
+      {
+        "name": "Gas Laws (Boyle, Charles, Pressure Law)",
+        "video_title": "Gas Laws for A-Level Physics",
+        "url": "https://youtu.be/T1KJW4P5w30"
+      },
+      {
+        "name": "Ideal Gas Equation (pV=nRT)",
+        "video_title": "Ideal Gas Equation Explained",
+        "url": "https://youtu.be/1v4V-7R1R7Y"
+      },
+      {
+        "name": "Molecular Kinetic Theory",
+        "video_title": "Kinetic Theory of Gases (A-Level)",
+        "url": "https://youtu.be/F8fmBELEvXY"
+      }
+    ]
+  },
+  {
+    "topic": "Fields and Their Consequences",
+    "subtopics": [
+      {
+        "name": "Gravitational Fields",
+        "video_title": "Gravitational Fields & Field Lines",
+        "url": "https://youtu.be/Ep0C-y7a2nQ"
+      },
+      {
+        "name": "Newton’s Law of Gravitation",
+        "video_title": "Newton's Law of Gravitation Explained",
+        "url": "https://youtu.be/F8LWpr2we_k"
+      },
+      {
+        "name": "Gravitational Potential & Energy",
+        "video_title": "Gravitational Potential & Potential Energy",
+        "url": "https://youtu.be/XFv2Xa_G3So"
+      },
+      {
+        "name": "Electric Fields & Coulomb’s Law",
+        "video_title": "Electric Fields and Coulomb's Law",
+        "url": "https://youtu.be/OG3shq-owwA"
+      },
+      {
+        "name": "Electric Potential & Energy",
+        "video_title": "Electric Potential & Work Done",
+        "url": "https://youtu.be/kIpSLMuBBLw"
+      },
+      {
+        "name": "Capacitance Basics",
+        "video_title": "Capacitors - Basics & Charging",
+        "url": "https://youtu.be/1krP-hUVi6w"
+      },
+      {
+        "name": "Energy Stored in Capacitors",
+        "video_title": "Energy in a Capacitor (1/2CV²)",
+        "url": "https://youtu.be/POAPBXiYEJw"
+      },
+      {
+        "name": "Magnetic Fields & Flux",
+        "video_title": "Magnetic Fields & Flux Density",
+        "url": "https://youtu.be/0STlXLUftn8"
+      },
+      {
+        "name": "Fleming’s Left & Right Hand Rules",
+        "video_title": "Fleming's Left and Right Hand Rules",
+        "url": "https://youtu.be/fy0zTq2aFJw"
+      },
+      {
+        "name": "Electromagnetic Induction",
+        "video_title": "Faraday’s Law & Lenz’s Law",
+        "url": "https://youtu.be/vlJX-4sUuVs"
+      }
+    ]
+  },
+  {
+    "topic": "Nuclear Physics & Medical Physics",
+    "subtopics": [
+      {
+        "name": "Atomic Structure & Isotopes",
+        "video_title": "Atomic Structure and Isotopes",
+        "url": "https://youtu.be/Q2Y2f_lQcxg"
+      },
+      {
+        "name": "Radioactive Decay & Types (α, β, γ)",
+        "video_title": "Alpha, Beta & Gamma Radiation Explained",
+        "url": "https://youtu.be/Rv7KkFk_Vl4"
+      },
+      {
+        "name": "Half-Life & Decay Equations",
+      “video_title”: “Half-Life Calculations”,  
+        "url": "https://youtu.be/JrMZC8PuGfY"
+      },
+      {
+        "name": "Activity, Decay Constant & A = λN",
+        "video_title": "Radioactive Activity and Decay Constant",
+        "url": "https://youtu.be/CWuodxkBx8M"
+      },
+      {
+        "name": "Mass Defect & Binding Energy",
+        "video_title": "Binding Energy and Mass Defect",
+        "url": "https://youtu.be/WMJ_8M9K594"
+      },
+      {
+        "name": "Nuclear Fission & Chain Reactions",
+        "video_title": "Nuclear Fission Explained",
+        "url": "https://youtu.be/rBqv1Arp_Fs"
+      },
+      {
+        "name": "Nuclear Fusion & Stars",
+        "video_title": "Nuclear Fusion and Stars",
+        "url": "https://youtu.be/eLFHht90v9I"
+      },
+      {
+        "name": "X-Rays & Attenuation",
+        "video_title": "How X-Rays Work",
+        "url": "https://youtu.be/62yZuk8uZHg"
+      },
+      {
+        "name": "PET Scans & Annihilation",
+        "video_title": "PET Scans and Positron Emission",
+        "url": "https://youtu.be/_6Fp1k8YQwk"
+      },
+      {
+        "name": "MRI & Larmor Frequency",
+        "video_title": "MRI Physics Explained",
+        "url": "https://youtu.be/t1aU6vSBQLg"
+      }
+    ]
+  },
+  {
+    "topic": "Astrophysics",
+    "subtopics": [
+      {
+        "name": "Stellar Classification (OBAFGKM)",
+        "video_title": "Stellar Spectral Classes Explained",
+        "url": "https://youtu.be/zGg9UJr6Mps"
+      },
+      {
+        "name": "Hertzsprung-Russell Diagram",
+        "video_title": "H-R Diagram Basics",
+        "url": "https://youtu.be/Gp1y2hMDDnA"
+      },
+      {
+        "name": "Parallax & Distance Measurement",
+        "video_title": "Measuring Stellar Distances",
+        "url": "https://youtu.be/VMzR1OQxuXU"
+      },
+      {
+        "name": "Red Shift & Doppler Effect",
+        "video_title": "Red Shift and Universe Expansion",
+        "url": "https://youtu.be/R6tR0sCPxng"
+      },
+      {
+        "name": "Stellar Evolution (Protostar to Black Hole)",
+        "video_title": "Life Cycle of Stars",
+        "url": "https://youtu.be/rxxC7Q8Wooo"
+      },
+      {
+        "name": "Cosmology & Big Bang",
+        "video_title": "Big Bang Theory Overview",
+        "url": "https://youtu.be/eLj0GfQ0P0A"
+      }
+    ]
+  },
+  {
+    "topic": "Turning Points in Physics",
+    "subtopics": [
+      {
+        "name": "The Discovery of the Electron (Thomson)",
+        "video_title": "How the Electron Was Discovered",
+        "url": "https://youtu.be/EVJxVdSprK8"
+      },
+      {
+        "name": "Millikan Oil Drop Experiment",
+        "video_title": "Millikan's Oil Drop Explained",
+        "url": "https://youtu.be/KMT1FLzEn9I"
+      },
+      {
+        "name": "Einstein and the Photoelectric Effect",
+        "video_title": "Photoelectric Effect History and Impact",
+        "url": "https://youtu.be/57G56e3k7b4"
+      },
+      {
+        "name": "Rutherford Scattering and Nuclear Model",
+        "video_title": "Gold Foil Experiment",
+        "url": "https://youtu.be/Q3gKBVB6nok"
+      },
+      {
+        "name": "Wave-Particle Duality (de Broglie)",
+        "video_title": "De Broglie Hypothesis Explained",
+        "url": "https://youtu.be/I8MCfwPjMtg"
+      },
+      {
+        "name": "Special Relativity – Michelson-Morley",
+        "video_title": "Michelson-Morley Experiment",
+        "url": "https://youtu.be/1TKSfAkWWN0"
+      }
+    ]
+  },
+  {
+    "topic": "Engineering Physics",
+    "subtopics": [
+      {
+        "name": "Stress, Strain & Young's Modulus",
+        "video_title": "Stress & Strain Graphs",
+        "url": "https://youtu.be/771-B666WVE"
+      },
+      {
+        "name": "Ductile vs Brittle Failure",
+        "video_title": "Material Behaviour in Engineering",
+        "url": "https://youtu.be/IwusZ_qK6mU"
+      },
+      {
+        "name": "Thermal Expansion",
+        "video_title": "Thermal Expansion of Solids",
+        "url": "https://youtu.be/6tPYdwNVcEw"
+      },
+      {
+        "name": "Engines and Efficiency",
+        "video_title": "Heat Engines & Efficiency",
+        "url": "https://youtu.be/n_vmyC6YNpc"
+      },
+      {
+        "name": "Rotational Motion in Machinery",
+        "video_title": "Rotational Dynamics Basics",
+        "url": "https://youtu.be/wvR7XSPmx0g"
+      },
+      {
+        "name": "Fluid Dynamics (Bernoulli)",
+        "video_title": "Bernoulli's Principle",
+        "url": "https://youtu.be/O1z8j2hMb5c"
+      }
+    ]
+  },
+  {
+    "topic": "General / Exam Technique",
+    "subtopics": [
+      {
+        "name": "A-Level problem solving techniques and exam tips",
+      "video_title": "A-Level Problem Solving Strategies",
+        "url": "https://www.youtube.com/watch?v=nr5SRqK3YWY"
+      }
+    ]
+  }
+]

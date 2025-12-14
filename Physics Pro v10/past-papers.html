@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Pro - Past Papers</title>
+    <meta name="description" content="Access comprehensive A-Level Physics past papers from 2020-2024 with mark schemes. Practice with real exam questions and track your progress.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        accent: 'hsl(var(--accent))',
+                        'accent-foreground': 'hsl(var(--accent-foreground))',
+                        muted: 'hsl(var(--muted))',
+                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        border: 'hsl(var(--border))',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="min-h-screen bg-background">
+        <!-- Navigation -->
+        <div id="navigation"></div>
+        
+        <!-- Main Content -->
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-testid="pastpapers-title">A-Level Physics Past Papers</h1>
+                    <p class="text-xl text-muted-foreground mb-6" data-testid="pastpapers-description">
+                        Practice with authentic exam questions and detailed mark schemes from AQA
+                    </p>
+                    <div class="bg-accent/10 border border-accent/20 rounded-lg p-4 max-w-3xl mx-auto">
+                        <p class="text-sm text-accent" data-testid="pastpapers-note">
+                            All papers include question papers (QP) and mark schemes (MS). Click the checkmark to track your completion progress.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Years Container -->
+                <div class="space-y-6" data-testid="years-container">
+                    <!-- Years will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Past Papers Data
+        const yearsData = [
+            {
+                year: "2024",
+                papers: [
+                    { 
+                        paperNumber: "Paper 1", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-1/QP/June%202024%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-1/June%202024%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 2", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-2/QP/June%202024%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-2/June%202024%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 3", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-3/QP/June%202024%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-3/June%202024%20MS.pdf"
+                    }
+                ]
+            },
+            {
+                year: "2023",
+                papers: [
+                    { 
+                        paperNumber: "Paper 1", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-1/QP/June%202023%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-1/June%202023%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 2", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-2/QP/June%202023%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-2/June%202023%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 3", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-3/QP/June%202023%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-3/June%202023%20MS.pdf"
+                    }
+                ]
+            },
+            {
+                year: "2022",
+                papers: [
+                    { 
+                        paperNumber: "Paper 1", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-1/QP/June%202022%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-1/June%202022%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 2", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-2/QP/June%202022%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-2/June%202022%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 3", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-3/QP/June%202022%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-3/June%202022%20MS.pdf"
+                    }
+                ]
+            },
+            {
+                year: "2021",
+                papers: [
+                    { 
+                        paperNumber: "Paper 1", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-1/QP/June%202021%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-1/June%202021%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 2", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-2/QP/June%202021%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-2/June%202021%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 3", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-3/QP/June%202021%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-3/June%202021%20MS.pdf"
+                    }
+                ]
+            },
+            {
+                year: "2020",
+                papers: [
+                    { 
+                        paperNumber: "Paper 1", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-1/QP/June%202020%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-1/June%202020%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 2", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-2/QP/June%202020%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-2/June%202020%20MS.pdf"
+                    },
+                    { 
+                        paperNumber: "Paper 3", 
+                        qpUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Past-Papers/AQA/Paper-3/QP/June%202020%20QP.pdf",
+                        msUrl: "https://pmt.physicsandmathstutor.com/download/Physics/A-level/Mark-Schemes/AQA/Paper-3/June%202020%20MS.pdf"
+                    }
+                ]
+            }
+        ];
+
+        let expandedYears = [];
+        let completedPapers = JSON.parse(localStorage.getItem('completedPapers') || '[]');
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header and footer
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navigation').innerHTML = data;
+                });
+            
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+
+            renderYears();
+        });
+
+        function renderYears() {
+            const container = document.querySelector('[data-testid="years-container"]');
+            container.innerHTML = '';
+
+            yearsData.forEach(yearData => {
+                const isExpanded = expandedYears.includes(yearData.year);
+                
+                const yearDiv = document.createElement('div');
+                yearDiv.className = 'glass-card rounded-2xl overflow-hidden';
+                yearDiv.innerHTML = `
+                    <button 
+                        onclick="toggleYear('${yearData.year}')"
+                        class="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/20 transition-colors duration-200"
+                        data-testid="year-toggle-${yearData.year}"
+                    >
+                        <span class="text-xl font-semibold">${yearData.year}</span>
+                        <svg class="w-5 h-5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    
+                    <div class="px-6 pb-6 space-y-4 ${isExpanded ? '' : 'hidden'}" data-testid="year-content-${yearData.year}">
+                        ${yearData.papers.map(paper => {
+                            const paperId = `${yearData.year}-${paper.paperNumber.replace(' ', '-')}`;
+                            const isCompleted = completedPapers.includes(paperId);
+                            
+                            return `
+                                <div class="border border-border rounded-lg p-4 hover:bg-muted/10 transition-colors duration-200" data-testid="paper-${paperId}">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex-1">
+                                            <h4 class="font-medium mb-2">${paper.paperNumber}</h4>
+                                            <div class="flex flex-wrap gap-2">
+                                                <a 
+                                                    href="${paper.qpUrl}" 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    class="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors duration-200"
+                                                    data-testid="qp-link-${paperId}"
+                                                >
+                                                    QP: Open PDF
+                                                </a>
+                                                <a 
+                                                    href="${paper.msUrl}" 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    class="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full hover:bg-green-200 transition-colors duration-200"
+                                                    data-testid="ms-link-${paperId}"
+                                                >
+                                                    MS: Open PDF
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <button 
+                                            onclick="toggleCompletion('${paperId}')"
+                                            class="ml-4 p-2 rounded-full transition-all duration-200 ${isCompleted ? 'bg-green-100 text-green-600' : 'bg-muted hover:bg-muted/80 text-muted-foreground'}"
+                                            data-testid="completion-toggle-${paperId}"
+                                        >
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+                
+                container.appendChild(yearDiv);
+            });
+        }
+
+        function toggleYear(year) {
+            const index = expandedYears.indexOf(year);
+            if (index > -1) {
+                expandedYears.splice(index, 1);
+            } else {
+                expandedYears.push(year);
+            }
+            renderYears();
+        }
+
+        function toggleCompletion(paperId) {
+            const index = completedPapers.indexOf(paperId);
+            if (index > -1) {
+                completedPapers.splice(index, 1);
+            } else {
+                completedPapers.push(paperId);
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('completedPapers', JSON.stringify(completedPapers));
+            renderYears();
+        }
+    </script>
+</body>
+</html>

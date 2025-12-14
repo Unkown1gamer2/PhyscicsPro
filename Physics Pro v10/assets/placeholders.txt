@@ -1,0 +1,38 @@
+ASSET PLACEHOLDER LIST
+
+Hero Section:
+- "hero 3D or Lottie here" → Interactive 3D physics visualization showing particle cloud morphing to sine wave to orbital system
+- Alternative: Lottie animation with smooth transitions between physics concepts
+
+Feature Strip Thumbnails:
+- "3D thumbnail here" (Multi Learn) → Animated brain icon with connecting neurons
+- "3D thumbnail here" (Video Tutorials) → Play button with video frame preview
+- "3D thumbnail here" (Past Papers) → Exam paper icon with checkmarks
+- "3D thumbnail here" (Exam Questions) → Question mark with multiple choice options
+- "3D thumbnail here" (Flashcards) → Flipping card animation
+
+Topic Cover Images:
+- "topic image here" (Particles) → Atomic model with electron orbits
+- "topic image here" (Waves) → Sine wave visualization
+- "topic image here" (Mechanics) → Force diagram with arrows
+- "topic image here" (Electricity) → Circuit diagram with current flow
+- "topic image here" (Further Mechanics) → Pendulum or orbital motion
+- "topic image here" (Thermal) → Molecular motion visualization
+- "topic image here" (Fields) → Field lines around charged objects
+
+Testimonial Avatars:
+- "avatar here" (Sarah M.) → Student with physics textbooks in bright classroom
+- "avatar here" (James K.) → Male student studying in library setting
+- "avatar here" (Emily R.) → Confident student with graduation cap or lab coat
+
+Trust Badges and Logos:
+- "badge here" → Exam board approvals (AQA, OCR, Edexcel logos)
+- "badge here" → "Trusted by 10,000+ students" certification badge
+- "badge here" → "98% pass rate" achievement badge
+- "badge here" → Security and privacy certifications
+
+Multi Learn Demo:
+- "video/demo here" → High-quality physics classroom scene with teacher at whiteboard explaining wave motion, students engaged in background
+
+Logo:
+- "logo here" → PhysicsPro brand logo with atom symbol or wave icon incorporated

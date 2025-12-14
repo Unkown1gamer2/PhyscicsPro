@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-Level Physics Past Papers</title>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background:#f7f7f7; color:#222; margin:0; padding:0; }
+    header { background:#0a74da; color:white; padding:18px 16px; text-align:center; }
+    main { max-width:900px; margin:28px auto; padding:0 16px; }
+    h2 { margin-top:36px; border-bottom:2px solid #0a74da; padding-bottom:6px; }
+    .paper { background:white; margin:12px 0; padding:14px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06);
+            display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .paper .meta { display:flex; flex-direction:column; gap:4px; }
+    .paper a { text-decoration:none; color:#0a74da; font-weight:600; padding:8px 12px; border-radius:8px; border:1px solid transparent; }
+    .paper a:hover { background:#e8f0ff; border-color:#cfe0ff; }
+    footer { text-align:center; padding:18px; background:#efefef; margin-top:36px; font-size:0.9em; }
+    @media (max-width:600px) { .paper { flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>A-Level Physics — Past Papers</h1>
+  </header>
+
+  <main>
+    <h2>Specification & Data Sheets</h2>
+
+    <div class="paper">
+      <div class="meta">
+        <div><strong>Specification — AQA Physics (7408) Data & Formulae Sheet</strong></div>
+        <div style="font-size:0.9em; color:#666">Official AQA data & formula sheet (use in exams where allowed).</div>
+      </div>
+      <a href="https://filestore.aqa.org.uk/resources/physics/AQA-7408-SDB.PDF" target="_blank" rel="noopener">Open PDF</a>
+    </div>
+
+    <h2>Examples / Key Papers</h2>
+
+    <div class="paper">
+      <div class="meta">
+        <div><strong>Example Paper — Source A (sample)</strong></div>
+        <div style="font-size:0.9em; color:#666">Sample PDF hosted on CDN.</div>
+      </div>
+      <a href="https://cdn.sanity.io/files/p28bar15/green/c84fb691cf808ff97ba17ffce6f458f837016dc9.pdf" target="_blank" rel="noopener">Open PDF</a>
+    </div>
+
+    <!-- Add more papers below. Change title text and href to your actual PDF links -->
+    <h2>Past Papers (add more below)</h2>
+
+    <div class="paper">
+      <div class="meta">
+        <div><strong>Past Paper — Example Title</strong></div>
+        <div style="font-size:0.9em; color:#666">Replace this link with the real PDF URL.</div>
+      </div>
+      <a href="yourPDFlink3.pdf" target="_blank" rel="noopener">Open PDF</a>
+    </div>
+
+    <div class="paper">
+      <div class="meta">
+        <div><strong>Past Paper — Example Title 2</strong></div>
+        <div style="font-size:0.9em; color:#666">Replace this link with the real PDF URL.</div>
+      </div>
+      <a href="yourPDFlink4.pdf" target="_blank" rel="noopener">Open PDF</a>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Physics Revision • Replace footer text as needed
+  </footer>
+</body>
+</html>

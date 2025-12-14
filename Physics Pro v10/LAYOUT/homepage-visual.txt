@@ -1,0 +1,101 @@
+HOMEPAGE VISUAL LAYOUT SPECIFICATIONS
+
+NAVIGATION BAR (Sticky, 64px height):
+- Full width glass panel with backdrop blur
+- Logo left-aligned (PhysicsPro wordmark)
+- Center navigation: 6 links with 32px spacing
+- Right section: Theme toggle + Sign In text + Start Now button
+- Padding: 16px horizontal, 0px vertical
+
+HERO SECTION (100vh height):
+Grid Layout: 50/50 split on desktop, stacked on mobile
+
+Left Column (Content):
+- Vertical centering with padding-top: 64px (nav offset)
+- H1: 7rem line-height, max-width 600px
+- Subtitle: 2rem, color muted, max-width 500px
+- Button row: flex gap 16px, margin-top 32px
+- Stats row: horizontal flex, gap 24px, margin-top 24px
+- Email form: max-width 400px, margin-top 32px
+
+Right Column (3D Demo):
+- Square aspect ratio container (600px max)
+- 3D canvas fills container with rounded corners
+- Demo caption: absolute bottom-left
+- Keyboard hint: absolute top-right
+- Scroll indicator: centered below, margin-top 48px
+
+FEATURE STRIP (Padding: 64px vertical):
+- Background: Muted color
+- Grid: 5 columns desktop, 2 mobile, gap 24px
+- Cards: aspect-ratio 1.2:1, padding 24px
+- Icon container: 48px square, margin-bottom 16px
+- Hover lift: -8px transform
+
+MULTI LEARN SECTION (Padding: 80px vertical):
+Grid Layout: 50/50 split, gap 48px
+
+Left (Demo Video):
+- Aspect ratio 16:9
+- Glass container with 32px padding
+- Overlay caption: absolute positioning
+- Image object-fit: cover with opacity 0.8
+
+Right (MCQ Panel):
+- Sticky positioning, top offset 96px
+- Question text: 1.25rem font-size
+- Options: padding 12px, border radius 8px
+- Feedback area: conditional display with transitions
+
+TOPICS GRID (Padding: 80px vertical):
+- Background: Muted color
+- Header: centered, margin-bottom 64px
+- Grid: 4 columns desktop, 2 tablet, 1 mobile
+- Gap: 24px between items
+- Cards: padding 24px, hover lift -8px
+
+Topic Card Structure:
+- Icon: 64px square with gradient background
+- Title: 1.25rem, margin 16px 0 8px
+- Description: 0.875rem muted color
+- Quick links: absolute overlay, slide up on hover
+- CTA link: bottom-aligned with arrow
+
+TESTIMONIALS (Padding: 80px vertical):
+- Header: centered, margin-bottom 64px  
+- Grid: 3 columns desktop, 1 mobile
+- Gap: 32px between cards
+- Cards: padding 32px, stagger animation delays
+- Trust badges: centered, margin-top 64px
+
+Testimonial Card Layout:
+- Avatar + name section: flex row, gap 16px
+- Quote: italic, margin 24px 0
+- Improvement stat: accent color, small font
+
+FOOTER (Padding: 64px vertical):
+- Background: Foreground color, white text
+- Grid: 4 columns desktop, 2 mobile
+- Column gap: 32px
+- Newsletter form: flex column, gap 8px
+- Copyright: centered, border-top, padding-top 32px
+
+SPACING SYSTEM:
+- Section padding: 80px vertical, responsive scaling
+- Container max-width: 1280px, centered
+- Horizontal padding: 16px mobile, 24px tablet, 32px desktop
+- Component margins: 8px, 16px, 24px, 32px, 48px, 64px
+
+VISUAL HIERARCHY:
+1. Hero title (largest, accent color highlight)
+2. Section headers (bold, dark color)
+3. Card titles (medium weight, readable size)
+4. Body text (regular weight, muted when secondary)
+5. Small text/captions (light weight, smallest size)
+
+ANIMATION TIMING:
+- Page load: Staggered fade-ins, 200ms delays
+- Hover states: 200ms ease-out transforms
+- Scroll indicators: 300ms opacity transitions
+- Theme switching: 300ms color transitions
+- Mobile menu: 250ms slide animations

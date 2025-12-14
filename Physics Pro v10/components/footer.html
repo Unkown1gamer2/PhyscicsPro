@@ -1,0 +1,75 @@
+<footer class="bg-foreground text-background py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Quick Links -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold" data-testid="footer-quicklinks-title">Quick Links</h3>
+                <div class="space-y-2">
+                    <button onclick="navigateToNotes()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-notes">
+                        Notes
+                    </button>
+                    <button onclick="navigateToVideos()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-videos">
+                        Video Tutorials
+                    </button>
+                    <button onclick="navigateToPastPapers()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-papers">
+                        Past Papers
+                    </button>
+                    <button onclick="navigateToMultiLearn()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-multilearn">
+                        Multi Learn
+                    </button>
+                    <button onclick="navigateToExamQuestions()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-questions">
+                        Exam Questions
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Resources -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold" data-testid="footer-resources-title">Resources</h3>
+                <div class="space-y-2">
+                    <button onclick="openSpecificationGuide()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-specification">
+                        Specification Guide
+                    </button>
+                    <button onclick="openDataSheet()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-data">
+                        Data Booklet
+                    </button>
+                    <a href="#" class="block text-background/70 hover:text-background transition-colors duration-200" data-testid="footer-link-formula">
+                        Formula Sheet
+                    </a>
+                    <a href="#" class="block text-background/70 hover:text-background transition-colors duration-200" data-testid="footer-link-planner">
+                        Study Planner
+                    </a>
+                    <a href="#" class="block text-background/70 hover:text-background transition-colors duration-200" data-testid="footer-link-tracker">
+                        Progress Tracker
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold" data-testid="footer-contact-title">Contact</h3>
+                <div class="space-y-2">
+                    <div class="text-background/70" data-testid="footer-email">Give Us Feedback</div>
+                    <div class="text-background/70" data-testid="footer-help">Help Center</div>
+                    <div class="text-background/70" data-testid="footer-forum">Email:</div>
+                    <div class="text-background/70" data-testid="footer-hours">Scottlucey@outlook.com</div>
+                </div>
+            </div>
+            
+            <!-- User Resources -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold" data-testid="footer-user-resources-title">Your Account</h3>
+                <div class="space-y-2">
+                    <div class="text-background/70" data-testid="footer-profile">My Profile</div>
+                    <button onclick="navigateToProgress()" class="text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-progress">Study Progress</button>
+                    <div class="text-background/70" data-testid="footer-settings">Settings</div>
+                    <button onclick="navigateToLogin()" class="text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-logout">Log Out</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-background/20 mt-12 pt-8 text-center text-background/70">
+            <p data-testid="footer-copyright">© 2025 PhysicsPro. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

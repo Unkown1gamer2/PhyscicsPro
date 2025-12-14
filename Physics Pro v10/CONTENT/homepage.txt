@@ -1,0 +1,59 @@
+HOMEPAGE CONTENT
+
+Navigation:
+- Logo: PhysicsPro
+- Center/right nav: Specification, Data, Questions by Topic, Past Papers, Videos, Multi Learn
+- Right: Sign In, Start Now button
+
+Hero Section:
+- H1: Physics A-Level Revision
+- Subtitle: Master topics with smart videos, adaptive MCQs, and interactive 3D demos
+- Primary CTA: Start Now
+- Secondary CTA: Explore Multi Learn
+- Stats: "500+ practice questions" "100+ videos" "Works offline"
+- Email form: "write email here" with "Notify me" button
+
+3D Demo:
+- Scroll-reactive morphing composition
+- Particle cloud → sine wave → orbiting sphere
+- Caption: "Explain this demo here" → "Interactive Physics Demo"
+- Keyboard hint: "keyboard hint here" → "Space to pause"
+
+Feature Strip (5 cards):
+- Multi Learn: Adaptive learning with instant feedback
+- Video Tutorials: Expert explanations for every topic
+- Past Papers: Real exam questions with mark schemes
+- Exam Questions: Practice with targeted question sets
+- Flashcards: Quick revision with spaced repetition
+
+Multi Learn Section:
+- Title: Multi Learn
+- Description: Learn smarter with interactive lessons that adapt to your progress
+- Sample question: "What happens to the wavelength of light when it enters a denser medium?"
+- Options: It increases, It decreases, It remains the same
+- Feedback: Correct! / Try again
+- Explanation: "When light enters a denser medium, its speed decreases, causing the wavelength to decrease while frequency remains constant."
+- CTA: Try a Sample Lesson
+
+Topics Grid (7 topics):
+- Particles and Radiation: Atomic structure, radioactivity, and particle physics
+- Waves: Wave properties, interference, and electromagnetic spectrum
+- Mechanics and Materials: Forces, motion, energy, and material properties
+- Electricity: Current, voltage, resistance, and electrical circuits
+- Further Mechanics: Momentum, circular motion, and simple harmonic motion
+- Thermal Physics: Temperature, heat transfer, and kinetic theory
+- Fields and Their Consequences: Gravitational, electric, and magnetic fields
+
+Testimonials:
+- Sarah M.: "The 3D demos made complex physics concepts finally click for me. Went from struggling with waves to acing my mocks!" (+2 grades)
+- James K.: "Multi Learn's adaptive questions helped me identify exactly where I was weak. The instant feedback saved hours of confusion." (+3 grades)
+- Emily R.: "The past papers section is incredible - having mark schemes and examiner reports made exam prep so much more effective." (+2 grades)
+
+Trust badges: "Trusted by 10,000+ students", "98% pass rate", "Average +2.5 grade improvement"
+
+Footer:
+- Quick Links: Topics Overview, Video Tutorials, Past Papers, Multi Learn, Exam Questions
+- Resources: Specification Guide, Data Booklet, Formula Sheet, Study Planner, Progress Tracker
+- Contact: "write email here", Help Center, Community Forum, Office Hours: 9-5 GMT
+- Newsletter: "write email here" with Subscribe button
+- Copyright: © 2024 PhysicsPro. All rights reserved.
