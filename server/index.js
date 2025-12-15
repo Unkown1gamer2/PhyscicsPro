@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = parseInt(process.env.PORT || "5000");
+const PORT = parseInt(process.env.PORT || "5000"); // Correctly parse PORT from environment variable
 
 // Serve static files from the root directory
 app.use(express.static(path.join(__dirname, '..')));
