@@ -48,6 +48,10 @@ app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '../notes.html'));
 });
 
+app.get('/progress', (req, res) => {
+  res.sendFile(path.join(__dirname, '../progress.html'));
+});
+
 // Handle all other routes by serving index.html (for client-side routing fallback)
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
