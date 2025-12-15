@@ -33,51 +33,26 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend Architecture
 
-**React + TypeScript SPA**: The client is built as a Single Page Application using React 18 with TypeScript for type safety. The application uses Wouter for lightweight client-side routing and Vite as the build tool for fast development and optimized production builds.
+**Static HTML, Vanilla JavaScript, and Tailwind CSS**: The client is built using static HTML pages for structure, Vanilla JavaScript for dynamic content and interactivity, and Tailwind CSS (via CDN) for styling. The application uses `localStorage` for client-side state management and `window.location.href` for basic routing between HTML pages.
 
-**Component Architecture**: The UI follows a modular component structure with shadcn/ui providing the foundational design system. Components are organized into reusable UI primitives (buttons, cards, forms) and feature-specific components (Hero, Navigation, MultiLearnSection). The design system implements a consistent Apple-style aesthetic with frosted glass effects, rounded corners, and subtle animations.
-
-**State Management**: The application uses React Query (TanStack Query) for server state management, providing caching, background updates, and optimistic updates. Local component state is managed with React hooks, and theme state is persisted to localStorage.
-
-**Styling System**: Tailwind CSS provides utility-first styling with custom CSS variables for theming. The design system supports light/dark mode switching with smooth transitions. Custom glass morphism effects are implemented using backdrop-blur and transparency layers.
+**Component Architecture**: The UI follows a modular component structure with custom-built components using standard HTML elements and styled with Tailwind CSS. The design system implements a consistent Apple-style aesthetic with frosted glass effects, rounded corners, and subtle animations.
 
 ### Backend Architecture
 
-**Express.js Server**: The backend is built with Express.js providing RESTful API endpoints. The server handles authentication, data validation, and business logic processing. Error handling middleware provides consistent error responses across the application.
-
-**TypeScript Integration**: Full TypeScript support across the backend ensures type safety between client and server. Shared types and schemas are defined in a common directory for consistency.
-
-**Session Management**: User sessions are managed with express-session, configured for secure cookie handling and persistent storage.
+**Express.js Static Server**: The backend is built with Express.js, primarily serving static HTML, CSS, and JavaScript files. There are no database or API endpoints implemented beyond serving these static assets.
 
 ### Data Storage Solutions
 
-**PostgreSQL with Drizzle ORM**: The application uses PostgreSQL as the primary database with Drizzle ORM providing type-safe database operations. Drizzle's schema-first approach ensures database schema and TypeScript types remain synchronized.
-
-**Schema Design**: The current schema includes user management with plans for expanding to include course content, user progress tracking, and subscription management. Database migrations are managed through Drizzle Kit.
-
-**Connection Management**: Database connections are handled through environment variables with proper connection pooling for production environments.
+**Local JSON Files**: Content data, such as video information, is stored in local JSON files (e.g., `assets/videos-data.json`). Client-side persistence for user preferences (like theme or past paper completion status) is handled using `localStorage`.
 
 ### Authentication and Authorization
 
-**Session-based Authentication**: The application implements traditional session-based authentication stored server-side. User credentials are securely hashed and stored in the database.
-
-**Route Protection**: Protected routes are implemented at both the server and client levels, ensuring unauthorized users cannot access premium content.
+**No Authentication/Authorization**: The current architecture does not include any authentication or authorization mechanisms. All content is publicly accessible.
 
 ### External Dependencies
 
-**UI Component Library**: Radix UI primitives provide accessible, unstyled components that are customized with the design system. This ensures accessibility compliance while maintaining design flexibility.
+**Styling**: Tailwind CSS (via CDN) for utility-first styling.
+**Icons**: Inline SVG icons.
+**Other**: No external UI component libraries or frontend frameworks (like React) are used.
 
-**Development Tools**: 
-- Vite for fast development builds and hot module replacement
-- ESBuild for production bundling
-- PostCSS with Autoprefixer for CSS processing
-- TypeScript compiler for type checking
-
-**Third-party Integrations**: 
-- Three.js types are included for future 3D visualization features
-- Neon Database serverless driver for scalable database connections
-- React Hook Form with Zod for form validation and type safety
-
-**Payment Processing**: Placeholder implementation exists for future payment provider integration to handle subscription management.
-
-The architecture is designed for scalability with clear separation of concerns, making it easy to add new features like real-time collaboration, advanced analytics, or additional content types.
+The architecture is designed for simplicity and ease of deployment as a static site, with all dynamic functionality handled client-side using Vanilla JavaScript.
