@@ -2,69 +2,74 @@
 import { IosSelector } from './ios-selector.js';
 
 document.addEventListener('DOMContentLoaded', async function() {
-    // Load header and footer components if elements exist
-    await loadComponents();
-    
-    // Initialize theme after components are loaded
-    initializeTheme();
-    
-    // Initialize timer functionality after a short delay to ensure components are loaded
-    setTimeout(() => {
-        if (typeof initializeTimer === 'function') {
-            initializeTimer();
-        }
-    }, 100);
-    
-    // Initialize scroll functionality
-    initializeScrollToTop();
-    initializeScrollToBottom();
-    
-    // Initialize navigation scroll effects
-    initializeNavigation();
-    
-    // Initialize external link security
-    initializeExternalLinks();
+    try {
+        // Load header and footer components if elements exist
+        await loadComponents();
+        
+        // Initialize theme after components are loaded
+        initializeTheme();
+        
+        // Initialize scroll functionality
+        initializeScrollToTop();
+        initializeScrollToBottom();
+        
+        // Initialize navigation scroll effects
+        initializeNavigation();
+        
+        // Initialize external link security
+        initializeExternalLinks();
+        
+        // Initialize timer functionality after a short delay to ensure components are rendered
+        setTimeout(() => {
+            if (typeof initializeTimer === 'function') {
+                initializeTimer();
+            }
+        }, 100);
+
+    } catch (error) {
+        console.error('Error during DOMContentLoaded initialization:', error);
+    }
 });
 
 // Component Loading
 async function loadComponents() {
-    // Load header component
     const navigationDiv = document.getElementById('navigation');
-    if (navigationDiv) {
-        try {
-            const response = await fetch('components/header.html');
-            if (response.ok) {
-                navigationDiv.innerHTML = await response.text();
-            }
-        } catch (error) {
-            console.warn('Could not load header component:', error);
-        }
-    }
-    
-    // Load footer component
     const footerDiv = document.getElementById('footer');
-    if (footerDiv) {
-        try {
-            const response = await fetch('components/footer.html');
-            if (response.ok) {
-                footerDiv.innerHTML = await response.text();
-            }
-        } catch (error) {
-            console.warn('Could not load footer component:', error);
+
+    const headerPromise = navigationDiv ? fetch('components/header.html').then(response => response.ok ? response.text() : Promise.reject('Failed to fetch header')) : Promise.resolve(null);
+    const footerPromise = footerDiv ? fetch('components/footer.html').then(response => response.ok ? response.text() : Promise.reject('Failed to fetch footer')) : Promise.resolve(null);
+
+    try {
+        const [headerHtml, footerHtml] = await Promise.all([headerPromise, footerPromise]);
+        
+        if (navigationDiv && headerHtml) {
+            navigationDiv.innerHTML = headerHtml;
+        } else if (navigationDiv) {
+            console.warn('Navigation div found but header HTML not loaded or empty.');
         }
+        if (footerDiv && footerHtml) {
+            footerDiv.innerHTML = footerHtml;
+        } else if (footerDiv) {
+            console.warn('Footer div found but footer HTML not loaded or empty.');
+        }
+    } catch (error) {
+        console.warn('Could not load components:', error);
     }
 }
 
 // Theme Management
 function initializeTheme() {
+    const themeToggles = document.querySelectorAll('#theme-toggle');
+    if (themeToggles.length === 0) {
+        console.warn('Theme toggle button not found during initializeTheme.');
+        return; // Exit if elements aren't there
+    }
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
     }
     
-    // Update all theme toggle buttons if they exist (some pages may have multiple)
-    const themeToggles = document.querySelectorAll('#theme-toggle');
     themeToggles.forEach(themeToggle => {
         updateThemeToggleIcon(savedTheme);
         // Remove existing listeners to avoid duplicates
@@ -118,7 +123,10 @@ function scrollToTop() {
 // Dynamic scroll functionality
 function initializeScrollToBottom() {
     const scrollBtn = document.getElementById('scroll-bottom');
-    if (!scrollBtn) return;
+    if (!scrollBtn) {
+        console.warn('Scroll to bottom button not found during initializeScrollToBottom.');
+        return; // Exit if element isn't there
+    }
     
     let isAtBottom = false;
     
@@ -170,6 +178,11 @@ let timerRunning = false;
 let hourSelector, minuteSelector, secondSelector;
 
 function initializeTimer() {
+    const timerIcon = document.getElementById('timer-icon');
+    if (!timerIcon) {
+        console.warn('Timer icon not found during initializeTimer.');
+        return; // Exit if element isn't there
+    }
     setupTimerControls();
     restoreTimerFromStorage();
 }
@@ -589,3 +602,10 @@ window.openDataSheet = openDataSheet;
 window.handleStartNow = handleStartNow; // Make available globally
 window.handleSampleAnswer = handleSampleAnswer; // Make available globally
 window.scrollToTop = scrollToTop; // Make available globally
+window.toggleTheme = toggleTheme; // Make available globally for theme-toggle buttons
+window.updateThemeToggleIcon = updateThemeToggleIcon; // Make available globally
+window.initializeIosSelectors = initializeIosSelectors; // Make available globally for timer dropdown
+window.startTimer = startTimer; // Make available globally for timer controls
+window.pauseTimer = pauseTimer; // Make available globally for timer controls
+window.stopTimer = stopTimer; // Make available globally for timer controls
+window.cancelTimer = cancelTimer; // Make available globally for timer controls
