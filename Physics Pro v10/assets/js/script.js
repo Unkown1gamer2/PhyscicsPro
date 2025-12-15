@@ -137,6 +137,15 @@ function initializeScrollToBottom() {
         }
     }
     
+    // Set up click handler
+    scrollBtn.addEventListener('click', handleScrollClick);
+    
+    // Set up scroll listener
+    window.addEventListener('scroll', updateScrollButton);
+    
+    // Initial check
+    updateScrollButton();
+
     function handleScrollClick() {
         if (isAtBottom) {
             // Scroll to top
@@ -146,15 +155,6 @@ function initializeScrollToBottom() {
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
     }
-    
-    // Set up click handler
-    scrollBtn.addEventListener('click', handleScrollClick);
-    
-    // Set up scroll listener
-    window.addEventListener('scroll', updateScrollButton);
-    
-    // Initial check
-    updateScrollButton();
 }
 
 // iOS Timer functionality
@@ -539,6 +539,34 @@ function handleFeatureClick(featureId) {
     }
 }
 
+// Homepage specific functions
+// Start Now button functionality
+function handleStartNow() {
+    const featureSection = document.querySelector('[data-testid="feature-specification"]').parentElement.parentElement;
+    if (featureSection) {
+        const rect = featureSection.getBoundingClientRect();
+        const scrollTop = window.pageYOffset + rect.top - 80;
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+    }
+}
+
+// Sample MCQ functionality
+function handleSampleAnswer(selectedIndex) {
+    const feedback = document.getElementById('feedback');
+    const correctAnswer = 1; // "It decreases"
+    
+    feedback.classList.remove('hidden');
+    
+    if (selectedIndex === correctAnswer) {
+        feedback.className = 'mt-4 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800';
+        feedback.innerHTML = '<strong>Correct!</strong> When light enters a denser medium, its speed decreases, causing the wavelength to decrease while frequency remains constant.';
+    } else {
+        feedback.className = 'mt-4 p-4 rounded-lg bg-red-100 border border-red-300 text-red-800';
+        feedback.innerHTML = '<strong>Incorrect.</strong> When light enters a denser medium, its speed decreases, causing the wavelength to decrease while frequency remains constant.';
+    }
+}
+
+
 // Make functions available globally for HTML onclick handlers
 window.handleFeatureClick = handleFeatureClick;
 window.navigateToHome = navigateToHome;
@@ -553,3 +581,5 @@ window.navigateToNotes = navigateToNotes;
 window.navigateToProgress = navigateToProgress;
 window.openSpecificationGuide = openSpecificationGuide;
 window.openDataSheet = openDataSheet;
+window.handleStartNow = handleStartNow; // Make available globally
+window.handleSampleAnswer = handleSampleAnswer; // Make available globally
