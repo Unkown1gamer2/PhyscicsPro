@@ -75,7 +75,7 @@
                     
                     <!-- Key Features Preview -->
                     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="handleFeatureClick()">
+                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="scrollToTop()">
                             <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                                 <div class="w-6 h-6 bg-white rounded-lg animate-pulse"></div>
                             </div>
@@ -83,7 +83,7 @@
                             <p class="text-sm text-muted-foreground">Adaptive questions with instant feedback</p>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="handleFeatureClick()">
+                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="scrollToTop()">
                             <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                                 <div class="w-0 h-0 border-l-[8px] border-l-white border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent ml-1"></div>
                             </div>
@@ -91,7 +91,7 @@
                             <p class="text-sm text-muted-foreground">Expert explanations for every topic</p>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="handleFeatureClick()">
+                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="scrollToTop()">
                             <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                                 <div class="w-6 h-6 border-2 border-white rounded opacity-80"></div>
                             </div>
@@ -99,7 +99,7 @@
                             <p class="text-sm text-muted-foreground">Real exams with mark schemes</p>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="handleFeatureClick()">
+                        <div class="glass-card p-6 rounded-2xl hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer" onclick="scrollToTop()">
                             <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                                 <div class="w-6 h-6 border-2 border-white rounded opacity-80 flex items-center justify-center">
                                     <div class="w-2 h-2 bg-white rounded"></div>
@@ -113,7 +113,7 @@
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <button 
-                            onclick="handleSignUp()"
+                            onclick="navigateToHome()"
                             class="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 animate-glow"
                             data-testid="button-signup"
                         >
@@ -121,7 +121,7 @@
                         </button>
                         
                         <button 
-                            onclick="handleLogIn()"
+                            onclick="navigateToHome()"
                             class="glass-card hover:bg-muted/20 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300"
                             data-testid="button-login"
                         >
@@ -129,7 +129,7 @@
                         </button>
                         
                         <button 
-                            onclick="handleDemo()"
+                            onclick="navigateToDemo()"
                             class="text-accent hover:text-accent/80 px-6 py-2 font-medium transition-colors duration-200 flex items-center gap-2"
                             data-testid="button-demo"
                         >
@@ -165,24 +165,6 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
-    <script>
-        function handleSignUp() {
-            window.location.href = 'index.html';
-        }
-
-        function handleLogIn() {
-            window.location.href = 'index.html';
-        }
-
-        function handleDemo() {
-            window.location.href = 'demo.html';
-        }
-
-        function handleFeatureClick() {
-            // Scroll to top to encourage sign up
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
+    <script type="module" src="assets/js/script.js"></script>
 </body>
 </html>

@@ -110,6 +110,11 @@ function initializeScrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Generic scroll to top function
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 // Dynamic scroll functionality
 function initializeScrollToBottom() {
     const scrollBtn = document.getElementById('scroll-bottom');
@@ -583,3 +588,4 @@ window.openSpecificationGuide = openSpecificationGuide;
 window.openDataSheet = openDataSheet;
 window.handleStartNow = handleStartNow; // Make available globally
 window.handleSampleAnswer = handleSampleAnswer; // Make available globally
+window.scrollToTop = scrollToTop; // Make available globally
