@@ -11,6 +11,9 @@ const paperStructure = {
                         "Written Questions": { qp: "1.1 SI Units and Their Prefixes QP.pdf", ms: "1.1 SI Units and Their Prefixes MS.pdf" },
                         "Multiple Choice": { qp: "1.1 SI Units and Their Prefixes MCQ QP.pdf", ms: "1.1 SI Units and Their Prefixes MCQ MS.pdf" }
                     },
+                    "1.2 Limitation of Physical Measurements": { // NEW SUBTOPIC
+                        "Written Questions": { qp: "1.2 Limitation of Physical Measurements QP.pdf", ms: "1.2 Limitation of Physical Measurements MS.pdf" }
+                    },
                     "1.3 Estimation of Physical Quantities": {
                         "Written Questions": { qp: "1.3. Estimation of Physical Quantities QP.pdf", ms: "1.3. Estimation of Physical Quantities MS.pdf" },
                         "Multiple Choice": { qp: "1.3 Estimation of Physical Quantities MCQ QP.pdf", ms: "1.3 Estimation of Physical Quantities MCQ MS.pdf" }
@@ -97,6 +100,9 @@ const paperStructure = {
                 title: "7. Fields and Their Consequences",
                 folder: "7. Fields and Their Consequences",
                 subtopics: {
+                    "7.1 Fields": { // NEW SUBTOPIC FOR FLASHCARDS
+                        "Flashcards": { qp: "Flashcards - Topic 7.1 Fields - AQA Physics A-level.pdf", ms: "Flashcards - Topic 7.1 Fields - AQA Physics A-level.pdf" }
+                    },
                     "7.2 Gravitational Fields": {
                         "Written Questions": { qp: "7.2 Gravitational Fields QP.pdf", ms: "7.2 Gravitational Fields MS.pdf" },
                         "Multiple Choice": { qp: "7.2 Gravitational Fields MCQ QP.pdf", ms: "7.2 Gravitational Fields MCQ MS.pdf" }
@@ -166,6 +172,9 @@ const paperStructure = {
                         },
                         "10.3 Biological Measurement and Non-ionising Imaging": {
                             "Written Questions": { qp: "10.3 Biological Measurement and Non-ionising Imaging QP.pdf", ms: "10.3 Biological Measurement and Non-ionising Imaging MS.pdf" }
+                        },
+                        "10.4 Non-ionising Imaging": { // NEW SUBTOPIC FOR FLASHCARDS
+                            "Flashcards": { qp: "Flashcards - Topic 10.4 Non-ionising Imaging - AQA Physics A-level.pdf", ms: "Flashcards - Topic 10.4 Non-ionising Imaging - AQA Physics A-level.pdf" }
                         },
                         "10.5 X-ray Imaging": {
                             "Written Questions": { qp: "10.5 X-ray Imaging QP.pdf", ms: "10.5 X-ray Imaging MS.pdf" }
@@ -269,12 +278,14 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
             const typeContainer = document.createElement('div');
             typeContainer.className = 'bg-muted/10 rounded-lg p-3 mb-2 ml-4';
             
-            const typeHeader = document.createElement('div');
-            typeHeader.className = 'flex items-center gap-2 mb-2';
-            
-            const icon = type === "Multiple Choice" ? 
-                '<svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>' :
-                '<svg class="w-4 h-4 flex-shrink-0 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>';
+            let icon = ''; // Initialize icon variable
+            if (type === "Multiple Choice") {
+                icon = '<svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
+            } else if (type === "Written Questions") {
+                icon = '<svg class="w-4 h-4 flex-shrink-0 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>';
+            } else if (type === "Flashcards") { // NEW ICON FOR FLASHCARDS
+                icon = '<svg class="w-4 h-4 flex-shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.206 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.794 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.794 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.206 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>';
+            }
             
             typeHeader.innerHTML = `${icon}<span class="font-medium text-sm">${type}</span>`;
             typeContainer.appendChild(typeHeader);
@@ -311,26 +322,29 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
             qpLink.target = '_blank';
             qpLink.rel = 'noopener noreferrer';
             qpLink.className = 'text-blue-500 hover:text-blue-600 hover:underline font-medium transition-colors text-sm';
-            qpLink.textContent = 'Question Paper';
+            qpLink.textContent = type === "Flashcards" ? 'Open Flashcards' : 'Question Paper'; // Adjust link text for flashcards
             
             qpDiv.appendChild(qpCheckbox);
             qpDiv.appendChild(qpLink);
             linksContainer.appendChild(qpDiv);
             
-            let msPath;
-            if (folder) {
-                msPath = `assets/pdfs/${encodeURIComponent(folder)}/${encodeURIComponent(files.ms)}`;
-            } else {
-                msPath = `assets/pdfs/${encodeURIComponent(files.ms)}`;
+            // Only add Mark Scheme link if it's not a Flashcard type
+            if (type !== "Flashcards") {
+                let msPath;
+                if (folder) {
+                    msPath = `assets/pdfs/${encodeURIComponent(folder)}/${encodeURIComponent(files.ms)}`;
+                } else {
+                    msPath = `assets/pdfs/${encodeURIComponent(files.ms)}`;
+                }
+                
+                const msLink = document.createElement('a');
+                msLink.href = msPath;
+                msLink.target = '_blank';
+                msLink.rel = 'noopener noreferrer';
+                msLink.className = 'text-purple-500 hover:text-purple-600 hover:underline font-medium transition-colors text-sm';
+                msLink.textContent = 'Mark Scheme';
+                linksContainer.appendChild(msLink);
             }
-            
-            const msLink = document.createElement('a');
-            msLink.href = msPath;
-            msLink.target = '_blank';
-            msLink.rel = 'noopener noreferrer';
-            msLink.className = 'text-purple-500 hover:text-purple-600 hover:underline font-medium transition-colors text-sm';
-            msLink.textContent = 'Mark Scheme';
-            linksContainer.appendChild(msLink);
             
             typeContainer.appendChild(linksContainer);
             subtopicDiv.appendChild(typeContainer);
