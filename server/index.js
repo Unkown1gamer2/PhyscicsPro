@@ -8,6 +8,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = parseInt(process.env.PORT || "5000"); // Correctly parse PORT from environment variable
 
+// Serve static files from the assets/pdfs directory specifically
+app.use('/assets/pdfs', express.static(path.join(__dirname, '../assets/pdfs')));
+
 // Serve static files from the root directory
 app.use(express.static(path.join(__dirname, '..')));
 
@@ -54,6 +57,7 @@ app.get('/progress', (req, res) => {
 
 // Handle all other routes by serving index.html (for client-side routing fallback)
 app.get('*', (req, res) => {
+  console.log(`Catch-all route hit for: ${req.path}`); // Log requests hitting this route
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
