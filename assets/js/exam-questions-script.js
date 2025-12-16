@@ -278,6 +278,9 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
             const typeContainer = document.createElement('div');
             typeContainer.className = 'bg-muted/10 rounded-lg p-3 mb-2 ml-4';
             
+            const typeHeader = document.createElement('div'); // Declare typeHeader here
+            typeHeader.className = 'flex items-center gap-2 mb-2';
+            
             let icon = ''; // Initialize icon variable
             if (type === "Multiple Choice") {
                 icon = '<svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
