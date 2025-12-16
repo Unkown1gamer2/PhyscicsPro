@@ -17,7 +17,7 @@ const paperStructure = {
                     },
                     "1.3 Estimation of Physical Quantities": {
                         "Written Questions": { qp: "1.3. Estimation of Physical Quantities QP.pdf", ms: "1.3. Estimation of Physical Quantities MS.pdf" },
-                        "Multiple Choice": { qp: "1.3 Estimation of Physical Quantities MCQ QP.pdf", ms: "1.3 Estimation of Physical Quantities MCQ MS.pdf" }
+                        "Multiple Choice": { qp: "1.3. Estimation of Physical Quantities MCQ QP.pdf", ms: "1.3. Estimation of Physical Quantities MCQ MS.pdf" }
                     }
                 }
             },
