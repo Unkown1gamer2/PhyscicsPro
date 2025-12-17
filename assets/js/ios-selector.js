@@ -1,5 +1,8 @@
 // ios-selector.js
 export class IosSelector {
+    /** @type {function(number): void | null} */
+    onChange;
+
     /**
      * @param {object} options
      * @param {string} options.el

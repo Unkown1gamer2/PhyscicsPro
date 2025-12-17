@@ -587,118 +587,49 @@ function handleSampleAnswer(selectedIndex) {
     }
 }
 
-/**
- * @global
- * @type {function(string): void}
- */
+/** @type {typeof handleFeatureClick} */
 window.handleFeatureClick = handleFeatureClick;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToHome} */
 window.navigateToHome = navigateToHome;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToLogin} */
 window.navigateToLogin = navigateToLogin;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToPastPapers} */
 window.navigateToPastPapers = navigateToPastPapers;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToDemo} */
 window.navigateToDemo = navigateToDemo;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToMultiLearn} */
 window.navigateToMultiLearn = navigateToMultiLearn;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToVideos} */
 window.navigateToVideos = navigateToVideos;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToExamQuestions} */
 window.navigateToExamQuestions = navigateToExamQuestions;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToQuickLearn} */
 window.navigateToQuickLearn = navigateToQuickLearn;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToNotes} */
 window.navigateToNotes = navigateToNotes;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof navigateToProgress} */
 window.navigateToProgress = navigateToProgress;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof openSpecificationGuide} */
 window.openSpecificationGuide = openSpecificationGuide;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof openDataSheet} */
 window.openDataSheet = openDataSheet;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof handleStartNow} */
 window.handleStartNow = handleStartNow;
-/**
- * @global
- * @type {function(number): void}
- */
+/** @type {typeof handleSampleAnswer} */
 window.handleSampleAnswer = handleSampleAnswer;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof scrollToTop} */
 window.scrollToTop = scrollToTop;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof toggleTheme} */
 window.toggleTheme = toggleTheme;
-/**
- * @global
- * @type {function(string): void}
- */
+/** @type {typeof updateThemeToggleIcon} */
 window.updateThemeToggleIcon = updateThemeToggleIcon;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof initializeIosSelectors} */
 window.initializeIosSelectors = initializeIosSelectors;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof startTimer} */
 window.startTimer = startTimer;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof pauseTimer} */
 window.pauseTimer = pauseTimer;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof stopTimer} */
 window.stopTimer = stopTimer;
-/**
- * @global
- * @type {function(): void}
- */
+/** @type {typeof cancelTimer} */
 window.cancelTimer = cancelTimer;

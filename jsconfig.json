@@ -16,7 +16,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["node"]
   },
   "include": ["**/*.js", "**/*.jsx", "**/*.json"],
   "exclude": ["node_modules"]
