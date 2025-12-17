@@ -2,6 +2,12 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+/**
+ * @global
+ * @type {NodeJS.Process}
+ */
+const process = global.process;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

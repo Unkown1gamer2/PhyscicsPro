@@ -589,7 +589,7 @@ function handleSampleAnswer(selectedIndex) {
 
 /**
  * @global
- * @type {function(): void}
+ * @type {function(string): void}
  */
 window.handleFeatureClick = handleFeatureClick;
 /**
