@@ -411,15 +411,19 @@ function initializeCanvas(questionIndex) {
     const canvas = document.getElementById(`canvas-${questionIndex}`);
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    // Type assertion for canvas
+    const canvasElement = /** @type {HTMLCanvasElement} */ (canvas);
+    const ctx = canvasElement.getContext('2d');
+    if (!ctx) return; // Ensure context is available
+
     let isDrawing = false;
     let lastX = 0;
     let lastY = 0;
 
     // Set canvas size
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = 200;
+    const rect = canvasElement.getBoundingClientRect();
+    canvasElement.width = rect.width;
+    canvasElement.height = 200;
 
     ctx.strokeStyle = '#000000';
     ctx.lineWidth = 2;
@@ -428,7 +432,7 @@ function initializeCanvas(questionIndex) {
 
     function startDrawing(e) {
         isDrawing = true;
-        const rect = canvas.getBoundingClientRect();
+        const rect = canvasElement.getBoundingClientRect();
         lastX = (e.clientX || e.touches[0].clientX) - rect.left;
         lastY = (e.clientY || e.touches[0].clientY) - rect.top;
     }
@@ -437,7 +441,7 @@ function initializeCanvas(questionIndex) {
         if (!isDrawing) return;
         e.preventDefault();
         
-        const rect = canvas.getBoundingClientRect();
+        const rect = canvasElement.getBoundingClientRect();
         const currentX = (e.clientX || e.touches[0].clientX) - rect.left;
         const currentY = (e.clientY || e.touches[0].clientY) - rect.top;
 
@@ -455,22 +459,26 @@ function initializeCanvas(questionIndex) {
     }
 
     // Mouse events
-    canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mouseup', stopDrawing);
-    canvas.addEventListener('mouseout', stopDrawing);
+    canvasElement.addEventListener('mousedown', startDrawing);
+    canvasElement.addEventListener('mousemove', draw);
+    canvasElement.addEventListener('mouseup', stopDrawing);
+    canvasElement.addEventListener('mouseout', stopDrawing);
 
     // Touch events
-    canvas.addEventListener('touchstart', startDrawing);
-    canvas.addEventListener('touchmove', draw);
-    canvas.addEventListener('touchend', stopDrawing);
+    canvasElement.addEventListener('touchstart', startDrawing);
+    canvasElement.addEventListener('touchmove', draw);
+    canvasElement.addEventListener('touchend', stopDrawing);
 }
 
 function clearCanvas(questionIndex) {
     const canvas = document.getElementById(`canvas-${questionIndex}`);
     if (canvas) {
-        const ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Type assertion for canvas
+        const canvasElement = /** @type {HTMLCanvasElement} */ (canvas);
+        const ctx = canvasElement.getContext('2d');
+        if (ctx) { // Ensure context is available
+            ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        }
     }
 }
 

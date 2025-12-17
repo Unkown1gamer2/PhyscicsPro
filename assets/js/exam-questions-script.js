@@ -109,7 +109,7 @@ const paperStructure = {
                         "Multiple Choice": { qp: "7.2 Gravitational Fields MCQ QP.pdf", ms: "7.2 Gravitational Fields MCQ MS.pdf" }
                     },
                     "7.3 Electric Fields": {
-                        "Written Questions": { qp: "7.3 Electric Fields QP.pdf", ms: "7.3 Electric Fields QP.pdf", ms: "7.3 Electric Fields MS.pdf" }
+                        "Written Questions": { qp: "7.3 Electric Fields QP.pdf", ms: "7.3 Electric Fields MS.pdf" }
                     },
                     "7.4 Capacitance": {
                         "Written Questions": { qp: "7.4 Capacitance QP.pdf", ms: "7.4 Capacitance MS.pdf" },

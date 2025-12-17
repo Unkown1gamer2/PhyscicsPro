@@ -257,9 +257,12 @@ function setupTimerControls() {
     
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-        if (!timerSetDropdown.contains(e.target) && !timerControlDropdown.contains(e.target) && !timerIcon.contains(e.target)) {
-            timerSetDropdown.classList.add('hidden');
-            timerControlDropdown.classList.add('hidden');
+        // Type guard to ensure e.target is a Node
+        if (e.target instanceof Node) {
+            if (!timerSetDropdown.contains(e.target) && !timerControlDropdown.contains(e.target) && !timerIcon.contains(e.target)) {
+                timerSetDropdown.classList.add('hidden');
+                timerControlDropdown.classList.add('hidden');
+            }
         }
     });
     
@@ -584,28 +587,118 @@ function handleSampleAnswer(selectedIndex) {
     }
 }
 
-
-// Make functions available globally for HTML onclick handlers
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.handleFeatureClick = handleFeatureClick;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToHome = navigateToHome;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToLogin = navigateToLogin;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToPastPapers = navigateToPastPapers;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToDemo = navigateToDemo;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToMultiLearn = navigateToMultiLearn;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToVideos = navigateToVideos;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToExamQuestions = navigateToExamQuestions;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToQuickLearn = navigateToQuickLearn;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToNotes = navigateToNotes;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.navigateToProgress = navigateToProgress;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.openSpecificationGuide = openSpecificationGuide;
+/**
+ * @global
+ * @type {function(): void}
+ */
 window.openDataSheet = openDataSheet;
-window.handleStartNow = handleStartNow; // Make available globally
-window.handleSampleAnswer = handleSampleAnswer; // Make available globally
-window.scrollToTop = scrollToTop; // Make available globally
-window.toggleTheme = toggleTheme; // Make available globally for theme-toggle buttons
-window.updateThemeToggleIcon = updateThemeToggleIcon; // Make available globally
-window.initializeIosSelectors = initializeIosSelectors; // Make available globally for timer dropdown
-window.startTimer = startTimer; // Make available globally for timer controls
-window.pauseTimer = pauseTimer; // Make available globally for timer controls
-window.stopTimer = stopTimer; // Make available globally for timer controls
-window.cancelTimer = cancelTimer; // Make available globally for timer controls
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.handleStartNow = handleStartNow;
+/**
+ * @global
+ * @type {function(number): void}
+ */
+window.handleSampleAnswer = handleSampleAnswer;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.scrollToTop = scrollToTop;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.toggleTheme = toggleTheme;
+/**
+ * @global
+ * @type {function(string): void}
+ */
+window.updateThemeToggleIcon = updateThemeToggleIcon;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.initializeIosSelectors = initializeIosSelectors;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.startTimer = startTimer;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.pauseTimer = pauseTimer;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.stopTimer = stopTimer;
+/**
+ * @global
+ * @type {function(): void}
+ */
+window.cancelTimer = cancelTimer;

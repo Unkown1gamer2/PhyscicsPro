@@ -165,9 +165,12 @@ function playVideo(url, title, mainTopic, subTopic) {
     const titleEl = document.getElementById('current-video-title');
     const pathEl = document.getElementById('current-video-path');
     
+    if (!iframe || !titleEl || !pathEl) return; // Ensure elements exist
+
     titleEl.textContent = title;
     pathEl.textContent = `${mainTopic} → ${subTopic}`;
-    iframe.src = url;
+    // Type assertion for iframe
+    /** @type {HTMLIFrameElement} */ (iframe).src = url;
     
     player.classList.remove('hidden');
     player.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -177,7 +180,10 @@ function closeVideo() {
     const player = document.getElementById('video-player');
     const iframe = document.getElementById('video-iframe');
     
-    iframe.src = '';
+    if (!iframe) return; // Ensure iframe exists
+
+    // Type assertion for iframe
+    /** @type {HTMLIFrameElement} */ (iframe).src = '';
     player.classList.add('hidden');
 }
 

@@ -1,5 +1,14 @@
 // ios-selector.js
 export class IosSelector {
+    /**
+     * @param {object} options
+     * @param {string} options.el
+     * @param {'infinite'|'normal'} [options.type='infinite']
+     * @param {number} [options.count=20]
+     * @param {Array<number>} options.source
+     * @param {number|null} [options.value=null]
+     * @param {function(number): void} [options.onChange=null]
+     */
     constructor(options) {
         let defaults = {
             el: '', 
@@ -89,7 +98,7 @@ export class IosSelector {
         if (index === -1) index = 0;
         this.scroll = index;
         this._update();
-        if (this.onChange) this.onChange(this.source[this.scroll]);
+        if (this.options.onChange) this.options.onChange(this.source[this.scroll]);
     }
 
     _update() {
