@@ -267,7 +267,7 @@ function createItemId(section, subtopic, type) {
 function renderSubtopics(subtopics, folder, parentElement, completed) {
     Object.keys(subtopics).forEach((subtopicName) => {
         const subtopicDiv = document.createElement('div');
-        subtopicDiv.className = 'ml-4 mb-4';
+        subtopicDiv.className = 'border-t border-border px-6 py-4';
         
         const subtopicTitle = document.createElement('h4');
         subtopicTitle.className = 'font-semibold text-base mb-2 text-foreground';
@@ -277,7 +277,7 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
         const types = subtopics[subtopicName];
         Object.keys(types).forEach((type) => {
             const typeContainer = document.createElement('div');
-            typeContainer.className = 'bg-muted/10 rounded-lg p-3 mb-2 ml-4';
+            typeContainer.className = 'mb-2';
             
             const typeHeader = document.createElement('div'); 
             typeHeader.className = 'flex items-center gap-2 mb-2';
@@ -296,7 +296,7 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
             
             const files = types[type];
             const linksContainer = document.createElement('div');
-            linksContainer.className = 'flex flex-wrap gap-4 ml-6';
+            linksContainer.className = 'flex flex-wrap gap-2';
             
             const qpItemId = createItemId(folder, subtopicName, type);
             const qpIsCompleted = completed[qpItemId] || false;
@@ -325,8 +325,8 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
             qpLink.href = qpPath;
             qpLink.target = '_blank';
             qpLink.rel = 'noopener noreferrer';
-            qpLink.className = 'text-blue-500 hover:text-blue-600 hover:underline font-medium transition-colors text-sm';
-            qpLink.textContent = type === "Flashcards" ? 'Open Flashcards' : 'Question Paper'; 
+            qpLink.className = 'text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors duration-200';
+            qpLink.textContent = type === "Flashcards" ? 'Open Flashcards' : 'QP: Open PDF'; 
             
             qpDiv.appendChild(qpCheckbox);
             qpDiv.appendChild(qpLink);
@@ -345,8 +345,8 @@ function renderSubtopics(subtopics, folder, parentElement, completed) {
                 msLink.href = msPath;
                 msLink.target = '_blank';
                 msLink.rel = 'noopener noreferrer';
-                msLink.className = 'text-purple-500 hover:text-purple-600 hover:underline font-medium transition-colors text-sm';
-                msLink.textContent = 'Mark Scheme';
+                msLink.className = 'text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full hover:bg-purple-200 transition-colors duration-200';
+                msLink.textContent = 'MS: Open PDF';
                 linksContainer.appendChild(msLink);
             }
             
@@ -366,20 +366,20 @@ function renderPage() {
     Object.keys(paperStructure).forEach((paperName) => {
         const paperData = paperStructure[paperName];
         
-        const paperDiv = document.createElement('div');
-        paperDiv.className = 'mb-8';
+        const paperItem = document.createElement('div');
+        paperItem.className = 'mb-8';
         
         const paperTitle = document.createElement('h2');
         paperTitle.className = 'text-3xl font-black mb-6 text-accent border-b-2 border-accent pb-2';
         paperTitle.textContent = paperName;
-        paperDiv.appendChild(paperTitle);
+        paperItem.appendChild(paperTitle);
         
         if (paperName === "Paper 3") {
             const sectionADiv = document.createElement('div');
-            sectionADiv.className = 'glass-card rounded-xl p-4 mb-4';
+            sectionADiv.className = 'glass-card rounded-xl overflow-hidden mb-4';
             
             const sectionAHeader = document.createElement('button');
-            sectionAHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200 py-2';
+            sectionAHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
             sectionAHeader.onclick = () => toggleSection('section-a-content');
             sectionAHeader.innerHTML = `
                 <h3 class="text-xl font-bold">${paperData.sectionA.title}</h3>
@@ -391,16 +391,16 @@ function renderPage() {
             
             const sectionAContent = document.createElement('div');
             sectionAContent.id = 'section-a-content';
-            sectionAContent.className = 'hidden mt-4';
+            sectionAContent.className = 'hidden px-6 pb-6';
             renderSubtopics(paperData.sectionA.subtopics, paperData.sectionA.folder, sectionAContent, completed);
             sectionADiv.appendChild(sectionAContent);
-            paperDiv.appendChild(sectionADiv);
+            paperItem.appendChild(sectionADiv);
             
             const sectionBDiv = document.createElement('div');
-            sectionBDiv.className = 'glass-card rounded-xl p-4';
+            sectionBDiv.className = 'glass-card rounded-xl overflow-hidden';
             
             const sectionBHeader = document.createElement('button');
-            sectionBHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200 py-2';
+            sectionBHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
             sectionBHeader.onclick = () => toggleSection('section-b-content');
             sectionBHeader.innerHTML = `
                 <h3 class="text-xl font-bold">${paperData.sectionB.title}</h3>
@@ -412,14 +412,14 @@ function renderPage() {
             
             const sectionBContent = document.createElement('div');
             sectionBContent.id = 'section-b-content';
-            sectionBContent.className = 'hidden mt-4 space-y-4';
+            sectionBContent.className = 'hidden px-6 pb-6 space-y-4';
             
             paperData.sectionB.options.forEach((option, optIndex) => {
                 const optionDiv = document.createElement('div');
-                optionDiv.className = 'bg-muted/5 rounded-lg p-4 border border-border';
+                optionDiv.className = 'border-t border-border px-6 py-4';
                 
                 const optionHeader = document.createElement('button');
-                optionHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200 py-1';
+                optionHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
                 optionHeader.onclick = (e) => {
                     e.stopPropagation();
                     toggleSection(`option-${optIndex}-content`);
@@ -442,7 +442,7 @@ function renderPage() {
             });
             
             sectionBDiv.appendChild(sectionBContent);
-            paperDiv.appendChild(sectionBDiv);
+            paperItem.appendChild(sectionBDiv);
             
         } else {
             const sectionsContainer = document.createElement('div');
@@ -450,10 +450,10 @@ function renderPage() {
             
             paperData.sections.forEach((section, secIndex) => {
                 const sectionDiv = document.createElement('div');
-                sectionDiv.className = 'glass-card rounded-xl p-4';
+                sectionDiv.className = 'glass-card rounded-xl overflow-hidden';
                 
                 const sectionHeader = document.createElement('button');
-                sectionHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200 py-2';
+                sectionHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
                 sectionHeader.onclick = () => toggleSection(`${paperName}-section-${secIndex}`);
                 sectionHeader.innerHTML = `
                     <h3 class="text-lg font-bold">${section.title}</h3>
@@ -465,7 +465,7 @@ function renderPage() {
                 
                 const sectionContent = document.createElement('div');
                 sectionContent.id = `${paperName}-section-${secIndex}`;
-                sectionContent.className = 'hidden mt-4';
+                sectionContent.className = 'hidden px-6 pb-6';
                 
                 if (Object.keys(section.subtopics).length > 0) {
                     renderSubtopics(section.subtopics, section.folder, sectionContent, completed);
@@ -480,10 +480,10 @@ function renderPage() {
                 sectionsContainer.appendChild(sectionDiv);
             });
             
-            paperDiv.appendChild(sectionsContainer);
+            paperItem.appendChild(sectionsContainer);
         }
         
-        container.appendChild(paperDiv);
+        container.appendChild(paperItem);
     });
 }
 
@@ -511,5 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Make functions available globally for HTML onclick handlers
-window.toggleCompleted = toggleCompleted;
-window.toggleSection = toggleSection;
+Object.assign(window, {
+    toggleCompleted,
+    toggleSection,
+});

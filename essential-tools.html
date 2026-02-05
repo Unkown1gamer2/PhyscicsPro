@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Tools - Physics Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#3b82f6',
+                        background: '#ffffff',
+                        surface: '#f3f4f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans selection:bg-accent selection:text-white dark:bg-[#0f1115] dark:text-white transition-colors duration-300">
+
+    <div id="navigation"></div>
+
+    <main class="container mx-auto px-4 pt-32 pb-24 max-w-7xl min-h-screen">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold mb-4">Essential Tools</h1>
+            <p class="text-muted-foreground text-lg">All the resources you need for A-Level Physics success.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1: Notes -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="navigateToNotes()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Notes" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Notes</h3>
+                        <p class="text-xs text-muted-foreground">Comprehensive study notes</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Video Tutorials -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="navigateToVideos()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1492619882492-4874d6210926?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Videos" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Video Tutorials</h3>
+                        <p class="text-xs text-muted-foreground">Expert explanations</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3: Past Papers -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="navigateToPastPapers()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Past Papers" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Past Papers</h3>
+                        <p class="text-xs text-muted-foreground">Real exams & mark schemes</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4: Multi Learn -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="navigateToMultiLearn()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Multi Learn" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Multi Learn</h3>
+                        <p class="text-xs text-muted-foreground">Adaptive learning</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5: Exam Questions -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="navigateToExamQuestions()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Exam Questions" class="w-full h-full object-cover">
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Exam Questions</h3>
+                        <p class="text-xs text-muted-foreground">Topic-based practice</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6: Specification Guide -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="openSpecificationGuide()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative bg-blue-100 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Specification Guide</h3>
+                        <p class="text-xs text-muted-foreground">Course guide & topics</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 7: Data Booklet -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="openDataSheet()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative bg-green-100 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Data Booklet</h3>
+                        <p class="text-xs text-muted-foreground">Constants & values</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 8: Formula Sheet -->
+            <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="openFormulaSheet()">
+                <div class="w-full h-48 rounded-xl overflow-hidden relative bg-purple-100 flex items-center justify-center">
+                    <svg class="w-20 h-20 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">Formula Sheet</h3>
+                        <p class="text-xs text-muted-foreground">Equations & formulae</p>
+                    </div>
+                    <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                        OPEN
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>

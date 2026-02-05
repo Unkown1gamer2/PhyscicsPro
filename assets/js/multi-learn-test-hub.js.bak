@@ -1,12 +1,20 @@
-// assets/js/videos-script.js
 
 let videosData = [];
 let structuredData = {};
+const targetVideoIds = ['k90', 'Jxt', 'qJn', 'V3W', 'PVW', 'uEt', 'qHD', 'rpi', 'YJp', 'hdq', 'nOM', 'BUq', 'NA0', 'fK7', 'r5r'];
 
 async function loadVideosData() {
     try {
         const response = await fetch('assets/videos-data.json');
-        videosData = await response.json();
+        const allVideos = await response.json();
+        
+        // Filter only the target videos
+        videosData = allVideos.filter(video => {
+            const urlParts = video.page_url.split('/');
+            const videoId = urlParts[urlParts.length - 1];
+            return targetVideoIds.includes(videoId);
+        });
+
         processVideosData();
         renderVideos();
     } catch (error) {
@@ -21,7 +29,8 @@ function processVideosData() {
         const mainTopic = item.main_topic;
         const subTopic = item.sub_topic;
         const videoTitle = item.video_title;
-        const videoUrl = item.youtube_links[0];
+        const urlParts = item.page_url.split('/');
+        const videoId = urlParts[urlParts.length - 1];
         
         if (!structuredData[mainTopic]) {
             structuredData[mainTopic] = {};
@@ -33,7 +42,7 @@ function processVideosData() {
         
         structuredData[mainTopic][subTopic].push({
             title: videoTitle,
-            url: videoUrl
+            id: videoId
         });
     });
 }
@@ -48,18 +57,19 @@ function renderVideos() {
         
         const mainHeader = document.createElement('button');
         mainHeader.className = 'accordion-header w-full px-6 py-4 flex items-center justify-between transition-all duration-200';
+        // Auto-expand since we only have one topic usually
         mainHeader.onclick = () => toggleMainTopic(mainIndex);
         
         mainHeader.innerHTML = `
             <h2 class="text-xl font-bold text-left">${mainTopic}</h2>
-            <svg id="main-arrow-${mainIndex}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="main-arrow-${mainIndex}" class="w-5 h-5 transition-transform duration-200 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
         `;
         
         const mainContent = document.createElement('div');
         mainContent.id = `main-${mainIndex}`;
-        mainContent.className = 'accordion-content hidden';
+        mainContent.className = 'accordion-content'; // Removed hidden to auto-expand
         
         const subTopics = structuredData[mainTopic];
         Object.keys(subTopics).forEach((subTopic, subIndex) => {
@@ -75,28 +85,28 @@ function renderVideos() {
             
             subHeader.innerHTML = `
                 <h3 class="text-base font-semibold text-left">${subTopic}</h3>
-                <svg id="sub-arrow-${mainIndex}-${subIndex}" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg id="sub-arrow-${mainIndex}-${subIndex}" class="w-4 h-4 transition-transform duration-200 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
             `;
             
             const subContent = document.createElement('div');
             subContent.id = `sub-${mainIndex}-${subIndex}`;
-            subContent.className = 'hidden accordion-subcontent px-6 pb-3';
+            subContent.className = 'accordion-subcontent px-6 pb-3'; // Removed hidden
             
             const videosList = document.createElement('div');
             videosList.className = 'space-y-2';
             
             subTopics[subTopic].forEach((video, videoIndex) => {
                 const videoButton = document.createElement('button');
-                videoButton.className = 'video-item w-full text-left px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-3';
+                videoButton.className = 'video-item w-full text-left px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-3 hover:bg-muted';
                 videoButton.onclick = (e) => {
                     e.stopPropagation();
-                    playVideo(video.url, video.title, mainTopic, subTopic);
+                    window.location.href = `multi-learn-test-player.html?videoId=${video.id}`;
                 };
                 
                 videoButton.innerHTML = `
-                    <svg class="w-4 h-4 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"></path>
                     </svg>
                     <span class="text-sm">${video.title}</span>
@@ -123,18 +133,6 @@ function toggleMainTopic(index) {
     
     const isHidden = content.classList.contains('hidden');
     
-    document.querySelectorAll('[id^="main-"]').forEach(el => {
-        if (el.id !== `main-${index}` && el.id.startsWith('main-')) {
-            el.classList.add('hidden');
-        }
-    });
-    
-    document.querySelectorAll('[id^="main-arrow-"]').forEach(el => {
-        if (el.id !== `main-arrow-${index}`) {
-            el.classList.remove('rotate-180');
-        }
-    });
-    
     if (isHidden) {
         content.classList.remove('hidden');
         arrow.classList.add('rotate-180');
@@ -159,42 +157,12 @@ function toggleSubTopic(mainIndex, subIndex) {
     }
 }
 
-function playVideo(url, title, mainTopic, subTopic) {
-    const player = document.getElementById('video-player');
-    const iframe = document.getElementById('video-iframe');
-    const titleEl = document.getElementById('current-video-title');
-    const pathEl = document.getElementById('current-video-path');
-    
-    if (!iframe || !titleEl || !pathEl) return; // Ensure elements exist
-
-    titleEl.textContent = title;
-    pathEl.textContent = `${mainTopic} → ${subTopic}`;
-    // Type assertion for iframe
-    /** @type {HTMLIFrameElement} */ (iframe).src = url;
-    
-    player.classList.remove('hidden');
-    player.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function closeVideo() {
-    const player = document.getElementById('video-player');
-    const iframe = document.getElementById('video-iframe');
-    
-    if (!iframe) return; // Ensure iframe exists
-
-    // Type assertion for iframe
-    /** @type {HTMLIFrameElement} */ (iframe).src = '';
-    player.classList.add('hidden');
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     loadVideosData();
 });
 
-// Make functions available globally for HTML onclick handlers
+// Make functions available globally
 Object.assign(window, {
     toggleMainTopic,
-    toggleSubTopic,
-    playVideo,
-    closeVideo,
+    toggleSubTopic
 });

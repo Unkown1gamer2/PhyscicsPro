@@ -1,4 +1,3 @@
-// assets/js/videos-script.js
 
 let videosData = [];
 let structuredData = {};
@@ -7,6 +6,7 @@ async function loadVideosData() {
     try {
         const response = await fetch('assets/videos-data.json');
         videosData = await response.json();
+        
         processVideosData();
         renderVideos();
     } catch (error) {
@@ -21,7 +21,8 @@ function processVideosData() {
         const mainTopic = item.main_topic;
         const subTopic = item.sub_topic;
         const videoTitle = item.video_title;
-        const videoUrl = item.youtube_links[0];
+        const urlParts = item.page_url.split('/');
+        const videoId = urlParts[urlParts.length - 1];
         
         if (!structuredData[mainTopic]) {
             structuredData[mainTopic] = {};
@@ -33,7 +34,7 @@ function processVideosData() {
         
         structuredData[mainTopic][subTopic].push({
             title: videoTitle,
-            url: videoUrl
+            id: videoId
         });
     });
 }
@@ -48,6 +49,7 @@ function renderVideos() {
         
         const mainHeader = document.createElement('button');
         mainHeader.className = 'accordion-header w-full px-6 py-4 flex items-center justify-between transition-all duration-200';
+        // Auto-expand since we only have one topic usually
         mainHeader.onclick = () => toggleMainTopic(mainIndex);
         
         mainHeader.innerHTML = `
@@ -82,24 +84,25 @@ function renderVideos() {
             
             const subContent = document.createElement('div');
             subContent.id = `sub-${mainIndex}-${subIndex}`;
-            subContent.className = 'hidden accordion-subcontent px-6 pb-3';
+            subContent.className = 'accordion-subcontent px-6 pb-3 hidden';
             
             const videosList = document.createElement('div');
             videosList.className = 'space-y-2';
             
             subTopics[subTopic].forEach((video, videoIndex) => {
                 const videoButton = document.createElement('button');
-                videoButton.className = 'video-item w-full text-left px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-3';
+                videoButton.className = 'video-item w-full text-left px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-3 hover:bg-muted';
                 videoButton.onclick = (e) => {
                     e.stopPropagation();
-                    playVideo(video.url, video.title, mainTopic, subTopic);
+                    window.location.href = `multi-learn-player.html?videoId=${video.id}`;
                 };
                 
                 videoButton.innerHTML = `
-                    <svg class="w-4 h-4 flex-shrink-0 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"></path>
                     </svg>
-                    <span class="text-sm">${video.title}</span>
+                    <span class="text-sm flex-grow">${video.title}</span>
+                    ${renderProgressPill(video.id)}
                 `;
                 
                 videosList.appendChild(videoButton);
@@ -122,18 +125,6 @@ function toggleMainTopic(index) {
     const arrow = document.getElementById(`main-arrow-${index}`);
     
     const isHidden = content.classList.contains('hidden');
-    
-    document.querySelectorAll('[id^="main-"]').forEach(el => {
-        if (el.id !== `main-${index}` && el.id.startsWith('main-')) {
-            el.classList.add('hidden');
-        }
-    });
-    
-    document.querySelectorAll('[id^="main-arrow-"]').forEach(el => {
-        if (el.id !== `main-arrow-${index}`) {
-            el.classList.remove('rotate-180');
-        }
-    });
     
     if (isHidden) {
         content.classList.remove('hidden');
@@ -159,42 +150,41 @@ function toggleSubTopic(mainIndex, subIndex) {
     }
 }
 
-function playVideo(url, title, mainTopic, subTopic) {
-    const player = document.getElementById('video-player');
-    const iframe = document.getElementById('video-iframe');
-    const titleEl = document.getElementById('current-video-title');
-    const pathEl = document.getElementById('current-video-path');
-    
-    if (!iframe || !titleEl || !pathEl) return; // Ensure elements exist
+function renderProgressPill(videoId) {
+    let progress = null;
+    try {
+        const stored = localStorage.getItem('multiLearnProgress');
+        if (stored) {
+            const data = JSON.parse(stored);
+            progress = data[videoId];
+        }
+    } catch (e) {
+        console.error('Error reading progress:', e);
+    }
 
-    titleEl.textContent = title;
-    pathEl.textContent = `${mainTopic} → ${subTopic}`;
-    // Type assertion for iframe
-    /** @type {HTMLIFrameElement} */ (iframe).src = url;
-    
-    player.classList.remove('hidden');
-    player.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+    // Default grey pill for incomplete
+    if (!progress || !progress.completed) {
+        return `<div class="w-16 h-2.5 rounded-full bg-gray-300 dark:bg-gray-600 flex-shrink-0 transition-colors" title="Not completed"></div>`;
+    }
 
-function closeVideo() {
-    const player = document.getElementById('video-player');
-    const iframe = document.getElementById('video-iframe');
+    const score = progress.score || 0;
+    const total = progress.total || 10;
+    const greenPercent = Math.round((score / total) * 100);
     
-    if (!iframe) return; // Ensure iframe exists
-
-    // Type assertion for iframe
-    /** @type {HTMLIFrameElement} */ (iframe).src = '';
-    player.classList.add('hidden');
+    // Split pill: Green for correct, Red for incorrect
+    return `
+        <div class="w-16 h-2.5 rounded-full bg-red-500 overflow-hidden flex flex-shrink-0 shadow-sm" title="Score: ${score}/${total}">
+            <div class="h-full bg-green-500 transition-all duration-500" style="width: ${greenPercent}%"></div>
+        </div>
+    `;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     loadVideosData();
 });
 
-// Make functions available globally for HTML onclick handlers
+// Make functions available globally
 Object.assign(window, {
     toggleMainTopic,
-    toggleSubTopic,
-    playVideo,
-    closeVideo,
+    toggleSubTopic
 });

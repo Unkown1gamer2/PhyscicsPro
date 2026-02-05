@@ -35,6 +35,7 @@ export class IosSelector {
 
         this.elems = { el: document.querySelector(this.options.el) };
         this._create(this.options.source);
+        this._update();
         this._bindEvents();
     }
 
@@ -48,6 +49,9 @@ export class IosSelector {
         this.elems.el.innerHTML = `<div class="select-wrap"><ul class="select-options">${circleListHTML}</ul><div class="highlight"></div></div>`;
         this.elems.circleList = this.elems.el.querySelector('.select-options');
         this.elems.circleItems = this.elems.el.querySelectorAll('.select-option');
+        if (this.elems.circleList) {
+            this.elems.circleList.style.transform = `translateZ(${-this.radius}px) rotateX(0deg)`;
+        }
     }
 
     _bindEvents() {

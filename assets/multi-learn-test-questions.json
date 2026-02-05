@@ -1,0 +1,1541 @@
+[
+  {
+    "id": "uEt",
+    "title": "Magnetic fields, flux density and motor effect",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "What are the units of magnetic flux density $B$?",
+        "opts": {
+          "A": "Webers ($Wb$)",
+          "B": "Tesla ($T$)",
+          "C": "Henries ($H$)",
+          "D": "Farads ($F$)"
+        },
+        "ans": "B",
+        "exp": "Magnetic flux density is measured in Tesla ($T$), which is equivalent to $N A^{-1} m^{-1}$."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "Which rule is used to determine the direction of the force on a current-carrying wire in a magnetic field?",
+        "opts": {
+          "A": "Right-hand grip rule",
+          "B": "Lenz's Law",
+          "C": "Fleming's Left-Hand Rule",
+          "D": "Fleming's Right-Hand Rule"
+        },
+        "ans": "C",
+        "exp": "Fleming's Left-Hand Rule relates the Force (thumb), Magnetic Field (first finger), and Current (second finger) for the motor effect."
+      },
+      {
+        "qn": 3,
+        "type": "write",
+        "q": "State the formula for the force $F$ on a wire of length $L$ carrying current $I$ at an angle $\\theta$ to a magnetic field $B$.",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "$F = BIL \\sin(\\theta)$",
+          "F = BIL sin theta",
+          "F=BILsin(theta)"
+        ],
+        "exp": "The force is proportional to the component of the magnetic field perpendicular to the wire."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "A wire of length $0.50\\,m$ carries a current of $2.0\\,A$ perpendicular to a magnetic field of $0.10\\,T$. Calculate the force.",
+        "opts": {
+          "A": "0.10 N",
+          "B": "0.20 N",
+          "C": "0.05 N",
+          "D": "1.00 N"
+        },
+        "ans": "A",
+        "exp": "$F = BIL = 0.10 \\times 2.0 \\times 0.50 = 0.10\\,N$."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "If the current in a wire is doubled and the magnetic flux density is halved, what happens to the magnetic force?",
+        "opts": {
+          "A": "It doubles",
+          "B": "It is halved",
+          "C": "It remains the same",
+          "D": "It increases fourfold"
+        },
+        "ans": "C",
+        "exp": "Since $F \\propto BI$, $2I \\times 0.5B = 1BI$. The force remains unchanged."
+      },
+      {
+        "qn": 6,
+        "type": "multi",
+        "q": "Which factors increase the force on a conductor in a magnetic field?",
+        "opts": {
+          "A": "Increasing the current",
+          "B": "Decreasing the length of the wire",
+          "C": "Increasing the magnetic flux density",
+          "D": "Placing the wire parallel to the field"
+        },
+        "ans": "A,C",
+        "exp": "$F = BIL \\sin(\\theta)$. Increasing $B$ or $I$ increases $F$. Parallel placement ($\\theta = 0$) results in zero force."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "What is the force on a wire carrying current parallel to a magnetic field?",
+        "opts": {
+          "0": "Zero",
+          "A": "Maximum",
+          "C": "Dependent on length only",
+          "D": "Negative"
+        },
+        "ans": "B",
+        "exp": "When parallel, $\\theta = 0^{\\circ}$, and $\\sin(0) = 0$, so $F = 0$."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "Define 1 Tesla.",
+        "opts": {
+          "A": "1 Newton per Ampere per meter",
+          "B": "1 Joule per Coulomb",
+          "C": "1 Weber per meter",
+          "D": "1 Newton per Coulomb"
+        },
+        "ans": "A",
+        "exp": "From $B = F/IL$, $1\\,T = 1\\,N A^{-1} m^{-1}$."
+      },
+      {
+        "qn": 9,
+        "type": "mcq",
+        "q": "In Fleming's Left-Hand Rule, what does the second finger represent?",
+        "opts": {
+          "A": "Force",
+          "B": "Magnetic Field",
+          "C": "Conventional Current",
+          "D": "Electron flow"
+        },
+        "ans": "C",
+        "exp": "The second finger represents conventional current (positive to negative)."
+      },
+      {
+        "qn": 10,
+        "type": "write",
+        "q": "What is the name of the effect where a current-carrying wire experiences a force in a magnetic field?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Motor effect",
+          "The motor effect"
+        ],
+        "exp": "The motor effect is the basis for electric motors, converting electrical energy to kinetic energy."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:2",
+        "content": "Always remember that Fleming's Left-Hand Rule uses conventional current (positive to negative). If a question mentions electron flow, point your second finger in the opposite direction to the movement of the electrons.",
+        "helps_with": [
+          9
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:3",
+        "content": "The sine component in $F = BIL \\sin(\\theta)$ is because only the component of the magnetic field perpendicular to the current contributes to the force. If the wire is parallel, the force is always zero.",
+        "helps_with": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "qHD",
+    "title": "Free moving charges in magnetic fields",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "What is the formula for the force on a charge $q$ moving at velocity $v$ perpendicular to a magnetic field $B$?",
+        "opts": {
+          "A": "F = Bqv",
+          "B": "F = BIL",
+          "C": "F = mv/Br",
+          "D": "F = qE"
+        },
+        "ans": "A",
+        "exp": "The force on a moving charge is $F = Bqv \\sin(\\theta)$."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "What is the path of a charged particle entering a uniform magnetic field at a right angle?",
+        "opts": {
+          "A": "Parabolic",
+          "B": "Circular",
+          "C": "Straight line",
+          "D": "Spiral"
+        },
+        "ans": "B",
+        "exp": "The force is always perpendicular to the velocity, acting as a centripetal force, resulting in a circular path."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "An electron enters a magnetic field directed into the page, moving from left to right. In which direction is the initial force?",
+        "opts": {
+          "A": "Up the page",
+          "B": "Down the page",
+          "C": "Into the page",
+          "D": "Out of the page"
+        },
+        "ans": "B",
+        "exp": "Using Fleming's Left-Hand Rule: Field (index) goes in, Current (middle) goes left (opposite to electron), Thumb points down."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "Derive the radius $r$ of the circular path of a particle with mass $m$ and charge $q$ in field $B$.",
+        "opts": {
+          "A": "$r = Bq / mv$",
+          "B": "$r = mv / Bq$",
+          "C": "$r = mv^2 / Bq$",
+          "D": "$r = Bqv / m$"
+        },
+        "ans": "B",
+        "exp": "Equating magnetic force to centripetal force: $Bqv = mv^2 / r$, which rearranges to $r = mv / Bq$."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "How does the radius of the path change if the velocity of the particle is doubled?",
+        "opts": {
+          "A": "Halved",
+          "B": "Doubled",
+          "C": "Quadrupled",
+          "D": "Remains same"
+        },
+        "ans": "B",
+        "exp": "Since $r \\propto v$, doubling the velocity doubles the radius."
+      },
+      {
+        "qn": 6,
+        "type": "mcq",
+        "q": "What happens to the kinetic energy of a particle moving in a uniform magnetic field?",
+        "opts": {
+          "A": "Increases",
+          "B": "Decreases",
+          "C": "Remains constant",
+          "D": "Oscillates"
+        },
+        "ans": "C",
+        "exp": "The magnetic force is always perpendicular to the direction of motion, so no work is done and speed (and KE) remains constant."
+      },
+      {
+        "qn": 7,
+        "type": "write",
+        "q": "What device uses magnetic and electric fields to separate isotopes or identify molecules by their mass-to-charge ratio?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Mass spectrometer",
+          "A mass spectrometer"
+        ],
+        "exp": "Mass spectrometers use the fact that $r = mv/Bq$ to separate ions based on their $m/q$ ratio."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "What is the shape of the path if a particle enters the field at an angle between $0^{\\circ}$ and $90^{\\circ}$?",
+        "opts": {
+          "A": "Circle",
+          "B": "Helix",
+          "C": "Parabola",
+          "D": "Hyperbola"
+        },
+        "ans": "B",
+        "exp": "The velocity component perpendicular to the field causes circular motion, while the parallel component causes constant linear motion, resulting in a helix."
+      },
+      {
+        "qn": 9,
+        "type": "mcq",
+        "q": "A proton and an alpha particle ($4x$ mass, $2x$ charge) enter a field at the same speed. What is the ratio of $r_{alpha} / r_{proton}$?",
+        "opts": {
+          "A": "1",
+          "B": "2",
+          "C": "0.5",
+          "D": "4"
+        },
+        "ans": "B",
+        "exp": "$r = mv/Bq$. Ratio is $(4m/2q) / (m/q) = 2$."
+      },
+      {
+        "qn": 10,
+        "type": "write",
+        "q": "In a cyclotron, what is responsible for increasing the speed of the particles?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Electric field",
+          "The electric field",
+          "potential difference",
+          "voltage"
+        ],
+        "exp": "The magnetic field only bends the path; the electric field in the gap between the 'Dees' accelerates the particles."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:4",
+        "content": "Remember the derivation $r = mv / Bq$. It combines the topics of Magnetic Fields and Circular Motion ($F = mv^2 / r$). You will often be asked to solve for mass or velocity using this relation.",
+        "helps_with": [
+          5,
+          9
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:6",
+        "content": "Crucial concept: Magnetic fields do NO work on free charges because the force is always at 90 degrees to the velocity. This means the speed of the particle never changes, only its direction.",
+        "helps_with": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rpi",
+    "title": "Electromagnetic induction, dynamo effect & Lenz's law",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "What is defined as the product of magnetic flux density and the area perpendicular to the field?",
+        "opts": {
+          "A": "Magnetic Flux",
+          "B": "Magnetic Flux Linkage",
+          "C": "Electromotive Force",
+          "D": "Permeability"
+        },
+        "ans": "A",
+        "exp": "Magnetic flux $\\Phi = BA$."
+      },
+      {
+        "qn": 2,
+        "type": "write",
+        "q": "State Lenz's Law regarding the direction of an induced EMF.",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "The direction of the induced EMF is such as to oppose the change that created it",
+          "Opposes the change",
+          "Induced EMF opposes change in flux"
+        ],
+        "exp": "Lenz's Law is a consequence of the conservation of energy."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "What is the unit of Magnetic Flux?",
+        "opts": {
+          "A": "Tesla ($T$)",
+          "B": "Weber ($Wb$)",
+          "C": "Weber-turns",
+          "D": "Coulomb"
+        },
+        "ans": "B",
+        "exp": "Magnetic flux is measured in Webers ($Wb$)."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "Calculate the flux linkage for a coil with $200$ turns, area $0.01\\,m^2$ in a $0.5\\,T$ field.",
+        "opts": {
+          "A": "1.0 Wb-turns",
+          "B": "0.005 Wb-turns",
+          "C": "100 Wb-turns",
+          "D": "50 Wb-turns"
+        },
+        "ans": "A",
+        "exp": "$N\\Phi = NBA = 200 \\times 0.5 \\times 0.01 = 1.0\\,Wb$-turns."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "What does the negative sign in Faraday's Law ($E = -N \\Delta\\Phi / \\Delta t$) represent?",
+        "opts": {
+          "A": "Energy loss",
+          "B": "Lenz's Law",
+          "C": "AC current",
+          "D": "Magnetic repulsion"
+        },
+        "ans": "B",
+        "exp": "The negative sign mathematically indicates that the induced EMF opposes the change in flux."
+      },
+      {
+        "qn": 6,
+        "type": "mcq",
+        "q": "A magnet is dropped through a copper pipe. Why does it fall slower than in air?",
+        "opts": {
+          "A": "Air resistance",
+          "B": "Magnetic attraction to copper",
+          "C": "Eddy currents create an opposing field",
+          "D": "Copper is a magnet"
+        },
+        "ans": "C",
+        "exp": "The moving magnet induces eddy currents in the copper; these create a magnetic field that opposes the magnet's motion (Lenz's Law)."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "If a coil is rotated so that it is parallel to the magnetic field, what is the magnetic flux through it?",
+        "opts": {
+          "A": "Maximum",
+          "B": "Minimum (Zero)",
+          "C": "Depends on the number of turns",
+          "D": "Negative"
+        },
+        "ans": "B",
+        "exp": "When parallel, no field lines pass through the area of the coil, so $\\Phi = 0$."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "Which of the following would NOT induce an EMF in a loop of wire?",
+        "opts": {
+          "A": "Moving a magnet towards the loop",
+          "B": "Rotating the loop in a magnetic field",
+          "C": "Moving the loop at constant velocity in a uniform field",
+          "D": "Changing the strength of the magnetic field"
+        },
+        "ans": "C",
+        "exp": "If the loop moves at constant velocity in a uniform field, the flux through it does not change, so no EMF is induced."
+      },
+      {
+        "qn": 9,
+        "type": "write",
+        "q": "Give the formula for Magnetic Flux Linkage.",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "$N\\Phi = BAN \\cos(\\theta)$",
+          "N Phi = BAN cos theta",
+          "BAN cos theta"
+        ],
+        "exp": "Flux linkage is the flux through one turn multiplied by the total number of turns."
+      },
+      {
+        "qn": 10,
+        "type": "mcq",
+        "q": "If the number of turns in a coil is tripled and the rate of change of flux is doubled, the induced EMF is multiplied by:",
+        "opts": {
+          "A": "3",
+          "B": "5",
+          "C": "6",
+          "D": "1.5"
+        },
+        "ans": "C",
+        "exp": "$E \\propto N(\\Delta\\Phi/\\Delta t)$, so $3 \\times 2 = 6$."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:2",
+        "content": "Lenz's law is essentially the Law of Conservation of Energy applied to induction. If the induced field didn't oppose the change, you could create infinite energy by just starting a small movement.",
+        "helps_with": [
+          6
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:9",
+        "content": "Pay close attention to the angle $\\theta$. If the angle is given between the coil surface and the field, use $\\sin(\\theta)$. If given between the normal to the coil and the field, use $\\cos(\\theta)$.",
+        "helps_with": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "YJp",
+    "title": "AC generation and back EMF",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "In an AC generator, when is the induced EMF at its maximum value?",
+        "opts": {
+          "A": "When the coil is perpendicular to the field",
+          "B": "When the flux linkage is maximum",
+          "C": "When the coil is parallel to the field",
+          "D": "When the coil is stationary"
+        },
+        "ans": "C",
+        "exp": "When the coil is parallel to the field, the rate of change of flux linkage is maximum, even though the flux itself is zero."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "What is the effect of increasing the speed of rotation of an AC generator coil?",
+        "opts": {
+          "A": "Increased frequency only",
+          "B": "Increased peak EMF only",
+          "C": "Increased frequency and peak EMF",
+          "D": "Decreased peak EMF"
+        },
+        "ans": "C",
+        "exp": "Faster rotation increases the rate of change of flux ($E_{max} = BAN\\omega$), and $\\omega = 2\\pi f$ increases the frequency."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "What is 'Back EMF' in an electric motor?",
+        "opts": {
+          "A": "The voltage supplied to the motor",
+          "B": "An EMF induced in the spinning coil that opposes the supply voltage",
+          "C": "The EMF caused by resistance",
+          "D": "A static charge buildup"
+        },
+        "ans": "B",
+        "exp": "As the motor spins, it acts like a generator, inducing an EMF that opposes the input according to Lenz's Law."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "What happens to the current in a motor as it speeds up?",
+        "opts": {
+          "A": "It increases",
+          "B": "It decreases",
+          "C": "It stays the same",
+          "D": "It becomes AC"
+        },
+        "ans": "B",
+        "exp": "As speed increases, Back EMF increases. Since $V_{net} = V_{supply} - E_{back}$, the net voltage (and thus current) decreases."
+      },
+      {
+        "qn": 5,
+        "type": "write",
+        "q": "State the equation for peak EMF ($E_0$) of a rotating coil in terms of $B, A, N$ and angular frequency $\\omega$.",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "$E_0 = BAN\\omega$",
+          "E = BANw",
+          "BAN omega"
+        ],
+        "exp": "The peak EMF is the product of magnetic flux density, area, number of turns, and angular velocity."
+      },
+      {
+        "qn": 6,
+        "type": "mcq",
+        "q": "What is the shape of the graph of flux linkage against time for a rotating coil?",
+        "opts": {
+          "A": "Linear",
+          "B": "Sinusoidal",
+          "C": "Exponential",
+          "D": "Square wave"
+        },
+        "ans": "B",
+        "exp": "Flux linkage varies as $N\\Phi = BAN \\cos(\\omega t)$, which is a sinusoidal (cosine) wave."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "At what point in the rotation is the back EMF in a motor zero?",
+        "opts": {
+          "A": "At maximum speed",
+          "B": "When the motor is stalled (not turning)",
+          "C": "At half the maximum speed",
+          "D": "Always"
+        },
+        "ans": "B",
+        "exp": "If the coil isn't moving, there is no change in flux, so no back EMF is induced."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "If the supply voltage to a motor is $12\\,V$ and the back EMF is $10\\,V$, what is the voltage across the coil resistance?",
+        "opts": {
+          "A": "22 V",
+          "B": "10 V",
+          "C": "2 V",
+          "D": "12 V"
+        },
+        "ans": "C",
+        "exp": "$V_{net} = V_{supply} - E_{back} = 12 - 10 = 2\\,V$."
+      },
+      {
+        "qn": 9,
+        "type": "mcq",
+        "q": "If the frequency of rotation of a generator is doubled, the peak EMF:",
+        "opts": {
+          "A": "Doubles",
+          "B": "Halves",
+          "C": "Stays the same",
+          "D": "Quadruples"
+        },
+        "ans": "A",
+        "exp": "$E_0 = BAN(2\\pi f)$. If $f$ doubles, $E_0$ doubles."
+      },
+      {
+        "qn": 10,
+        "type": "multi",
+        "q": "Which components are needed to convert the AC output of a generator into DC?",
+        "opts": {
+          "A": "Split-ring commutator",
+          "B": "Slip rings",
+          "C": "Rectifier (diodes)",
+          "D": "Transformers"
+        },
+        "ans": "A,C",
+        "exp": "A split-ring commutator is used in DC generators; rectifiers can convert AC from an alternator to DC."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:1",
+        "content": "Graph Tip: The induced EMF is the gradient of the flux linkage-time graph (with a minus sign). When the flux graph is at its peak (gradient = 0), the EMF is zero. When the flux is zero (gradient is steepest), the EMF is at its peak.",
+        "helps_with": [
+          6
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:4",
+        "content": "Back EMF explains why motors can burn out if they get stuck (stalled). Without back EMF to oppose the supply, the current becomes very high ($I = V/R$), potentially overheating the coils.",
+        "helps_with": [
+          7,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hdq",
+    "title": "Induced EMF and Faraday's law",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "write",
+        "q": "State Faraday's Law of electromagnetic induction in words.",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "The induced EMF is directly proportional to the rate of change of magnetic flux linkage",
+          "EMF equals rate of change of flux linkage",
+          "E = d(Nphi)/dt"
+        ],
+        "exp": "This is the fundamental law relating changing magnetic fields to electricity."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "A coil has a constant flux linkage of $5.0\\,Wb$-turns. What is the induced EMF?",
+        "opts": {
+          "A": "5.0 V",
+          "B": "0 V",
+          "C": "2.5 V",
+          "D": "10 V"
+        },
+        "ans": "B",
+        "exp": "EMF is the *rate of change* of flux. If flux is constant, the rate of change is zero."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "The flux linkage through a coil changes from $0.8\\,Wb$-turns to $0.2\\,Wb$-turns in $0.1\\,s$. Calculate the magnitude of the induced EMF.",
+        "opts": {
+          "A": "6.0 V",
+          "B": "0.6 V",
+          "C": "10 V",
+          "D": "0.06 V"
+        },
+        "ans": "A",
+        "exp": "$E = \\Delta(N\\Phi) / \\Delta t = (0.8 - 0.2) / 0.1 = 6.0\\,V$."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "How can you increase the EMF induced in a coil moving through a magnetic field?",
+        "opts": {
+          "A": "Move it slower",
+          "B": "Use a weaker magnet",
+          "C": "Increase the number of turns in the coil",
+          "D": "Increase the resistance of the wire"
+        },
+        "ans": "C",
+        "exp": "$E = N \\Delta\\Phi / \\Delta t$. Increasing $N$ increases $E$."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "A search coil is used to measure magnetic field strength. It has $50$ turns and area $2\\,cm^2$. It is removed from a field of $0.4\\,T$ in $0.2\\,s$. Calculate the average EMF.",
+        "opts": {
+          "A": "0.02 V",
+          "B": "0.002 V",
+          "C": "0.2 V",
+          "D": "2.0 V"
+        },
+        "ans": "A",
+        "exp": "Area $= 2 \\times 10^{-4}\\,m^2$. $\\Delta(N\\Phi) = 50 \\times 0.4 \\times 2 \\times 10^{-4} = 0.004$. $E = 0.004 / 0.2 = 0.02\\,V$."
+      },
+      {
+        "qn": 6,
+        "type": "mcq",
+        "q": "On a graph of Flux Linkage ($N\\Phi$) against Time ($t$), what does the gradient represent?",
+        "opts": {
+          "A": "Magnetic flux density",
+          "B": "Induced EMF",
+          "C": "Work done",
+          "D": "Current"
+        },
+        "ans": "B",
+        "exp": "By Faraday's Law, $E = d(N\\Phi)/dt$, which is the gradient of the graph."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "If the flux through a single loop changes by $2\\,Wb$ in $0.5\\,s$, what is the EMF in a coil of $10$ such loops?",
+        "opts": {
+          "A": "4 V",
+          "B": "20 V",
+          "C": "40 V",
+          "D": "10 V"
+        },
+        "ans": "C",
+        "exp": "$E = N (\\Delta\\Phi / \\Delta t) = 10 \\times (2 / 0.5) = 40\\,V$."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "What happens to the induced EMF if the magnetic field is reversed in the same amount of time it originally took to turn it off?",
+        "opts": {
+          "A": "It stays the same",
+          "B": "It doubles",
+          "C": "It is zero",
+          "D": "It is halved"
+        },
+        "ans": "B",
+        "exp": "Reversing flux is a change of $2\\Phi$ (from $+\\Phi$ to $-\\Phi$), which is double the change of just turning it off ($\\Phi$ to $0$)."
+      },
+      {
+        "qn": 9,
+        "type": "write",
+        "q": "What is the unit for rate of change of magnetic flux?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Volts",
+          "V",
+          "Webers per second",
+          "Wb/s"
+        ],
+        "exp": "Since $E = \\Delta\\Phi / \\Delta t$, $1\\,V = 1\\,Wb/s$."
+      },
+      {
+        "qn": 10,
+        "type": "mcq",
+        "q": "A rectangular coil moves into a uniform magnetic field at constant speed. While it is fully inside the field, the induced EMF is:",
+        "opts": {
+          "A": "Constant and non-zero",
+          "B": "Increasing",
+          "C": "Zero",
+          "D": "Decreasing"
+        },
+        "ans": "C",
+        "exp": "While fully inside a uniform field, the flux linkage is constant, so its rate of change is zero."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:3",
+        "content": "When calculating $\\Delta\\Phi$, always check if the field is being removed (change = $\\Phi$), reversed (change = $2\\Phi$), or if the coil is being rotated (change depends on $BA \\cos \\theta$).",
+        "helps_with": [
+          8
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:6",
+        "content": "For A-Level exams, always relate Faraday's Law to the gradient of a graph if provided. If the graph is a curve, the instantaneous EMF is the gradient of the tangent at that point.",
+        "helps_with": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nOM",
+    "title": "Scalars vs vectors",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "Which of the following is the best definition of a vector quantity?",
+        "opts": {
+          "A": "A quantity that has magnitude only.",
+          "B": "A quantity that has direction only.",
+          "C": "A quantity that has both magnitude and direction.",
+          "D": "A quantity that can be measured with a ruler."
+        },
+        "ans": "C",
+        "exp": "The answer is C. Unlike scalars, which only describe 'how much' (magnitude), vectors describe both the size and the specific direction of a physical quantity."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "Which list contains only scalar quantities?",
+        "opts": {
+          "A": "Mass, Speed, Time",
+          "B": "Force, Velocity, Acceleration",
+          "C": "Distance, Displacement, Speed",
+          "D": "Weight, Mass, Energy"
+        },
+        "ans": "A",
+        "exp": "The answer is A. Mass, speed, and time do not have a direction. In list B, all are vectors. In list C, displacement is a vector. In list D, weight is a force (vector)."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "Which of these is the vector equivalent of speed?",
+        "opts": {
+          "A": "Acceleration",
+          "B": "Velocity",
+          "C": "Momentum",
+          "D": "Displacement"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Velocity is defined as the rate of change of displacement, or more simply, speed in a given direction."
+      },
+      {
+        "qn": 4,
+        "type": "write",
+        "q": "Is 'Temperature' a scalar or a vector quantity?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Scalar",
+          "it is a scalar"
+        ],
+        "exp": "The correct answer is Scalar. Temperature has a magnitude but no spatial direction. Students often confuse the '+' or '-' sign in Celsius with direction, but it actually represents a position on a scale relative to a zero point."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "A car travels $50\\,km$ North and then $50\\,km$ South. What is the total distance traveled?",
+        "opts": {
+          "A": "$0\\,km$",
+          "B": "$50\\,km$",
+          "C": "$100\\,km$",
+          "D": "$2500\\,km$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. Distance is a scalar quantity representing the total path length, so $50 + 50 = 100\\,km$."
+      },
+      {
+        "qn": 6,
+        "type": "multi",
+        "q": "Identify which of the following are vector quantities. Select all that apply.",
+        "opts": {
+          "A": "Weight",
+          "B": "Mass",
+          "C": "Electric field strength",
+          "D": "Energy"
+        },
+        "ans": "A,C",
+        "exp": "The correct options are A and C. Weight is a gravitational force acting downwards, and Electric field strength has a direction (the direction of force on a positive charge). Mass and Energy are scalars."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "Which statement about vectors is correct?",
+        "opts": {
+          "A": "A vector can be negative if it has a small magnitude.",
+          "B": "The negative sign in a vector represents a direction opposite to the chosen positive direction.",
+          "C": "Vector magnitude can be negative.",
+          "D": "Scalars and vectors can be added together directly."
+        },
+        "ans": "B",
+        "exp": "The answer is B. In physics, a negative sign on a vector quantity (like $-9.81\\,ms^{-2}$ for gravity) indicates direction, not a value 'less than zero' in the traditional mathematical sense."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "An object moves $3\\,m$ East and $4\\,m$ North. What is the magnitude of its displacement?",
+        "opts": {
+          "A": "$7\\,m$",
+          "B": "$1\\,m$",
+          "C": "$5\\,m$",
+          "D": "$12\\,m$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. Using Pythagoras' theorem for the vector magnitude: $\\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = 5\\,m$."
+      },
+      {
+        "qn": 9,
+        "type": "write",
+        "q": "What is the scalar quantity that represents the 'amount of matter' in an object?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Mass",
+          "mass"
+        ],
+        "exp": "The correct answer is Mass. Mass is a scalar measured in $kg$. Do not confuse this with Weight, which is a vector force measured in Newtons ($N$)."
+      },
+      {
+        "qn": 10,
+        "type": "mcq",
+        "q": "In a vector diagram, what does the length of the arrow represent?",
+        "opts": {
+          "A": "The direction of the vector.",
+          "B": "The magnitude of the vector.",
+          "C": "The unit of the vector.",
+          "D": "The precision of the measurement."
+        },
+        "ans": "B",
+        "exp": "The answer is B. When drawing vectors to scale, the length of the arrow is proportional to the magnitude of the quantity it represents."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:2",
+        "content": "A common exam trap is 'Weight' vs 'Mass'. Mass is scalar (kg), but Weight is a Force (N) and therefore a vector always acting towards the center of the planet.",
+        "helps_with": [
+          6,
+          9
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:7",
+        "content": "Whenever you see direction-specific words like 'North', 'Left', or 'Upwards', you are dealing with vectors. Use a sketch to visualize the path before calculating magnitude.",
+        "helps_with": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "BUq",
+    "title": "Displacement vs distance",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "If an athlete runs exactly one lap of a $400\\,m$ circular track, what is their displacement?",
+        "opts": {
+          "A": "$400\\,m$",
+          "B": "$0\\,m$",
+          "C": "$200\\,m$",
+          "D": "$400\\pi\\,m$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Displacement is the straight-line distance between the starting point and the ending point. Since the athlete ends where they started, the displacement is zero."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "Which of the following statements is always true?",
+        "opts": {
+          "A": "Distance is equal to displacement.",
+          "B": "Displacement is greater than distance.",
+          "C": "The magnitude of displacement is less than or equal to the distance traveled.",
+          "D": "Distance is a vector."
+        },
+        "ans": "C",
+        "exp": "The answer is C. Because displacement is the shortest distance between two points, any path taken that isn't a straight line will result in a distance greater than the displacement magnitude."
+      },
+      {
+        "qn": 3,
+        "type": "write",
+        "q": "A person walks $10\\,m$ East and then $6\\,m$ West. What is their total distance traveled in meters?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "16",
+          "16m",
+          "16 meters"
+        ],
+        "exp": "The correct answer is 16. Distance is a scalar; you simply add the magnitudes of each leg of the journey ($10 + 6 = 16$). Direction does not matter for distance."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "A person walks $10\\,m$ East and then $6\\,m$ West. What is their final displacement from the start?",
+        "opts": {
+          "A": "$16\\,m$ East",
+          "B": "$4\\,m$ West",
+          "C": "$4\\,m$ East",
+          "D": "$16\\,m$ West"
+        },
+        "ans": "C",
+        "exp": "The answer is C. Taking East as positive: $+10\\,m + (-6\\,m) = +4\\,m$ (which is $4\\,m$ East)."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "On a displacement-time graph, what does a horizontal line represent?",
+        "opts": {
+          "A": "Constant velocity",
+          "B": "The object is stationary",
+          "C": "Constant acceleration",
+          "D": "The object is returning to the start"
+        },
+        "ans": "B",
+        "exp": "The answer is B. If the displacement is not changing as time passes, the object's position is fixed, meaning it is stationary ($v = 0$)."
+      },
+      {
+        "qn": 6,
+        "type": "write",
+        "q": "What is the standard SI unit for both distance and displacement?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "m",
+          "metres",
+          "meters"
+        ],
+        "exp": "The correct answer is m. Both are measurements of length. In A-Level physics, always ensure your units are in meters unless specified otherwise."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "A ball is thrown vertically upwards $5\\,m$ and caught at the same height. What is the total distance?",
+        "opts": {
+          "A": "$0\\,m$",
+          "B": "$5\\,m$",
+          "C": "$10\\,m$",
+          "D": "$-10\\,m$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. The ball travels $5\\,m$ up and $5\\,m$ down. Total distance $= 5 + 5 = 10\\,m$."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "In the scenario where a ball is thrown $5\\,m$ up and caught at the same height, what is the displacement?",
+        "opts": {
+          "A": "$0\\,m$",
+          "B": "$5\\,m$",
+          "C": "$10\\,m$",
+          "D": "$5\\,m$ downwards"
+        },
+        "ans": "A",
+        "exp": "The answer is A. The start and end positions are identical, so the change in position (displacement) is zero."
+      },
+      {
+        "qn": 9,
+        "type": "multi",
+        "q": "Which of the following require a direction to be fully defined? Select all that apply.",
+        "opts": {
+          "A": "Displacement",
+          "B": "Distance",
+          "C": "Velocity",
+          "D": "Speed"
+        },
+        "ans": "A,C",
+        "exp": "The correct options are A and C. Displacement and Velocity are vectors. Distance and Speed are their scalar counterparts."
+      },
+      {
+        "qn": 10,
+        "type": "mcq",
+        "q": "A hiker walks $3\\,km$ North and $4\\,km$ East. What is the magnitude of the displacement?",
+        "opts": {
+          "A": "$7\\,km$",
+          "B": "$5\\,km$",
+          "C": "$1\\,km$",
+          "D": "$25\\,km$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Since the movements are at right angles, use Pythagoras: $\\sqrt{3^2 + 4^2} = 5\\,km$."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t1",
+        "placement": "after:2",
+        "content": "Remember: Distance is like your car's odometer—it only ever goes up. Displacement is like a GPS coordinate change—it cares about where you started vs where you finished.",
+        "helps_with": [
+          3,
+          4,
+          7,
+          8
+        ]
+      },
+      {
+        "tip_id": "t2",
+        "placement": "after:9",
+        "content": "When calculating displacement for journeys with multiple directions, always draw a vector triangle. If the start and end are the same point, displacement is 0.",
+        "helps_with": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "NA0",
+    "title": "Adding vectors - graphically and mathematically",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "When adding vectors graphically, how should the arrows be arranged?",
+        "opts": {
+          "A": "Tail-to-tail",
+          "B": "Head-to-head",
+          "C": "Tip-to-tail",
+          "D": "Parallel to each other only"
+        },
+        "ans": "C",
+        "exp": "The answer is C. To find the resultant vector, you place the tail of the second vector at the tip (head) of the first vector."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "What is the term for the single vector that has the same effect as all the original vectors combined?",
+        "opts": {
+          "A": "Equilibrant",
+          "B": "Resultant",
+          "C": "Component",
+          "D": "Magnitude"
+        },
+        "ans": "B",
+        "exp": "The answer is B. The resultant vector is the 'sum' of the vector addition."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "Two forces, $3\\,N$ and $4\\,N$, act on an object in the same direction. What is the resultant force?",
+        "opts": {
+          "A": "$1\\,N$",
+          "B": "$5\\,N$",
+          "C": "$7\\,N$",
+          "D": "$12\\,N$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. When vectors are collinear (same line) and in the same direction, you simply add their magnitudes: $3 + 4 = 7\\,N$."
+      },
+      {
+        "qn": 4,
+        "type": "mcq",
+        "q": "Two forces, $10\\,N$ and $6\\,N$, act on an object in opposite directions. What is the resultant force?",
+        "opts": {
+          "A": "$16\\,N$",
+          "B": "$4\\,N$",
+          "C": "$60\\,N$",
+          "D": "$8\\,N$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. For vectors in opposite directions, subtract the smaller magnitude from the larger one: $10 - 6 = 4\\,N$."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "If two vectors are at right angles to each other, which mathematical theorem is used to find the magnitude of the resultant?",
+        "opts": {
+          "A": "Sine Rule",
+          "B": "Cosine Rule",
+          "C": "Pythagoras' Theorem",
+          "D": "Newton's Second Law"
+        },
+        "ans": "C",
+        "exp": "The answer is C. For a right-angled triangle formed by two perpendicular vectors, $a^2 + b^2 = c^2$ gives the resultant magnitude."
+      },
+      {
+        "qn": 6,
+        "type": "write",
+        "q": "Calculate the magnitude of the resultant of a $5\\,N$ horizontal force and a $12\\,N$ vertical force.",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "13",
+          "13N",
+          "13 Newtons"
+        ],
+        "exp": "The correct answer is 13. Magnitude $= \\sqrt{5^2 + 12^2} = \\sqrt{25 + 144} = \\sqrt{169} = 13\\,N$."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "To find the angle $\\theta$ of a resultant vector relative to the horizontal component ($F_x$), which trig function is most commonly used?",
+        "opts": {
+          "A": "$\\sin(\\theta) = \\frac{opposite}{hypotenuse}$",
+          "B": "$\\cos(\\theta) = \\frac{adjacent}{hypotenuse}$",
+          "C": "$\\tan(\\theta) = \\frac{opposite}{adjacent}$",
+          "D": "$\\tan(\\theta) = \\frac{adjacent}{opposite}$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. Since you usually know the vertical ($F_y$) and horizontal ($F_x$) components, $\\tan(\\theta) = \\frac{F_y}{F_x}$ is the standard method."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "A vector has a resultant of $10\\,N$ at an angle of $90^{\\circ}$ to another $10\\,N$ vector. What is the magnitude of the resultant?",
+        "opts": {
+          "A": "$20\\,N$",
+          "B": "$0\\,N$",
+          "C": "$14.1\\,N$",
+          "D": "$100\\,N$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. $\\sqrt{10^2 + 10^2} = \\sqrt{200} \\approx 14.14\\,N$."
+      },
+      {
+        "qn": 9,
+        "type": "write",
+        "q": "What do we call the method of drawing vectors to scale on graph paper to find the resultant?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Scale drawing",
+          "Graphical method",
+          "Vector polygon"
+        ],
+        "exp": "The correct answer is Scale drawing. This involves using a ruler and protractor to physically measure the resultant's length and angle."
+      },
+      {
+        "qn": 10,
+        "type": "mcq",
+        "q": "If three vectors form a closed triangle when added tip-to-tail, what is the resultant force?",
+        "opts": {
+          "A": "The sum of their magnitudes",
+          "B": "Zero",
+          "C": "The length of the longest side",
+          "D": "Infinite"
+        },
+        "ans": "B",
+        "exp": "The answer is B. If the 'tip' of the last vector ends exactly at the 'tail' of the first, there is no displacement from the start, meaning the resultant is zero (equilibrium)."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t3",
+        "placement": "after:1",
+        "content": "When adding vectors, always draw them 'Tip-to-Tail'. The resultant starts at the very beginning (tail of the 1st) and ends at the very end (tip of the last).",
+        "helps_with": [
+          2,
+          10
+        ]
+      },
+      {
+        "tip_id": "t4",
+        "placement": "after:7",
+        "content": "Check your calculator mode! A-Level Physics questions almost always use Degrees ($^{\\circ}$), not Radians. If $\\tan^{-1}(1)$ doesn't give 45, you're in the wrong mode.",
+        "helps_with": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fK7",
+    "title": "Subtracting vectors",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "To subtract vector $B$ from vector $A$ ($A - B$), what is the correct conceptual approach?",
+        "opts": {
+          "A": "Add vector $A$ to the reverse of vector $B$.",
+          "B": "Subtract the magnitude of $B$ from $A$ regardless of direction.",
+          "C": "Multiply $A$ and $B$ then find the square root.",
+          "D": "Place them head-to-head and add them."
+        },
+        "ans": "A",
+        "exp": "The answer is A. Vector subtraction is defined as adding the negative of the vector: $A - B = A + (-B)$."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "How do you represent the negative of a vector graphically?",
+        "opts": {
+          "A": "Make the arrow shorter.",
+          "B": "Rotate the arrow $90^{\\circ}$.",
+          "C": "Reverse the direction of the arrow (rotate $180^{\\circ}$).",
+          "D": "Make the arrow a dashed line."
+        },
+        "ans": "C",
+        "exp": "The answer is C. A negative vector has the same magnitude but points in the exactly opposite direction."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "A car changes its velocity from $10\\,ms^{-1}$ North to $10\\,ms^{-1}$ South. What is the change in velocity ($\\Delta v$)?",
+        "opts": {
+          "A": "$0\\,ms^{-1}$",
+          "B": "$10\\,ms^{-1}$ South",
+          "C": "$20\\,ms^{-1}$ South",
+          "D": "$20\\,ms^{-1}$ North"
+        },
+        "ans": "C",
+        "exp": "The answer is C. $\\Delta v = v_{final} - v_{initial}$. Taking North as positive: $(-10) - (+10) = -20\\,ms^{-1}$ (which is $20\\,ms^{-1}$ South)."
+      },
+      {
+        "qn": 4,
+        "type": "write",
+        "q": "What is the formula for 'change in velocity' using $v$ (final) and $u$ (initial)?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "v - u",
+          "$v - u$",
+          "final velocity - initial velocity"
+        ],
+        "exp": "The correct answer is $v - u$. This is a vector subtraction. Even if speeds are the same, a change in direction means there is a change in velocity."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "An object moves at $5\\,ms^{-1}$ East, then changes to $5\\,ms^{-1}$ North. What is the magnitude of the change in velocity?",
+        "opts": {
+          "A": "$0\\,ms^{-1}$",
+          "B": "$7.07\\,ms^{-1}$",
+          "C": "$10\\,ms^{-1}$",
+          "D": "$5\\,ms^{-1}$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. $\\Delta v = v - u$. This is $5\\,N + (-5\\,E)$, which is $5\\,N + 5\\,W$. Magnitude $= \\sqrt{5^2 + 5^2} = \\sqrt{50} \\approx 7.07\\,ms^{-1}$."
+      },
+      {
+        "qn": 6,
+        "type": "mcq",
+        "q": "In vector subtraction $R = A - B$, if $A$ and $B$ are identical in magnitude and direction, what is $R$?",
+        "opts": {
+          "A": "$2A$",
+          "B": "A",
+          "C": "Zero",
+          "D": "$-2A$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. Subtracting a vector from itself results in a null vector (zero magnitude)."
+      },
+      {
+        "qn": 7,
+        "type": "write",
+        "q": "If vector $V$ points Up, in which direction does $-V$ point?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "Down",
+          "downwards",
+          "Down"
+        ],
+        "exp": "The correct answer is Down. Negating a vector flips its direction by $180$ degrees."
+      },
+      {
+        "qn": 8,
+        "type": "mcq",
+        "q": "Which physical quantity is defined as the rate of change of velocity?",
+        "opts": {
+          "A": "Speed",
+          "B": "Displacement",
+          "C": "Acceleration",
+          "D": "Force"
+        },
+        "ans": "C",
+        "exp": "The answer is C. Acceleration ($a = \\frac{\\Delta v}{\\Delta t}$) requires vector subtraction to find the change in velocity."
+      },
+      {
+        "qn": 9,
+        "type": "mcq",
+        "q": "A ball hits a wall at $20\\,ms^{-1}$ and rebounds at $20\\,ms^{-1}$. What is the magnitude of the change in velocity?",
+        "opts": {
+          "A": "$0\\,ms^{-1}$",
+          "B": "$20\\,ms^{-1}$",
+          "C": "$40\\,ms^{-1}$",
+          "D": "$400\\,ms^{-1}$"
+        },
+        "ans": "C",
+        "exp": "The answer is C. $v = -20$ (rebound), $u = +20$ (incident). $\\Delta v = -20 - 20 = -40\\,ms^{-1}$. Magnitude is $40\\,ms^{-1}$."
+      },
+      {
+        "qn": 10,
+        "type": "mcq",
+        "q": "When using the graphical method for $A - B$, the resultant points from:",
+        "opts": {
+          "A": "The tip of $A$ to the tip of $B$",
+          "B": "The tail of $A$ to the tip of $-B$",
+          "C": "The tip of $B$ to the tail of $A$",
+          "D": "The origin to the midpoint"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Following the 'Tip-to-Tail' rule for addition: $A + (-B)$ means you start at the tail of $A$ and end at the tip of the reversed $B$."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t5",
+        "placement": "after:3",
+        "content": "For change in velocity ($Δv$), the most common error is saying $10 - 10 = 0$ when the direction flips. Always assign a 'positive' direction (e.g., Right is positive, so Left is negative).",
+        "helps_with": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r5r",
+    "title": "Resolving vectors",
+    "questions": [
+      {
+        "qn": 1,
+        "type": "mcq",
+        "q": "What does 'resolving a vector' mean?",
+        "opts": {
+          "A": "Finding the total sum of multiple vectors.",
+          "B": "Breaking a single vector into two perpendicular components.",
+          "C": "Measuring the vector with a more precise instrument.",
+          "D": "Changing the direction of the vector."
+        },
+        "ans": "B",
+        "exp": "The answer is B. Resolving is the opposite of finding a resultant; it takes one vector and splits it into horizontal ($x$) and vertical ($y$) parts."
+      },
+      {
+        "qn": 2,
+        "type": "mcq",
+        "q": "A force $F$ acts at an angle $\\theta$ to the horizontal. What is the horizontal component $F_x$?",
+        "opts": {
+          "A": "$F \\sin(\\theta)$",
+          "B": "$F \\cos(\\theta)$",
+          "C": "$F \\tan(\\theta)$",
+          "D": "$F^2 \\cos(\\theta)$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Using trigonometry ($SOH CAH TOA$), the adjacent side (horizontal) is $hypotenuse \\times \\cos(\\theta)$."
+      },
+      {
+        "qn": 3,
+        "type": "mcq",
+        "q": "A force $F$ acts at an angle $\\theta$ to the horizontal. What is the vertical component $F_y$?",
+        "opts": {
+          "A": "$F \\sin(\\theta)$",
+          "B": "$F \\cos(\\theta)$",
+          "C": "$F \\tan(\\theta)$",
+          "D": "$F / \\sin(\\theta)$"
+        },
+        "ans": "A",
+        "exp": "The answer is A. The opposite side (vertical) to the angle $\\theta$ is $hypotenuse \\times \\sin(\\theta)$."
+      },
+      {
+        "qn": 4,
+        "type": "write",
+        "q": "Calculate the horizontal component of a $10\\,N$ force acting at $60^{\\circ}$ to the horizontal. (Give answer to 1 decimal place)",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "5.0",
+          "5",
+          "5.0N"
+        ],
+        "exp": "The correct answer is 5.0. $F_x = 10 \\cos(60^{\\circ})$. Since $\\cos(60^{\\circ}) = 0.5$, the force is $5.0\\,N$."
+      },
+      {
+        "qn": 5,
+        "type": "mcq",
+        "q": "A box is pulled along the floor by a rope at an angle. Which component of the tension force is responsible for moving the box horizontally?",
+        "opts": {
+          "A": "The vertical component",
+          "B": "The horizontal component",
+          "C": "The weight of the box",
+          "D": "The normal contact force"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Only the force acting in the direction of motion (horizontal) causes horizontal acceleration."
+      },
+      {
+        "qn": 6,
+        "type": "mcq",
+        "q": "A $100\\,N$ force acts at $30^{\\circ}$ to the vertical. What is the horizontal component?",
+        "opts": {
+          "A": "$100 \\cos(30)$",
+          "B": "$100 \\sin(30)$",
+          "C": "$100 / \\cos(30)$",
+          "D": "$100 \\tan(30)$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. If the angle is to the *vertical*, the horizontal side is 'opposite' the angle, so we use Sine. $100 \\sin(30)$."
+      },
+      {
+        "qn": 7,
+        "type": "mcq",
+        "q": "Which component of a projectile's initial velocity determines how long it stays in the air?",
+        "opts": {
+          "A": "The horizontal component",
+          "B": "The vertical component",
+          "C": "The resultant velocity",
+          "D": "The mass of the projectile"
+        },
+        "ans": "B",
+        "exp": "The answer is B. Gravity acts vertically, so the flight time depends on the initial vertical velocity and the height."
+      },
+      {
+        "qn": 8,
+        "type": "write",
+        "q": "A velocity vector of $20\\,ms^{-1}$ is at $30^{\\circ}$ to the horizontal ground. What is the initial vertical velocity in $ms^{-1}$?",
+        "opts": {},
+        "ans": "",
+        "accepted_answers": [
+          "10",
+          "10.0",
+          "10 m/s"
+        ],
+        "exp": "The correct answer is 10. $v_y = 20 \\sin(30^{\\circ})$. Since $\\sin(30^{\\circ}) = 0.5$, $v_y = 10\\,ms^{-1}$."
+      },
+      {
+        "qn": 9,
+        "type": "mcq",
+        "q": "When a block is on an inclined plane at angle $\\alpha$, the component of weight acting down the slope is usually given as:",
+        "opts": {
+          "A": "$mg \\cos(\\alpha)$",
+          "B": "$mg \\sin(\\alpha)$",
+          "C": "$mg \\tan(\\alpha)$",
+          "D": "$mg$"
+        },
+        "ans": "B",
+        "exp": "The answer is B. By geometry, the angle between weight (vertical) and the normal to the slope is $\\alpha$. The component parallel to the slope is the 'opposite' side, so $mg \\sin(\\alpha)$."
+      },
+      {
+        "qn": 10,
+        "type": "multi",
+        "q": "Why do we resolve vectors in physics problems? Select all that apply.",
+        "opts": {
+          "A": "To analyze motion in independent perpendicular directions (e.g. projectile motion).",
+          "B": "To simplify the addition of multiple vectors acting at different angles.",
+          "C": "To increase the magnitude of the force.",
+          "D": "To change a vector into a scalar."
+        },
+        "ans": "A,B",
+        "exp": "The correct options are A and B. Resolving allows us to use $F=ma$ in one direction at a time and makes adding several 'diagonal' vectors much easier by summing their $x$ and $y$ components separately."
+      }
+    ],
+    "tips": [
+      {
+        "tip_id": "t6",
+        "placement": "after:3",
+        "content": "A handy mnemonic: 'Cos is Cross'. The component that goes 'across' or 'touches' the angle $θ$ is the Cosine component ($F \\cos \\theta$).",
+        "helps_with": [
+          4,
+          8,
+          9
+        ]
+      },
+      {
+        "tip_id": "t7",
+        "placement": "after:9",
+        "content": "On an inclined plane, the component of weight perpendicular to the slope is $mg \\cos \\theta$. This is used to find the Normal Contact Force and Friction.",
+        "helps_with": [
+          10
+        ]
+      }
+    ]
+  }
+]

@@ -196,9 +196,9 @@ function initializeIosSelectors() {
 
     // Initialize selectors
     if (document.getElementById('hour-selector')) {
-        hourSelector = new IosSelector({el:'#hour-selector', source: hoursSource});
-        minuteSelector = new IosSelector({el:'#minute-selector', source: minutesSecondsSource});
-        secondSelector = new IosSelector({el:'#second-selector', source: minutesSecondsSource});
+        hourSelector = new IosSelector({el:'#hour-selector', source: hoursSource, count: 24});
+        minuteSelector = new IosSelector({el:'#minute-selector', source: minutesSecondsSource, count: 60});
+        secondSelector = new IosSelector({el:'#second-selector', source: minutesSecondsSource, count: 60});
     }
 }
 
@@ -494,7 +494,7 @@ function navigateToDemo() {
 }
 
 function navigateToMultiLearn() {
-    window.location.href = 'multi-learn.html';
+    window.location.href = 'multi-learn-hub.html';
 }
 
 function navigateToVideos() {
@@ -524,6 +524,22 @@ function openSpecificationGuide() {
 
 function openDataSheet() {
     window.open("https://filestore.aqa.org.uk/resources/physics/AQA-7408-SDB.PDF", "_blank");
+}
+
+function openFormulaSheet() {
+    // AQA Data and Formulae Booklet covers both
+    window.open("https://filestore.aqa.org.uk/resources/physics/AQA-7408-SDB.PDF", "_blank");
+}
+
+function scrollSection(elementId, direction) {
+    const container = document.getElementById(elementId);
+    if (container) {
+        const scrollAmount = 320; // Width of a card + gap
+        container.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
+            behavior: 'smooth'
+        });
+    }
 }
 
 // Feature strip handlers
@@ -563,8 +579,9 @@ function handleFeatureClick(featureId) {
 // Homepage specific functions
 // Start Now button functionality
 function handleStartNow() {
-    const featureSection = document.querySelector('[data-testid="feature-specification"]').parentElement.parentElement;
-    if (featureSection) {
+    const specElement = document.querySelector('[data-testid="feature-specification"]');
+    if (specElement && specElement.parentElement && specElement.parentElement.parentElement) {
+        const featureSection = specElement.parentElement.parentElement;
         const rect = featureSection.getBoundingClientRect();
         const scrollTop = window.pageYOffset + rect.top - 80;
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
@@ -574,62 +591,92 @@ function handleStartNow() {
 // Sample MCQ functionality
 function handleSampleAnswer(selectedIndex) {
     const feedback = document.getElementById('feedback');
+    const options = document.querySelectorAll('.sample-option');
     const correctAnswer = 1; // "It decreases"
     
+    // Reset all options
+    options.forEach((opt, idx) => {
+        opt.classList.remove('bg-green-50', 'bg-red-50', 'border-green-500', 'border-red-500', 'dark:bg-green-900/20', 'dark:bg-red-900/20');
+        opt.classList.add('border-border');
+        // Reset radio circle
+        const circle = opt.querySelector('div > div'); // The inner dot
+        if(circle) circle.classList.add('opacity-0');
+    });
+
+    // Highlight selected
+    const selectedOpt = options[selectedIndex];
+    if (selectedOpt) {
+        const circle = selectedOpt.querySelector('div > div');
+        if(circle) circle.classList.remove('opacity-0');
+    }
+
     feedback.classList.remove('hidden');
     
     if (selectedIndex === correctAnswer) {
-        feedback.className = 'mt-4 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800';
-        feedback.innerHTML = '<strong>Correct!</strong> When light enters a denser medium, its speed decreases, causing the wavelength to decrease while frequency remains constant.';
+        // Correct style
+        if (selectedOpt) {
+            selectedOpt.classList.remove('border-border');
+            selectedOpt.classList.add('bg-green-50', 'border-green-500', 'dark:bg-green-900/20');
+        }
+        
+        feedback.className = 'mt-6 p-4 rounded-xl bg-green-100 border border-green-200 text-green-800 dark:bg-green-900/30 dark:border-green-800 dark:text-green-200';
+        feedback.innerHTML = `
+            <div class="flex items-start gap-3">
+                <div class="bg-green-500 text-white rounded-full p-1 mt-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div>
+                    <strong class="block mb-1">Correct!</strong>
+                    <p>When light enters a denser medium (higher refractive index), its speed decreases. Since v = fλ and frequency (f) remains constant, the wavelength (λ) must decrease.</p>
+                </div>
+            </div>
+        `;
     } else {
-        feedback.className = 'mt-4 p-4 rounded-lg bg-red-100 border border-red-300 text-red-800';
-        feedback.innerHTML = '<strong>Incorrect.</strong> When light enters a denser medium, its speed decreases, causing the wavelength to decrease while frequency remains constant.';
+        // Incorrect style
+        if (selectedOpt) {
+            selectedOpt.classList.remove('border-border');
+            selectedOpt.classList.add('bg-red-50', 'border-red-500', 'dark:bg-red-900/20');
+        }
+        
+        feedback.className = 'mt-6 p-4 rounded-xl bg-red-100 border border-red-200 text-red-800 dark:bg-red-900/30 dark:border-red-800 dark:text-red-200';
+        feedback.innerHTML = `
+             <div class="flex items-start gap-3">
+                <div class="bg-red-500 text-white rounded-full p-1 mt-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </div>
+                <div>
+                    <strong class="block mb-1">Incorrect</strong>
+                    <p>When light enters a denser medium, it slows down. Think about the wave equation v = fλ. Frequency stays the same, so wavelength must decrease.</p>
+                </div>
+            </div>
+        `;
     }
 }
 
-/** @type {typeof handleFeatureClick} */
-window.handleFeatureClick = handleFeatureClick;
-/** @type {typeof navigateToHome} */
-window.navigateToHome = navigateToHome;
-/** @type {typeof navigateToLogin} */
-window.navigateToLogin = navigateToLogin;
-/** @type {typeof navigateToPastPapers} */
-window.navigateToPastPapers = navigateToPastPapers;
-/** @type {typeof navigateToDemo} */
-window.navigateToDemo = navigateToDemo;
-/** @type {typeof navigateToMultiLearn} */
-window.navigateToMultiLearn = navigateToMultiLearn;
-/** @type {typeof navigateToVideos} */
-window.navigateToVideos = navigateToVideos;
-/** @type {typeof navigateToExamQuestions} */
-window.navigateToExamQuestions = navigateToExamQuestions;
-/** @type {typeof navigateToQuickLearn} */
-window.navigateToQuickLearn = navigateToQuickLearn;
-/** @type {typeof navigateToNotes} */
-window.navigateToNotes = navigateToNotes;
-/** @type {typeof navigateToProgress} */
-window.navigateToProgress = navigateToProgress;
-/** @type {typeof openSpecificationGuide} */
-window.openSpecificationGuide = openSpecificationGuide;
-/** @type {typeof openDataSheet} */
-window.openDataSheet = openDataSheet;
-/** @type {typeof handleStartNow} */
-window.handleStartNow = handleStartNow;
-/** @type {typeof handleSampleAnswer} */
-window.handleSampleAnswer = handleSampleAnswer;
-/** @type {typeof scrollToTop} */
-window.scrollToTop = scrollToTop;
-/** @type {typeof toggleTheme} */
-window.toggleTheme = toggleTheme;
-/** @type {typeof updateThemeToggleIcon} */
-window.updateThemeToggleIcon = updateThemeToggleIcon;
-/** @type {typeof initializeIosSelectors} */
-window.initializeIosSelectors = initializeIosSelectors;
-/** @type {typeof startTimer} */
-window.startTimer = startTimer;
-/** @type {typeof pauseTimer} */
-window.pauseTimer = pauseTimer;
-/** @type {typeof stopTimer} */
-window.stopTimer = stopTimer;
-/** @type {typeof cancelTimer} */
-window.cancelTimer = cancelTimer;
+Object.assign(window, {
+    handleFeatureClick,
+    navigateToHome,
+    navigateToLogin,
+    navigateToPastPapers,
+    navigateToDemo,
+    navigateToMultiLearn,
+    navigateToVideos,
+    navigateToExamQuestions,
+    navigateToQuickLearn,
+    navigateToNotes,
+    navigateToProgress,
+    openSpecificationGuide,
+    openDataSheet,
+    openFormulaSheet,
+    scrollSection,
+    handleStartNow,
+    handleSampleAnswer,
+    scrollToTop,
+    toggleTheme,
+    updateThemeToggleIcon,
+    initializeIosSelectors,
+    startTimer,
+    pauseTimer,
+    stopTimer,
+    cancelTimer,
+});

@@ -120,11 +120,11 @@ function renderYears() {
         const isExpanded = expandedYears.includes(yearData.year);
         
         const yearDiv = document.createElement('div');
-        yearDiv.className = 'glass-card rounded-2xl overflow-hidden';
+        yearDiv.className = 'accordion-card rounded-2xl overflow-hidden';
         yearDiv.innerHTML = `
             <button 
                 onclick="toggleYear('${yearData.year}')"
-                class="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/20 transition-colors duration-200"
+                class="accordion-header w-full px-6 py-4 flex items-center justify-between transition-all duration-200"
                 data-testid="year-toggle-${yearData.year}"
             >
                 <span class="text-xl font-semibold">${yearData.year}</span>
@@ -133,7 +133,7 @@ function renderYears() {
                 </svg>
             </button>
             
-            <div class="px-6 pb-6 space-y-4 ${isExpanded ? '' : 'hidden'}" data-testid="year-content-${yearData.year}">
+            <div class="accordion-content px-6 pb-6 space-y-4 ${isExpanded ? '' : 'hidden'}" data-testid="year-content-${yearData.year}">
                 ${yearData.papers.map(paper => {
                     const paperId = `${yearData.year}-${paper.paperNumber.replace(' ', '-')}`;
                     const isCompleted = completedPapers.includes(paperId);

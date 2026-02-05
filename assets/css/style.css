@@ -36,6 +36,12 @@
   
   --font-sans: 'Inter', system-ui, sans-serif;
   --radius: 1rem;
+
+  /* Chat Bubble Variables */
+  --send-bg: #0B93F6;
+  --send-color: white;
+  --receive-bg: #E5E5EA;
+  --receive-text: black;
 }
 
 .dark {
@@ -63,6 +69,10 @@
   --chart-3: hsl(197, 37%, 24%);
   --chart-4: hsl(43, 74%, 66%);
   --chart-5: hsl(27, 87%, 67%);
+
+  /* Chat Bubble Variables Dark Mode */
+  --receive-bg: #262626;
+  --receive-text: white;
 }
 
 * {
@@ -260,6 +270,7 @@ nav .flex-shrink-0 button:hover {
     height: 100%;
     text-align: center;
     overflow: hidden;
+    perspective: 1200px;
     font-size: 16px;
     color: #666;
 }
@@ -318,4 +329,275 @@ nav .flex-shrink-0 button:hover {
     background-color: rgba(59, 130, 246, 0.2);
     border-top: 1px solid rgba(59, 130, 246, 0.4);
     border-bottom: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+/* Liquid glass header */
+.glass-header {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.glass-right {
+  display: flex;
+  gap: 12px;
+}
+
+.glass-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.22),
+      rgba(255,255,255,0.08)
+    );
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.35),
+    0 8px 24px rgba(0,0,0,0.25);
+}
+
+.dark .glass-group {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.02)
+    );
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.15),
+    0 8px 24px rgba(0,0,0,0.45);
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+}
+
+/* icon bubble sizing only */
+.glass-icons > * {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+/* Match brand bubble height to icon/sign-out bubbles */
+.glass-brand {
+  min-height: 56px;
+}
+
+/* iOS-style accordion for videos page */
+.accordion-card {
+  background: var(--glass-light);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid var(--glass-border-light);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.25),
+    0 10px 30px rgba(0,0,0,0.08);
+}
+.dark .accordion-card {
+  background: var(--glass-dark);
+  border: 1px solid var(--glass-border-dark);
+}
+.accordion-header {
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+}
+.dark .accordion-header {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+}
+.accordion-header:hover {
+  transform: translateY(-1px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));
+}
+.accordion-content {
+  padding-top: 4px;
+  padding-bottom: 10px;
+}
+.accordion-subsection {
+  border-top: 1px solid var(--border);
+}
+.accordion-subheader {
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+}
+.accordion-subheader:hover {
+  transform: translateY(-1px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+}
+.accordion-subcontent {
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+}
+.dark .accordion-subcontent {
+  background: rgba(0,0,0,0.15);
+}
+.video-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+}
+.video-item:hover {
+  background: rgba(255,255,255,0.10);
+  transform: translateX(2px);
+}
+.dark .video-item {
+  background: rgba(0,0,0,0.25);
+  border-color: rgba(255,255,255,0.12);
+}
+.dark .video-item:hover {
+  background: rgba(0,0,0,0.35);
+}
+
+/* iOS Chat Bubble Styles */
+.chat-bubble {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 25px;
+  word-wrap: break-word;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+
+.chat-bubble::before,
+.chat-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 25px;
+}
+
+/* Blue Send Bubble (Right side) */
+.chat-send {
+  color: var(--send-color);
+  background: var(--send-bg);
+}
+
+.chat-send::before {
+  right: -7px;
+  width: 20px;
+  background-color: var(--send-bg);
+  border-bottom-left-radius: 16px 14px;
+}
+
+.chat-send::after {
+  right: -26px;
+  width: 26px;
+  background-color: var(--background);
+  border-bottom-left-radius: 10px;
+}
+
+/* Gray Receive Bubble (Left side) */
+.chat-receive {
+  background: var(--receive-bg);
+  color: var(--receive-text);
+}
+
+.chat-receive::before {
+  left: -7px;
+  width: 20px;
+  background-color: var(--receive-bg);
+  border-bottom-right-radius: 16px 14px;
+}
+
+.chat-receive::after {
+  left: -26px;
+  width: 26px;
+  background-color: var(--background);
+  border-bottom-right-radius: 10px;
+}
+
+/* Gray Send Bubble (Right side, Gray color for "You") */
+.chat-send-gray {
+  color: var(--receive-text);
+  background: var(--receive-bg);
+}
+
+.chat-send-gray::before {
+  right: -7px;
+  width: 20px;
+  background-color: var(--receive-bg);
+  border-bottom-left-radius: 16px 14px;
+}
+
+.chat-send-gray::after {
+  right: -26px;
+  width: 26px;
+  background-color: var(--background);
+  border-bottom-left-radius: 10px;
+}
+
+/* Typing Indicator Animation */
+.typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9ca3af; /* Gray-400 */
+}
+
+.dark .typing-dot {
+  background: #6b7280; /* Gray-500 */
+}
+
+.typing-dot.one {
+  animation: cycleOne 1s ease-in-out infinite;
+}
+
+.typing-dot.two {
+  animation: cycleTwo 1s ease-in-out infinite;
+}
+
+.typing-dot.three {
+  animation: cycleThree 1s ease-in-out infinite;
+}
+
+@keyframes cycleOne {
+  0% { opacity: 0.4; }
+  33.333% { opacity: 1; }
+  66.6667% { opacity: 0.4; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes cycleTwo {
+  0% { opacity: 0.4; }
+  33.333% { opacity: 0.4; }
+  66.6667% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+@keyframes cycleThree {
+  0% { opacity: 0.4; }
+  33.333% { opacity: 0.4; }
+  66.6667% { opacity: 0.4; }
+  100% { opacity: 1; }
 }

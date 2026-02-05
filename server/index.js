@@ -36,7 +36,7 @@ app.get('/past-papers', (req, res) => {
 });
 
 app.get('/multi-learn', (req, res) => {
-  res.sendFile(path.join(__dirname, '../multi-learn.html'));
+  res.sendFile(path.join(__dirname, '../multi-learn-hub.html'));
 });
 
 app.get('/videos', (req, res) => {
