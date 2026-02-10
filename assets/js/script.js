@@ -124,27 +124,27 @@ function scrollToTop() {
 function initializeScrollToBottom() {
     const scrollBtn = document.getElementById('scroll-bottom');
     if (!scrollBtn) {
-        console.warn('Scroll to bottom button not found during initializeScrollToBottom.');
-        return; // Exit if element isn't there
+        // It's possible the button doesn't exist on some pages or isn't loaded yet
+        return; 
     }
     
-    let isAtBottom = false;
+    let isAtTop = true;
     
     function updateScrollButton() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
         
-        // Check if we're near the bottom (within 100px)
-        isAtBottom = scrollTop + windowHeight >= documentHeight - 100;
+        // Check if we're near the top (within 100px)
+        isAtTop = scrollTop < 100;
         
         const svg = scrollBtn.querySelector('svg');
         if (svg) {
-            if (isAtBottom) {
-                // Point up when at bottom
+            if (isAtTop) {
+                // At top: Point down (rotate 180deg relative to Up arrow)
+                // User wants to go to bottom
                 svg.style.transform = 'rotate(180deg)';
             } else {
-                // Point down when not at bottom
+                // Not at top: Point up (rotate 0deg relative to Up arrow)
+                // User wants to go to top
                 svg.style.transform = 'rotate(0deg)';
             }
         }
@@ -160,12 +160,12 @@ function initializeScrollToBottom() {
     updateScrollButton();
 
     function handleScrollClick() {
-        if (isAtBottom) {
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
+        if (isAtTop) {
             // Scroll to bottom
             window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        } else {
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 }
@@ -474,10 +474,10 @@ function initializeExternalLinks() {
 // Navigation functions
 function navigateToHome() {
     const currentPath = window.location.pathname;
-    if (currentPath === '/index.html' || currentPath === '/') {
+    if (currentPath.endsWith('/home.html')) {
         window.location.reload();
     } else {
-        window.location.href = 'index.html';
+        window.location.href = 'home.html';
     }
 }
 

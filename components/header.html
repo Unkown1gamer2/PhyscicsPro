@@ -1,46 +1,80 @@
-<nav class="glass-header">
-  <!-- LEFT bubble -->
-  <div class="glass-group glass-brand">
-    <button onclick="navigateToHome()" class="brand" data-testid="logo">
-      Physics<span class="text-foreground/60">Pro</span>
+<!-- TOP STANDARD NAVIGATION -->
+<header class="absolute top-0 left-0 w-full z-40 bg-background/80 backdrop-blur-md transition-all duration-300" id="top-standard-nav">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Branding -->
+    <button onclick="navigateToHome()" class="text-xl font-bold flex items-center gap-2 hover:opacity-80 transition-opacity" data-testid="logo">
+      <span>Physics</span><span class="text-accent">Pro</span>
     </button>
-  </div>
 
-  <!-- RIGHT side bubbles -->
-  <div class="glass-right">
-    <!-- Icons bubble -->
-    <div class="glass-group glass-icons">
-      <button id="theme-toggle" class="hover:text-accent transition-colors duration-200" data-testid="theme-toggle">
+    <!-- Right Side Actions -->
+    <div class="flex items-center gap-6">
+      <!-- Dark Mode -->
+      <button id="theme-toggle" class="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors duration-200" data-testid="theme-toggle">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
         </svg>
+        <span class="hidden sm:inline">Theme</span>
       </button>
-      <button onclick="navigateToProgress()" class="hover:text-accent transition-colors duration-200" data-testid="progress-icon">
+
+      <!-- Progress -->
+      <button onclick="navigateToProgress()" class="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors duration-200" data-testid="progress-icon">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
         </svg>
+        <span class="hidden sm:inline">Progress</span>
       </button>
-      <button id="timer-icon" class="relative hover:text-accent transition-colors duration-200" data-testid="timer-icon">
+
+      <!-- Timer -->
+      <button id="timer-icon" class="relative flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors duration-200" data-testid="timer-icon">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
+        <span class="hidden sm:inline">Timer</span>
       </button>
-      <button id="scroll-bottom" class="hover:text-accent transition-colors duration-200" data-testid="scroll-bottom">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </button>
-    </div>
 
-    <!-- Sign out bubble -->
-    <div class="glass-group">
-      <button onclick="navigateToLogin()" class="flex items-center space-x-2 px-3 py-2 transition-colors duration-200" data-testid="button-signout">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+      <!-- Sign Out -->
+      <button onclick="navigateToLogin()" class="flex items-center gap-2 text-sm font-medium hover:text-red-500 transition-colors duration-200" data-testid="button-signout">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
         </svg>
         <span>Sign Out</span>
       </button>
     </div>
+  </div>
+</header>
+
+<!-- BOTTOM FLOATING NAVIGATION (Glass Bubbles) -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center pointer-events-none">
+  <div class="glass-group pointer-events-auto flex items-center gap-4 px-6 py-3">
+    
+    <!-- Home (Far Left) -->
+    <button onclick="navigateToHome()" class="hover:text-accent transition-colors duration-200 flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10" title="Home">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+    </button>
+
+    <!-- Formula Book (Right of Home) -->
+    <button onclick="openFormulaSheet()" class="hover:text-accent transition-colors duration-200 flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10" title="Formula Book">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+        </svg>
+    </button>
+
+    <!-- Top/Bottom Toggle -->
+    <button id="scroll-bottom" class="hover:text-accent transition-all duration-300 flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10" title="Scroll">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="transition: transform 0.3s ease;">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+    <!-- Search (Far Right) -->
+    <button class="hover:text-accent transition-colors duration-200 flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10" title="Search">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+    </button>
+
   </div>
 </nav>
 
