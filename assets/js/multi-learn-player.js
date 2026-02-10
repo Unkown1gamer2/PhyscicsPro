@@ -421,8 +421,41 @@ window.showNextQuestion = (currentIndex) => {
 window.finishLesson = () => {
     isCompleted = true;
     saveProgress();
-    // Redirect immediately to hub as requested
-    window.location.href = 'multi-learn-hub.html';
+    
+    // Show footer
+    const footer = document.getElementById('footer');
+    if (footer) {
+        footer.classList.remove('hidden');
+    }
+
+    // Show completion message
+    const completionMsg = document.getElementById('completion-message');
+    if (completionMsg) {
+        completionMsg.classList.remove('hidden');
+        
+        // Add Return to Hub button if not present
+        if (!completionMsg.querySelector('button')) {
+             const returnBtn = document.createElement('button');
+             returnBtn.className = "mt-4 bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto";
+             returnBtn.textContent = "Return to Hub";
+             returnBtn.onclick = () => window.location.href = 'multi-learn-hub.html';
+             completionMsg.appendChild(returnBtn);
+        }
+        
+        // Scroll to completion message
+        setTimeout(() => {
+            completionMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+    }
+    
+    // Hide the "Finish Lesson" button to avoid confusion
+    const allButtons = document.querySelectorAll('button');
+    for (const btn of allButtons) {
+        if (btn.textContent.trim() === 'Finish Lesson') {
+            btn.style.display = 'none';
+            break;
+        }
+    }
 };
 
 // Progress & Navigation Handling

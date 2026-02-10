@@ -34,32 +34,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-        }
-        .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .snap-x {
-            scroll-snap-type: x mandatory;
-        }
-        .snap-center {
-            scroll-snap-align: center;
-        }
-        .glass-card-apple {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
-        }
-        .dark .glass-card-apple {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
 </head>
 <body>
     <div class="min-h-screen bg-background">
@@ -94,6 +68,7 @@
             <section>
                 <div class="flex items-center justify-between mb-4 px-2">
                     <h2 class="text-2xl font-bold">Essential Tools</h2>
+                    
                     <div class="flex items-center gap-2">
                         <button onclick="scrollSection('essential-tools-container', 'left')" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors" aria-label="Scroll Left">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
@@ -116,7 +91,7 @@
                                 <h3 class="font-bold text-lg">Multi Learn</h3>
                                 <p class="text-xs text-muted-foreground">Adaptive learning</p>
                             </div>
-                            <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                            <button class="bg-blue-500 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:opacity-90 transition-all animate-pulse-subtle">
                                 OPEN
                             </button>
                         </div>
@@ -290,8 +265,8 @@
                 </div>
             </section>
 
-            <!-- Topics List (Top Categories Style) -->
-            <section>
+        <!-- Topics List (Top Categories Style) -->
+        <section>
                 <div class="flex items-center justify-between mb-4 px-2">
                     <h2 class="text-2xl font-bold">Browse Topics</h2>
                 </div>
@@ -577,11 +552,10 @@
                     </div>
                 </div>
             </section>
-        </div>
+    </main>
 
-        <!-- Footer -->
-        <div id="footer"></div>
-    </div>
+    <!-- Footer -->
+    <div id="footer"></div>
 
     <!-- JavaScript -->
     <script type="module" src="assets/js/script.js"></script>
