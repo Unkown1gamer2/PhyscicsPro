@@ -32,7 +32,7 @@
   --glass-light: hsla(0, 0%, 100%, 0.1);
   --glass-border-light: hsla(0, 0%, 100%, 0.2);
   --glass-dark: hsla(220, 39%, 11%, 0.8);
-  --glass-border-dark: hsla(217, 19%, 27%, 0.3);
+  --glass-border-dark: hsla(217, 19%, 27%, 0.2);
   
   --font-sans: 'Inter', system-ui, sans-serif;
   --radius: 1rem;
@@ -101,7 +101,7 @@
 
 .dark .glass-card-apple {
     background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -267,7 +267,7 @@ html {
 }
 
 .dark .picker-column {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -415,9 +415,9 @@ nav .flex-shrink-0 button:hover {
       rgba(255,255,255,0.08),
       rgba(255,255,255,0.02)
     );
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.08);
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.15),
+    inset 0 1px 1px rgba(255,255,255,0.05),
     0 8px 24px rgba(0,0,0,0.45);
 }
 
@@ -455,6 +455,7 @@ nav .flex-shrink-0 button:hover {
 .dark .accordion-card {
   background: var(--glass-dark);
   border: 1px solid var(--glass-border-dark);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 .accordion-header {
   border-radius: 18px;
@@ -504,35 +505,13 @@ nav .flex-shrink-0 button:hover {
 }
 .dark .video-item {
   background: rgba(0,0,0,0.25);
-  border-color: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.05);
 }
 .dark .video-item:hover {
   background: rgba(0,0,0,0.35);
 }
 
-/* Glass Card Apple Style */
-.glass-card-apple {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1);
-}
-
-.dark .glass-card-apple {
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Scroll Snap Utilities */
-.snap-x {
-    scroll-snap-type: x mandatory;
-}
-
-.snap-center {
-    scroll-snap-align: center;
-}
-
+/* Glass Card Apple Style - Duplicate Removed */
 .chat-bubble {
   position: relative;
   padding: 10px 20px;

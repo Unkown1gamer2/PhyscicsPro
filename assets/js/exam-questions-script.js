@@ -1,517 +1,516 @@
 // assets/js/exam-questions-script.js
-console.log('exam-questions-script.js loaded');
 
-const paperStructure = {
-    "Paper 1": {
-        sections: [
-            {
-                title: "1. Measurements and Their Errors",
-                folder: "1. Measurements and Their Errors",
-                subtopics: {
-                    "1.1 SI Units and Their Prefixes": {
-                        "Written Questions": { qp: "1.1 SI Units and Their Prefixes QP.pdf", ms: "1.1 SI Units and Their Prefixes MS.pdf" },
-                        "Multiple Choice": { qp: "1.1 SI Units and Their Prefixes MCQ QP.pdf", ms: "1.1 SI Units and Their Prefixes MCQ MS.pdf" }
-                    },
-                    "1.2 Limitation of Physical Measurements": { // NEW SUBTOPIC
-                        "Written Questions": { qp: "1.2 Limitation of Physical Measurements QP.pdf", ms: "1.2 Limitation of Physical Measurements MS.pdf" }
-                    },
-                    "1.3 Estimation of Physical Quantities": {
-                        "Written Questions": { qp: "1.3. Estimation of Physical Quantities QP.pdf", ms: "1.3. Estimation of Physical Quantities MS.pdf" },
-                        "Multiple Choice": { qp: "1.3 Estimation of Physical Quantities MCQ QP.pdf", ms: "1.3 Estimation of Physical Quantities MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "2. Particles and Radiation",
-                folder: "2. Particles and Radiation",
-                subtopics: {
-                    "2.1 Particles": {
-                        "Written Questions": { qp: "2.1 Particles QP.pdf", ms: "2.1 Particles MS.pdf" },
-                        "Multiple Choice": { qp: "2.1 Particles MCQ QP.pdf", ms: "2.1 Particles MCQ MS.pdf" }
-                    },
-                    "2.2 Electromagnetic Radiation And Quantum Phenomena": {
-                        "Written Questions": { qp: "2.2 Electromagnetic Radiation And Quantum Phenomena QP.pdf", ms: "2.2 Electromagnetic Radiation And Quantum Phenomena MS.pdf" },
-                        "Multiple Choice": { qp: "2.2 Electromagnetic Radiation And Quantum Phenomena MCQ QP.pdf", ms: "2.2 Electromagnetic Radiation And Quantum Phenomena MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "3. Waves",
-                folder: "3. Waves",
-                subtopics: {
-                    "3.1 Progressive and Stationary Waves": {
-                        "Written Questions": { qp: "3.1 Progressive and Stationary Waves QP.pdf", ms: "3.1 Progressive and Stationary Waves MS.pdf" },
-                        "Multiple Choice": { qp: "3.1 Progressive and Stationary Waves MCQ QP.pdf", ms: "3.1 Progressive and Stationary Waves MCQ MS.pdf" }
-                    },
-                    "3.2 Refraction, Diffraction and Interference": {
-                        "Written Questions": { qp: "3.2 Refraction, Diffraction and Interference QP.pdf", ms: "3.2 Refraction, Diffraction and Interference MS.pdf" },
-                        "Multiple Choice": { qp: "3.2 Refraction, Diffraction and Interference MCQ QP.pdf", ms: "3.2 Refraction, Diffraction and Interference MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "4. Mechanics and Materials",
-                folder: "4. Mechanics and Materials",
-                subtopics: {
-                    "4.1 Force, Energy and Momentum": {
-                        "Written Questions": { qp: "4.1 Force, Energy and Momentum QP.pdf", ms: "4.1 Force, Energy and Momentum MS.pdf" },
-                        "Multiple Choice": { qp: "4.1 Force, Energy and Momentum MCQ QP.pdf", ms: "4.1 Force, Energy and Momentum MCQ MS.pdf" }
-                    },
-                    "4.2 Materials": {
-                        "Written Questions": { qp: "4.2 Materials QP.pdf", ms: "4.2 Materials MS.pdf" },
-                        "Multiple Choice": { qp: "4.2 Materials MCQ QP.pdf", ms: "4.2 Materials MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "5. Electricity",
-                folder: "5. Electricity",
-                subtopics: {
-                    "5.1 Current Electricity": {
-                        "Written Questions": { qp: "5.1 Current Electricity QP.pdf", ms: "5.1 Current Electricity MS.pdf" },
-                        "Multiple Choice": { qp: "5.1 Current Electricity MCQ QP.pdf", ms: "5.1 Current Electricity MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "6.1 Further Mechanics",
-                folder: "6.1 Further Mechanics",
-                subtopics: {
-                    "6.1 Periodic Motion": {
-                        "Written Questions": { qp: "6.1 Periodic Motion QP.pdf", ms: "6.1 Periodic Motion MS.pdf" },
-                        "Multiple Choice": { qp: "6.1 Periodic Motion MCQ QP.pdf", ms: "6.1 Periodic Motion MCQ MS.pdf" }
-                    }
-                }
-            }
-        ]
-    },
-    "Paper 2": {
-        sections: [
-            {
-                title: "6.2 Thermal Physics",
-                folder: "6.2 Thermal Physics",
-                subtopics: {
-                    "6.2 Thermal Physics": {
-                        "Written Questions": { qp: "6.2 Thermal Physics QP.pdf", ms: "6.2 Thermal Physics MS.pdf" },
-                        "Multiple Choice": { qp: "6.2 Thermal Physics MCQ QP.pdf", ms: "6.2 Thermal Physics MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "7. Fields and Their Consequences",
-                folder: "7. Fields and Their Consequences",
-                subtopics: {
-                    "7.1 Fields": { // NEW SUBTOPIC FOR FLASHCARDS
-                        "Flashcards": { qp: "Flashcards - Topic 7.1 Fields - AQA Physics A-level.pdf", ms: "Flashcards - Topic 7.1 Fields - AQA Physics A-level.pdf" }
-                    },
-                    "7.2 Gravitational Fields": {
-                        "Written Questions": { qp: "7.2 Gravitational Fields QP.pdf", ms: "7.2 Gravitational Fields MS.pdf" },
-                        "Multiple Choice": { qp: "7.2 Gravitational Fields MCQ QP.pdf", ms: "7.2 Gravitational Fields MCQ MS.pdf" }
-                    },
-                    "7.3 Electric Fields": {
-                        "Written Questions": { qp: "7.3 Electric Fields QP.pdf", ms: "7.3 Electric Fields MS.pdf" }
-                    },
-                    "7.4 Capacitance": {
-                        "Written Questions": { qp: "7.4 Capacitance QP.pdf", ms: "7.4 Capacitance MS.pdf" },
-                        "Multiple Choice": { qp: "7.4 Capacitance MCQ QP.pdf", ms: "7.4 Capacitance MCQ MS.pdf" }
-                    },
-                    "7.5 Magnetic Fields": {
-                        "Written Questions": { qp: "7.5 Magnetic Fields QP.pdf", ms: "7.5 Magnetic Fields MS.pdf" },
-                        "Multiple Choice": { qp: "7.5 Magnetic Fields MCQ QP.pdf", ms: "7.5 Magnetic Fields MCQ MS.pdf" }
-                    }
-                }
-            },
-            {
-                title: "8. Nuclear Physics",
-                folder: "8. Nuclear Physics",
-                subtopics: {
-                    "8. Nuclear Physics": {
-                        "Written Questions": { qp: "8. Nuclear Physics QP.pdf", ms: "8. Nuclear Physics MS.pdf" },
-                        "Multiple Choice": { qp: "8. Nuclear Physics MCQ QP.pdf", ms: "8. Nuclear Physics MCQ MS.pdf" }
-                    }
-                }
-            }
-        ]
-    },
-    "Paper 3": {
-        sectionA: {
-            title: "Section A: Practical Skills",
-            folder: "",
-            subtopics: {
-                "Practical Skills": {
-                    "Written Questions": { qp: "Practical Skills QP.pdf", ms: "Practical Skills MS.pdf" }
-                }
-            }
-        },
-        sectionB: {
-            title: "Section B: One Of",
-            options: [
+(function() {
+    console.log('exam-questions-script.js loaded');
+
+    const paperStructure = {
+        "Paper 1": {
+            sections: [
                 {
-                    title: "9. Astrophysics",
-                    folder: "9. Astrophysics",
+                    title: "1. Measurements and Their Errors",
+                    folder: "1. Measurements and Their Errors",
                     subtopics: {
-                        "9.1 Telescopes": {
-                            "Written Questions": { qp: "9.1 Telescopes QP.pdf", ms: "9.1 Telescopes MS.pdf" }
+                        "1.1 SI Units and Their Prefixes": {
+                            "Written Questions": { qp: "1.1 SI Units and Their Prefixes QP.pdf", ms: "1.1 SI Units and Their Prefixes MS.pdf" },
+                            "Multiple Choice": { qp: "1.1 SI Units and Their Prefixes MCQ QP.pdf", ms: "1.1 SI Units and Their Prefixes MCQ MS.pdf" }
                         },
-                        "9.2 Classification of Stars": {
-                            "Written Questions": { qp: "9.2 Classification of Stars QP.pdf", ms: "9.2 Classification of Stars MS.pdf" }
+                        "1.2 Limitation of Physical Measurements": { // NEW SUBTOPIC
+                            "Written Questions": { qp: "1.2 Limitation of Physical Measurements QP.pdf", ms: "1.2 Limitation of Physical Measurements MS.pdf" }
                         },
-                        "9.3 Cosmology": {
-                            "Written Questions": { qp: "9.3 Cosmology QP.pdf", ms: "9.3 Cosmology MS.pdf" }
+                        "1.3 Estimation of Physical Quantities": {
+                            "Written Questions": { qp: "1.3. Estimation of Physical Quantities QP.pdf", ms: "1.3. Estimation of Physical Quantities MS.pdf" },
+                            "Multiple Choice": { qp: "1.3 Estimation of Physical Quantities MCQ QP.pdf", ms: "1.3 Estimation of Physical Quantities MCQ MS.pdf" }
                         }
                     }
                 },
                 {
-                    title: "10. Medical Physics",
-                    folder: "10. Medical Physics",
+                    title: "2. Particles and Radiation",
+                    folder: "2. Particles and Radiation",
                     subtopics: {
-                        "10.1 Physics of The Eye": {
-                            "Written Questions": { qp: "10.1 Physics of The Eye QP.pdf", ms: "10.1 Physics of The Eye MS.pdf" }
+                        "2.1 Particles": {
+                            "Written Questions": { qp: "2.1 Particles QP.pdf", ms: "2.1 Particles MS.pdf" },
+                            "Multiple Choice": { qp: "2.1 Particles MCQ QP.pdf", ms: "2.1 Particles MCQ MS.pdf" }
                         },
-                        "10.2 Physics of The Ear": {
-                            "Written Questions": { qp: "10.2 Physics of The Ear QP.pdf", ms: "10.2 Physics of The Ear MS.pdf" }
-                        },
-                        "10.3 Biological Measurement and Non-ionising Imaging": {
-                            "Written Questions": { qp: "10.3 Biological Measurement and Non-ionising Imaging QP.pdf", ms: "10.3 Biological Measurement and Non-ionising Imaging MS.pdf" }
-                        },
-                        "10.4 Non-ionising Imaging": { // NEW SUBTOPIC FOR FLASHCARDS
-                            "Flashcards": { qp: "Flashcards - Topic 10.4 Non-ionising Imaging - AQA Physics A-level.pdf", ms: "Flashcards - Topic 10.4 Non-ionising Imaging - AQA Physics A-level.pdf" }
-                        },
-                        "10.5 X-ray Imaging": {
-                            "Written Questions": { qp: "10.5 X-ray Imaging QP.pdf", ms: "10.5 X-ray Imaging MS.pdf" }
-                        },
-                        "10.6 Radionuclide Imaging and Therapy": {
-                            "Written Questions": { qp: "10.6 Radionuclide Imaging and Therapy QP.pdf", ms: "10.6 Radionuclide Imaging and Therapy MS.pdf" }
+                        "2.2 Electromagnetic Radiation And Quantum Phenomena": {
+                            "Written Questions": { qp: "2.2 Electromagnetic Radiation And Quantum Phenomena QP.pdf", ms: "2.2 Electromagnetic Radiation And Quantum Phenomena MS.pdf" },
+                            "Multiple Choice": { qp: "2.2 Electromagnetic Radiation And Quantum Phenomena MCQ QP.pdf", ms: "2.2 Electromagnetic Radiation And Quantum Phenomena MCQ MS.pdf" }
                         }
                     }
                 },
                 {
-                    title: "11. Engineering Physics",
-                    folder: "11. Engineering Physics",
+                    title: "3. Waves",
+                    folder: "3. Waves",
                     subtopics: {
-                        "11.1 Rotational Dynamics": {
-                            "Written Questions": { qp: "11.1 Rotational Dynamics QP.pdf", ms: "11.1 Rotational Dynamics MS.pdf" }
+                        "3.1 Progressive and Stationary Waves": {
+                            "Written Questions": { qp: "3.1 Progressive and Stationary Waves QP.pdf", ms: "3.1 Progressive and Stationary Waves MS.pdf" },
+                            "Multiple Choice": { qp: "3.1 Progressive and Stationary Waves MCQ QP.pdf", ms: "3.1 Progressive and Stationary Waves MCQ MS.pdf" }
                         },
-                        "11.2 Thermodynamics and Engines": {
-                            "Written Questions": { qp: "11.2 Thermodynamics and Engines QP.pdf", ms: "11.2 Thermodynamics and Engines MS.pdf" }
+                        "3.2 Refraction, Diffraction and Interference": {
+                            "Written Questions": { qp: "3.2 Refraction, Diffraction and Interference QP.pdf", ms: "3.2 Refraction, Diffraction and Interference MS.pdf" },
+                            "Multiple Choice": { qp: "3.2 Refraction, Diffraction and Interference MCQ QP.pdf", ms: "3.2 Refraction, Diffraction and Interference MCQ MS.pdf" }
                         }
                     }
                 },
                 {
-                    title: "12. Turning Points in Physics",
-                    folder: "12. Turning Points in Physics",
+                    title: "4. Mechanics and Materials",
+                    folder: "4. Mechanics and Materials",
                     subtopics: {
-                        "12.1 The Discovery of the Electron": {
-                            "Written Questions": { qp: "12.1 The Discovery of the Electron QP.pdf", ms: "12.1 The Discovery of the Electron MS.pdf" }
+                        "4.1 Force, Energy and Momentum": {
+                            "Written Questions": { qp: "4.1 Force, Energy and Momentum QP.pdf", ms: "4.1 Force, Energy and Momentum MS.pdf" },
+                            "Multiple Choice": { qp: "4.1 Force, Energy and Momentum MCQ QP.pdf", ms: "4.1 Force, Energy and Momentum MCQ MS.pdf" }
                         },
-                        "12.2 Wave Particle Duality": {
-                            "Written Questions": { qp: "12.2 Wave Particle Duality QP.pdf", ms: "12.2 Wave Particle Duality MS.pdf" }
-                        },
-                        "12.3 Special Relativity": {
-                            "Written Questions": { qp: "12.3 Special Relativity QP.pdf", ms: "12.3 Special Relativity MS.pdf" }
+                        "4.2 Materials": {
+                            "Written Questions": { qp: "4.2 Materials QP.pdf", ms: "4.2 Materials MS.pdf" },
+                            "Multiple Choice": { qp: "4.2 Materials MCQ QP.pdf", ms: "4.2 Materials MCQ MS.pdf" }
                         }
                     }
                 },
                 {
-                    title: "13. Electronics",
-                    folder: "13. Electronics",
+                    title: "5. Electricity",
+                    folder: "5. Electricity",
                     subtopics: {
-                        "13.1 Discrete Semiconductor Devices": {
-                            "Written Questions": { qp: "13.1 Discrete Semiconductor Devices QP.pdf", ms: "13.1 Discrete Semiconductor Devices MS.pdf" }
-                        },
-                        "13.2 Analogue and Digital Signals": {
-                            "Written Questions": { qp: "13.2 Analogue and Digital Signals QP.pdf", ms: "13.2 Analogue and Digital Signals MS.pdf" }
-                        },
-                        "13.3 Analogue Signal Processing": {
-                            "Written Questions": { qp: "13.3 Analogue Signal Processing QP.pdf", ms: "13.3 Analogue Signal Processing MS.pdf" }
-                        },
-                        "13.4 Operational Amplifier": {
-                            "Written Questions": { qp: "13.4 Operational Amplifier QP.pdf", ms: "13.4 Operational Amplifier MS.pdf" }
-                        },
-                        "13.5 Digital Signal Processing": {
-                            "Written Questions": { qp: "13.5 Digital Signal Processing QP.pdf", ms: "13.5 Digital Signal Processing MS.pdf" }
-                        },
-                        "13.6 Data Communication Systems": {
-                            "Written Questions": { qp: "13.6 Data Communication Systems QP.pdf", ms: "13.6 Data Communication Systems MS.pdf" }
+                        "5.1 Current Electricity": {
+                            "Written Questions": { qp: "5.1 Current Electricity QP.pdf", ms: "5.1 Current Electricity MS.pdf" },
+                            "Multiple Choice": { qp: "5.1 Current Electricity MCQ QP.pdf", ms: "5.1 Current Electricity MCQ MS.pdf" }
+                        }
+                    }
+                },
+                {
+                    title: "6.1 Further Mechanics",
+                    folder: "6.1 Further Mechanics",
+                    subtopics: {
+                        "6.1 Periodic Motion": {
+                            "Written Questions": { qp: "6.1 Periodic Motion QP.pdf", ms: "6.1 Periodic Motion MS.pdf" },
+                            "Multiple Choice": { qp: "6.1 Periodic Motion MCQ QP.pdf", ms: "6.1 Periodic Motion MCQ MS.pdf" }
                         }
                     }
                 }
             ]
+        },
+        "Paper 2": {
+            sections: [
+                {
+                    title: "6.2 Thermal Physics",
+                    folder: "6.2 Thermal Physics",
+                    subtopics: {
+                        "6.2 Thermal Physics": {
+                            "Written Questions": { qp: "6.2 Thermal Physics QP.pdf", ms: "6.2 Thermal Physics MS.pdf" },
+                            "Multiple Choice": { qp: "6.2 Thermal Physics MCQ QP.pdf", ms: "6.2 Thermal Physics MCQ MS.pdf" }
+                        }
+                    }
+                },
+                {
+                    title: "7. Fields and Their Consequences",
+                    folder: "7. Fields and Their Consequences",
+                    subtopics: {
+                        "7.1 Fields": { // NEW SUBTOPIC FOR FLASHCARDS
+                            "Flashcards": { qp: "Flashcards - Topic 7.1 Fields - AQA Physics A-level.pdf", ms: "Flashcards - Topic 7.1 Fields - AQA Physics A-level.pdf" }
+                        },
+                        "7.2 Gravitational Fields": {
+                            "Written Questions": { qp: "7.2 Gravitational Fields QP.pdf", ms: "7.2 Gravitational Fields MS.pdf" },
+                            "Multiple Choice": { qp: "7.2 Gravitational Fields MCQ QP.pdf", ms: "7.2 Gravitational Fields MCQ MS.pdf" }
+                        },
+                        "7.3 Electric Fields": {
+                            "Written Questions": { qp: "7.3 Electric Fields QP.pdf", ms: "7.3 Electric Fields MS.pdf" }
+                        },
+                        "7.4 Capacitance": {
+                            "Written Questions": { qp: "7.4 Capacitance QP.pdf", ms: "7.4 Capacitance MS.pdf" },
+                            "Multiple Choice": { qp: "7.4 Capacitance MCQ QP.pdf", ms: "7.4 Capacitance MCQ MS.pdf" }
+                        },
+                        "7.5 Magnetic Fields": {
+                            "Written Questions": { qp: "7.5 Magnetic Fields QP.pdf", ms: "7.5 Magnetic Fields MS.pdf" },
+                            "Multiple Choice": { qp: "7.5 Magnetic Fields MCQ QP.pdf", ms: "7.5 Magnetic Fields MCQ MS.pdf" }
+                        }
+                    }
+                },
+                {
+                    title: "8. Nuclear Physics",
+                    folder: "8. Nuclear Physics",
+                    subtopics: {
+                        "8. Nuclear Physics": {
+                            "Written Questions": { qp: "8. Nuclear Physics QP.pdf", ms: "8. Nuclear Physics MS.pdf" },
+                            "Multiple Choice": { qp: "8. Nuclear Physics MCQ QP.pdf", ms: "8. Nuclear Physics MCQ MS.pdf" }
+                        }
+                    }
+                }
+            ]
+        },
+        "Paper 3": {
+            sectionA: {
+                title: "Section A: Practical Skills",
+                folder: "",
+                subtopics: {
+                    "Practical Skills": {
+                        "Written Questions": { qp: "Practical Skills QP.pdf", ms: "Practical Skills MS.pdf" }
+                    }
+                }
+            },
+            sectionB: {
+                title: "Section B: One Of",
+                options: [
+                    {
+                        title: "9. Astrophysics",
+                        folder: "9. Astrophysics",
+                        subtopics: {
+                            "9.1 Telescopes": {
+                                "Written Questions": { qp: "9.1 Telescopes QP.pdf", ms: "9.1 Telescopes MS.pdf" }
+                            },
+                            "9.2 Classification of Stars": {
+                                "Written Questions": { qp: "9.2 Classification of Stars QP.pdf", ms: "9.2 Classification of Stars MS.pdf" }
+                            },
+                            "9.3 Cosmology": {
+                                "Written Questions": { qp: "9.3 Cosmology QP.pdf", ms: "9.3 Cosmology MS.pdf" }
+                            }
+                        }
+                    },
+                    {
+                        title: "10. Medical Physics",
+                        folder: "10. Medical Physics",
+                        subtopics: {
+                            "10.1 Physics of The Eye": {
+                                "Written Questions": { qp: "10.1 Physics of The Eye QP.pdf", ms: "10.1 Physics of The Eye MS.pdf" }
+                            },
+                            "10.2 Physics of The Ear": {
+                                "Written Questions": { qp: "10.2 Physics of The Ear QP.pdf", ms: "10.2 Physics of The Ear MS.pdf" }
+                            },
+                            "10.3 Biological Measurement and Non-ionising Imaging": {
+                                "Written Questions": { qp: "10.3 Biological Measurement and Non-ionising Imaging QP.pdf", ms: "10.3 Biological Measurement and Non-ionising Imaging MS.pdf" }
+                            },
+                            "10.4 Non-ionising Imaging": { // NEW SUBTOPIC FOR FLASHCARDS
+                                "Flashcards": { qp: "Flashcards - Topic 10.4 Non-ionising Imaging - AQA Physics A-level.pdf", ms: "Flashcards - Topic 10.4 Non-ionising Imaging - AQA Physics A-level.pdf" }
+                            },
+                            "10.5 X-ray Imaging": {
+                                "Written Questions": { qp: "10.5 X-ray Imaging QP.pdf", ms: "10.5 X-ray Imaging MS.pdf" }
+                            },
+                            "10.6 Radionuclide Imaging and Therapy": {
+                                "Written Questions": { qp: "10.6 Radionuclide Imaging and Therapy QP.pdf", ms: "10.6 Radionuclide Imaging and Therapy MS.pdf" }
+                            }
+                        }
+                    },
+                    {
+                        title: "11. Engineering Physics",
+                        folder: "11. Engineering Physics",
+                        subtopics: {
+                            "11.1 Rotational Dynamics": {
+                                "Written Questions": { qp: "11.1 Rotational Dynamics QP.pdf", ms: "11.1 Rotational Dynamics MS.pdf" }
+                            },
+                            "11.2 Thermodynamics and Engines": {
+                                "Written Questions": { qp: "11.2 Thermodynamics and Engines QP.pdf", ms: "11.2 Thermodynamics and Engines MS.pdf" }
+                            }
+                        }
+                    },
+                    {
+                        title: "12. Turning Points in Physics",
+                        folder: "12. Turning Points in Physics",
+                        subtopics: {
+                            "12.1 The Discovery of the Electron": {
+                                "Written Questions": { qp: "12.1 The Discovery of the Electron QP.pdf", ms: "12.1 The Discovery of the Electron MS.pdf" }
+                            },
+                            "12.2 Wave Particle Duality": {
+                                "Written Questions": { qp: "12.2 Wave Particle Duality QP.pdf", ms: "12.2 Wave Particle Duality MS.pdf" }
+                            },
+                            "12.3 Special Relativity": {
+                                "Written Questions": { qp: "12.3 Special Relativity QP.pdf", ms: "12.3 Special Relativity MS.pdf" }
+                            }
+                        }
+                    },
+                    {
+                        title: "13. Electronics",
+                        folder: "13. Electronics",
+                        subtopics: {
+                            "13.1 Discrete Semiconductor Devices": {
+                                "Written Questions": { qp: "13.1 Discrete Semiconductor Devices QP.pdf", ms: "13.1 Discrete Semiconductor Devices MS.pdf" }
+                            },
+                            "13.2 Analogue and Digital Signals": {
+                                "Written Questions": { qp: "13.2 Analogue and Digital Signals QP.pdf", ms: "13.2 Analogue and Digital Signals MS.pdf" }
+                            },
+                            "13.3 Analogue Signal Processing": {
+                                "Written Questions": { qp: "13.3 Analogue Signal Processing QP.pdf", ms: "13.3 Analogue Signal Processing MS.pdf" }
+                            },
+                            "13.4 Operational Amplifier": {
+                                "Written Questions": { qp: "13.4 Operational Amplifier QP.pdf", ms: "13.4 Operational Amplifier MS.pdf" }
+                            },
+                            "13.5 Digital Signal Processing": {
+                                "Written Questions": { qp: "13.5 Digital Signal Processing QP.pdf", ms: "13.5 Digital Signal Processing MS.pdf" }
+                            },
+                            "13.6 Data Communication Systems": {
+                                "Written Questions": { qp: "13.6 Data Communication Systems QP.pdf", ms: "13.6 Data Communication Systems MS.pdf" }
+                            }
+                        }
+                    }
+                ]
+            }
         }
+    };
+
+    function getCompletedItems() {
+        const stored = localStorage.getItem('examQuestionsCompleted');
+        return stored ? JSON.parse(stored) : {};
     }
-};
 
-function getCompletedItems() {
-    const stored = localStorage.getItem('examQuestionsCompleted');
-    return stored ? JSON.parse(stored) : {};
-}
-
-function saveCompletedItems(items) {
-    localStorage.setItem('examQuestionsCompleted', JSON.stringify(items));
-}
-
-function toggleCompleted(itemId, checkbox) {
-    const completed = getCompletedItems();
-    if (checkbox.checked) {
-        completed[itemId] = true;
-    } else {
-        delete completed[itemId];
+    function saveCompletedItems(items) {
+        localStorage.setItem('examQuestionsCompleted', JSON.stringify(items));
     }
-    saveCompletedItems(completed);
-}
 
-function createItemId(section, subtopic, type) {
-    return `${section}|${subtopic}|${type}`;
-}
+    function toggleCompleted(itemId, checkbox) {
+        const completed = getCompletedItems();
+        if (checkbox.checked) {
+            completed[itemId] = true;
+        } else {
+            delete completed[itemId];
+        }
+        saveCompletedItems(completed);
+    }
 
-function renderSubtopics(subtopics, folder, parentElement, completed) {
-    Object.keys(subtopics).forEach((subtopicName) => {
-        const subtopicDiv = document.createElement('div');
-        subtopicDiv.className = 'border-t border-border px-6 py-4';
-        
-        const subtopicTitle = document.createElement('h4');
-        subtopicTitle.className = 'font-semibold text-base mb-2 text-foreground';
-        subtopicTitle.textContent = subtopicName;
-        subtopicDiv.appendChild(subtopicTitle);
-        
-        const types = subtopics[subtopicName];
-        Object.keys(types).forEach((type) => {
-            const typeContainer = document.createElement('div');
-            typeContainer.className = 'mb-2';
+    function createItemId(section, subtopic, type) {
+        return `${section}|${subtopic}|${type}`;
+    }
+
+    function renderSubtopics(subtopics, folder, parentElement, completed) {
+        Object.keys(subtopics).forEach((subtopicName) => {
+            const subtopicDiv = document.createElement('div');
+            subtopicDiv.className = 'border-t border-border px-6 py-4';
             
-            const typeHeader = document.createElement('div'); 
-            typeHeader.className = 'flex items-center gap-2 mb-2';
+            const subtopicTitle = document.createElement('h4');
+            subtopicTitle.className = 'font-semibold text-base mb-2 text-foreground';
+            subtopicTitle.textContent = subtopicName;
+            subtopicDiv.appendChild(subtopicTitle);
             
-            let icon = ''; 
-            if (type === "Multiple Choice") {
-                icon = '<svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
-            } else if (type === "Written Questions") {
-                icon = '<svg class="w-4 h-4 flex-shrink-0 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>';
-            } else if (type === "Flashcards") { 
-                icon = '<svg class="w-4 h-4 flex-shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.206 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.794 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.794 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.206 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>';
-            }
-            
-            typeHeader.innerHTML = `${icon}<span class="font-medium text-sm">${type}</span>`;
-            typeContainer.appendChild(typeHeader);
-            
-            const files = types[type];
-            const linksContainer = document.createElement('div');
-            linksContainer.className = 'flex flex-wrap gap-2';
-            
-            const qpItemId = createItemId(folder, subtopicName, type);
-            const qpIsCompleted = completed[qpItemId] || false;
-            
-            const qpDiv = document.createElement('div');
-            qpDiv.className = 'flex items-center gap-2';
-            
-            const qpCheckbox = document.createElement('input');
-            qpCheckbox.type = 'checkbox';
-            qpCheckbox.checked = qpIsCompleted;
-            qpCheckbox.className = 'w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500 cursor-pointer';
-            qpCheckbox.title = 'Mark as done';
-            qpCheckbox.onclick = (e) => {
-                e.stopPropagation();
-                toggleCompleted(qpItemId, qpCheckbox);
-            };
-            
-            let qpPath;
-            if (folder) {
-                qpPath = `assets/pdfs/${encodeURIComponent(folder)}/${encodeURIComponent(files.qp)}`;
-            } else {
-                qpPath = `assets/pdfs/${encodeURIComponent(files.qp)}`;
-            }
-            
-            const qpLink = document.createElement('a');
-            qpLink.href = qpPath;
-            qpLink.target = '_blank';
-            qpLink.rel = 'noopener noreferrer';
-            qpLink.className = 'text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors duration-200';
-            qpLink.textContent = type === "Flashcards" ? 'Open Flashcards' : 'QP: Open PDF'; 
-            
-            qpDiv.appendChild(qpCheckbox);
-            qpDiv.appendChild(qpLink);
-            linksContainer.appendChild(qpDiv);
-            
-            // Only add Mark Scheme link if it's not a Flashcard type
-            if (type !== "Flashcards") {
-                let msPath;
-                if (folder) {
-                    msPath = `assets/pdfs/${encodeURIComponent(folder)}/${encodeURIComponent(files.ms)}`;
-                } else {
-                    msPath = `assets/pdfs/${encodeURIComponent(files.ms)}`;
+            const types = subtopics[subtopicName];
+            Object.keys(types).forEach((type) => {
+                const typeContainer = document.createElement('div');
+                typeContainer.className = 'mb-2';
+                
+                const typeHeader = document.createElement('div'); 
+                typeHeader.className = 'flex items-center gap-2 mb-2';
+                
+                let icon = ''; 
+                if (type === "Multiple Choice") {
+                    icon = '<svg class="w-4 h-4 flex-shrink-0 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
+                } else if (type === "Written Questions") {
+                    icon = '<svg class="w-4 h-4 flex-shrink-0 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>';
+                } else if (type === "Flashcards") { 
+                    icon = '<svg class="w-4 h-4 flex-shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.206 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.794 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.794 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.206 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>';
                 }
                 
-                const msLink = document.createElement('a');
-                msLink.href = msPath;
-                msLink.target = '_blank';
-                msLink.rel = 'noopener noreferrer';
-                msLink.className = 'text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full hover:bg-purple-200 transition-colors duration-200';
-                msLink.textContent = 'MS: Open PDF';
-                linksContainer.appendChild(msLink);
-            }
-            
-            typeContainer.appendChild(linksContainer);
-            subtopicDiv.appendChild(typeContainer);
-        });
-        
-        parentElement.appendChild(subtopicDiv);
-    });
-}
-
-function renderPage() {
-    const container = document.getElementById('topics-container');
-    container.innerHTML = '';
-    const completed = getCompletedItems();
-    
-    Object.keys(paperStructure).forEach((paperName) => {
-        const paperData = paperStructure[paperName];
-        
-        const paperItem = document.createElement('div');
-        paperItem.className = 'mb-8';
-        
-        const paperTitle = document.createElement('h2');
-        paperTitle.className = 'text-3xl font-black mb-6 text-accent border-b-2 border-accent pb-2';
-        paperTitle.textContent = paperName;
-        paperItem.appendChild(paperTitle);
-        
-        if (paperName === "Paper 3") {
-            const sectionADiv = document.createElement('div');
-            sectionADiv.className = 'glass-card rounded-xl overflow-hidden mb-4';
-            
-            const sectionAHeader = document.createElement('button');
-            sectionAHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
-            sectionAHeader.onclick = () => toggleSection('section-a-content');
-            sectionAHeader.innerHTML = `
-                <h3 class="text-xl font-bold">${paperData.sectionA.title}</h3>
-                <svg id="section-a-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            `;
-            sectionADiv.appendChild(sectionAHeader);
-            
-            const sectionAContent = document.createElement('div');
-            sectionAContent.id = 'section-a-content';
-            sectionAContent.className = 'hidden px-6 pb-6';
-            renderSubtopics(paperData.sectionA.subtopics, paperData.sectionA.folder, sectionAContent, completed);
-            sectionADiv.appendChild(sectionAContent);
-            paperItem.appendChild(sectionADiv);
-            
-            const sectionBDiv = document.createElement('div');
-            sectionBDiv.className = 'glass-card rounded-xl overflow-hidden';
-            
-            const sectionBHeader = document.createElement('button');
-            sectionBHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
-            sectionBHeader.onclick = () => toggleSection('section-b-content');
-            sectionBHeader.innerHTML = `
-                <h3 class="text-xl font-bold">${paperData.sectionB.title}</h3>
-                <svg id="section-b-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            `;
-            sectionBDiv.appendChild(sectionBHeader);
-            
-            const sectionBContent = document.createElement('div');
-            sectionBContent.id = 'section-b-content';
-            sectionBContent.className = 'hidden px-6 pb-6 space-y-4';
-            
-            paperData.sectionB.options.forEach((option, optIndex) => {
-                const optionDiv = document.createElement('div');
-                optionDiv.className = 'border-t border-border px-6 py-4';
+                typeHeader.innerHTML = `${icon}<span class="font-medium text-sm">${type}</span>`;
+                typeContainer.appendChild(typeHeader);
                 
-                const optionHeader = document.createElement('button');
-                optionHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
-                optionHeader.onclick = (e) => {
+                const files = types[type];
+                const linksContainer = document.createElement('div');
+                linksContainer.className = 'flex flex-wrap gap-2';
+                
+                const qpItemId = createItemId(folder, subtopicName, type);
+                const qpIsCompleted = completed[qpItemId] || false;
+                
+                const qpDiv = document.createElement('div');
+                qpDiv.className = 'flex items-center gap-2';
+                
+                const qpCheckbox = document.createElement('input');
+                qpCheckbox.type = 'checkbox';
+                qpCheckbox.checked = qpIsCompleted;
+                qpCheckbox.className = 'w-4 h-4 rounded border-gray-300 text-green-600 focus:ring-green-500 cursor-pointer';
+                qpCheckbox.title = 'Mark as done';
+                qpCheckbox.onclick = (e) => {
                     e.stopPropagation();
-                    toggleSection(`option-${optIndex}-content`);
+                    toggleCompleted(qpItemId, qpCheckbox);
                 };
-                optionHeader.innerHTML = `
-                    <h4 class="text-lg font-semibold">${option.title}</h4>
-                    <svg id="option-${optIndex}-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                `;
-                optionDiv.appendChild(optionHeader);
                 
-                const optionContent = document.createElement('div');
-                optionContent.id = `option-${optIndex}-content`;
-                optionContent.className = 'hidden mt-3';
-                renderSubtopics(option.subtopics, option.folder, optionContent, completed);
-                optionDiv.appendChild(optionContent);
-                
-                sectionBContent.appendChild(optionDiv);
-            });
-            
-            sectionBDiv.appendChild(sectionBContent);
-            paperItem.appendChild(sectionBDiv);
-            
-        } else {
-            const sectionsContainer = document.createElement('div');
-            sectionsContainer.className = 'space-y-4';
-            
-            paperData.sections.forEach((section, secIndex) => {
-                const sectionDiv = document.createElement('div');
-                sectionDiv.className = 'glass-card rounded-xl overflow-hidden';
-                
-                const sectionHeader = document.createElement('button');
-                sectionHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
-                sectionHeader.onclick = () => toggleSection(`${paperName}-section-${secIndex}`);
-                sectionHeader.innerHTML = `
-                    <h3 class="text-lg font-bold">${section.title}</h3>
-                    <svg id="${paperName}-section-${secIndex}-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                `;
-                sectionDiv.appendChild(sectionHeader);
-                
-                const sectionContent = document.createElement('div');
-                sectionContent.id = `${paperName}-section-${secIndex}`;
-                sectionContent.className = 'hidden px-6 pb-6';
-                
-                if (Object.keys(section.subtopics).length > 0) {
-                    renderSubtopics(section.subtopics, section.folder, sectionContent, completed);
+                let qpPath;
+                if (folder) {
+                    qpPath = `assets/pdfs/${encodeURIComponent(folder)}/${encodeURIComponent(files.qp)}`;
                 } else {
-                    const placeholder = document.createElement('p');
-                    placeholder.className = 'text-muted-foreground text-sm ml-4';
-                    placeholder.textContent = 'Coming soon...';
-                    sectionContent.appendChild(placeholder);
+                    qpPath = `assets/pdfs/${encodeURIComponent(files.qp)}`;
                 }
                 
-                sectionDiv.appendChild(sectionContent);
-                sectionsContainer.appendChild(sectionDiv);
+                const qpLink = document.createElement('a');
+                qpLink.href = qpPath;
+                qpLink.target = '_blank';
+                qpLink.rel = 'noopener noreferrer';
+                qpLink.className = 'text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors duration-200';
+                qpLink.textContent = type === "Flashcards" ? 'Open Flashcards' : 'QP: Open PDF'; 
+                
+                qpDiv.appendChild(qpCheckbox);
+                qpDiv.appendChild(qpLink);
+                linksContainer.appendChild(qpDiv);
+                
+                // Only add Mark Scheme link if it's not a Flashcard type
+                if (type !== "Flashcards") {
+                    let msPath;
+                    if (folder) {
+                        msPath = `assets/pdfs/${encodeURIComponent(folder)}/${encodeURIComponent(files.ms)}`;
+                    } else {
+                        msPath = `assets/pdfs/${encodeURIComponent(files.ms)}`;
+                    }
+                    
+                    const msLink = document.createElement('a');
+                    msLink.href = msPath;
+                    msLink.target = '_blank';
+                    msLink.rel = 'noopener noreferrer';
+                    msLink.className = 'text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full hover:bg-purple-200 transition-colors duration-200';
+                    msLink.textContent = 'MS: Open PDF';
+                    linksContainer.appendChild(msLink);
+                }
+                
+                typeContainer.appendChild(linksContainer);
+                subtopicDiv.appendChild(typeContainer);
             });
             
-            paperItem.appendChild(sectionsContainer);
-        }
+            parentElement.appendChild(subtopicDiv);
+        });
+    }
+
+    function renderPage() {
+        const container = document.getElementById('topics-container');
+        if (!container) return;
+        container.innerHTML = '';
+        const completed = getCompletedItems();
         
-        container.appendChild(paperItem);
-    });
-}
+        Object.keys(paperStructure).forEach((paperName) => {
+            const paperData = paperStructure[paperName];
+            
+            const paperItem = document.createElement('div');
+            paperItem.className = 'mb-8';
+            
+            const paperTitle = document.createElement('h2');
+            paperTitle.className = 'text-3xl font-black mb-6 text-accent border-b-2 border-accent pb-2';
+            paperTitle.textContent = paperName;
+            paperItem.appendChild(paperTitle);
+            
+            if (paperName === "Paper 3") {
+                const sectionADiv = document.createElement('div');
+                sectionADiv.className = 'glass-card rounded-xl overflow-hidden mb-4';
+                
+                const sectionAHeader = document.createElement('button');
+                sectionAHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
+                sectionAHeader.onclick = () => toggleSection('section-a-content');
+                sectionAHeader.innerHTML = `
+                    <h3 class="text-xl font-bold">${paperData.sectionA.title}</h3>
+                    <svg id="section-a-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                sectionADiv.appendChild(sectionAHeader);
+                
+                const sectionAContent = document.createElement('div');
+                sectionAContent.id = 'section-a-content';
+                sectionAContent.className = 'hidden px-6 pb-6';
+                renderSubtopics(paperData.sectionA.subtopics, paperData.sectionA.folder, sectionAContent, completed);
+                sectionADiv.appendChild(sectionAContent);
+                paperItem.appendChild(sectionADiv);
+                
+                const sectionBDiv = document.createElement('div');
+                sectionBDiv.className = 'glass-card rounded-xl overflow-hidden';
+                
+                const sectionBHeader = document.createElement('button');
+                sectionBHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
+                sectionBHeader.onclick = () => toggleSection('section-b-content');
+                sectionBHeader.innerHTML = `
+                    <h3 class="text-xl font-bold">${paperData.sectionB.title}</h3>
+                    <svg id="section-b-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                `;
+                sectionBDiv.appendChild(sectionBHeader);
+                
+                const sectionBContent = document.createElement('div');
+                sectionBContent.id = 'section-b-content';
+                sectionBContent.className = 'hidden px-6 pb-6 space-y-4';
+                
+                paperData.sectionB.options.forEach((option, optIndex) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'border-t border-border px-6 py-4';
+                    
+                    const optionHeader = document.createElement('button');
+                    optionHeader.className = 'w-full flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
+                    optionHeader.onclick = (e) => {
+                        e.stopPropagation();
+                        toggleSection(`option-${optIndex}-content`);
+                    };
+                    optionHeader.innerHTML = `
+                        <h4 class="text-lg font-semibold">${option.title}</h4>
+                        <svg id="option-${optIndex}-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    `;
+                    optionDiv.appendChild(optionHeader);
+                    
+                    const optionContent = document.createElement('div');
+                    optionContent.id = `option-${optIndex}-content`;
+                    optionContent.className = 'hidden mt-3';
+                    renderSubtopics(option.subtopics, option.folder, optionContent, completed);
+                    optionDiv.appendChild(optionContent);
+                    
+                    sectionBContent.appendChild(optionDiv);
+                });
+                
+                sectionBDiv.appendChild(sectionBContent);
+                paperItem.appendChild(sectionBDiv);
+                
+            } else {
+                const sectionsContainer = document.createElement('div');
+                sectionsContainer.className = 'space-y-4';
+                
+                paperData.sections.forEach((section, secIndex) => {
+                    const sectionDiv = document.createElement('div');
+                    sectionDiv.className = 'glass-card rounded-xl overflow-hidden';
+                    
+                    const sectionHeader = document.createElement('button');
+                    sectionHeader.className = 'w-full px-6 py-4 flex items-center justify-between hover:bg-muted/10 transition-colors duration-200';
+                    sectionHeader.onclick = () => toggleSection(`${paperName}-section-${secIndex}`);
+                    sectionHeader.innerHTML = `
+                        <h3 class="text-lg font-bold">${section.title}</h3>
+                        <svg id="${paperName}-section-${secIndex}-arrow" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    `;
+                    sectionDiv.appendChild(sectionHeader);
+                    
+                    const sectionContent = document.createElement('div');
+                    sectionContent.id = `${paperName}-section-${secIndex}`;
+                    sectionContent.className = 'hidden px-6 pb-6';
+                    
+                    if (Object.keys(section.subtopics).length > 0) {
+                        renderSubtopics(section.subtopics, section.folder, sectionContent, completed);
+                    } else {
+                        const placeholder = document.createElement('p');
+                        placeholder.className = 'text-muted-foreground text-sm ml-4';
+                        placeholder.textContent = 'Coming soon...';
+                        sectionContent.appendChild(placeholder);
+                    }
+                    
+                    sectionDiv.appendChild(sectionContent);
+                    sectionsContainer.appendChild(sectionDiv);
+                });
+                
+                paperItem.appendChild(sectionsContainer);
+            }
+            
+            container.appendChild(paperItem);
+        });
+    }
 
-function toggleSection(sectionId) {
-    const content = document.getElementById(sectionId);
-    const arrow = document.getElementById(`${sectionId}-arrow`) || document.querySelector(`[id$="${sectionId.split('-').pop()}-arrow"]`);
-    
-    if (content) {
-        const isHidden = content.classList.contains('hidden');
-        if (isHidden) {
-            content.classList.remove('hidden');
-        } else {
-            content.classList.add('hidden');
+    function toggleSection(sectionId) {
+        const content = document.getElementById(sectionId);
+        const arrow = document.getElementById(`${sectionId}-arrow`) || document.querySelector(`[id$="${sectionId.split('-').pop()}-arrow"]`);
+        
+        if (content) {
+            const isHidden = content.classList.contains('hidden');
+            if (isHidden) {
+                content.classList.remove('hidden');
+                if (arrow) arrow.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                if (arrow) arrow.classList.remove('rotate-180');
+            }
         }
     }
-    
-    const arrowEl = document.getElementById(`${sectionId}-arrow`);
-    if (arrowEl) {
-        arrowEl.classList.toggle('rotate-180');
-    }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderPage();
-});
+    document.addEventListener('DOMContentLoaded', renderPage);
 
-// Make functions available globally for HTML onclick handlers
-Object.assign(window, {
-    toggleCompleted,
-    toggleSection,
-});
+    // Make functions available globally
+    Object.assign(window, {
+        toggleSection,
+        toggleCompleted
+    });
+})();

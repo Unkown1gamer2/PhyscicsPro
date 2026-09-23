@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi Learn Hub</title>
-    <meta name="description" content="Physics Pro Multi Learn Hub.">
+    <title>Physics Pro - Test Page</title>
+    <meta name="description" content="Internal testing environment.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,13 +44,13 @@
                 <div class="mb-12">
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
-                            <h1 class="text-4xl sm:text-5xl font-black">Multi Learn Hub</h1>
+                            <h1 class="text-4xl sm:text-5xl font-black">Test Page</h1>
                             <p class="text-lg sm:text-xl text-muted-foreground mt-2">
-                                Explore physics topics and interactive lessons.
+                                Internal testing environment - Copy of Video Tutorials
                             </p>
                         </div>
                         <div class="ml-6">
-                            <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                            <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
                                 <div class="w-0 h-0 border-l-[16px] border-l-white border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1"></div>
                             </div>
                         </div>
@@ -58,6 +58,31 @@
                 </div>
 
                 <div id="videos-container" class="space-y-3"></div>
+
+                <div id="video-player" class="hidden mt-8">
+                    <div class="glass-card rounded-2xl p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 id="current-video-title" class="text-2xl font-bold mb-1"></h3>
+                                <p id="current-video-path" class="text-sm text-muted-foreground"></p>
+                            </div>
+                            <button onclick="closeVideo()" class="p-2 hover:bg-muted rounded-lg transition-colors duration-200">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="aspect-video rounded-lg overflow-hidden bg-black">
+                            <iframe 
+                                id="video-iframe"
+                                class="w-full h-full" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -65,6 +90,6 @@
     </div>
 
     <script type="module" src="assets/js/script.js"></script>
-    <script type="module" src="assets/js/multi-learn-hub.js"></script>
+    <script type="module" src="assets/js/test-script.js"></script>
 </body>
 </html>

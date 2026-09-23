@@ -19,13 +19,13 @@
             theme: {
                 extend: {
                     colors: {
-                        background: 'hsl(var(--background))',
-                        foreground: 'hsl(var(--foreground))',
-                        accent: 'hsl(var(--accent))',
-                        'accent-foreground': 'hsl(var(--accent-foreground))',
-                        muted: 'hsl(var(--muted))',
-                        'muted-foreground': 'hsl(var(--muted-foreground))',
-                        border: 'hsl(var(--border))',
+                        background: 'var(--background)',
+                        foreground: 'var(--foreground)',
+                        accent: 'var(--accent)',
+                        'accent-foreground': 'var(--accent-foreground)',
+                        muted: 'var(--muted)',
+                        'muted-foreground': 'var(--muted-foreground)',
+                        border: 'var(--border)',
                     }
                 }
             }
@@ -559,43 +559,5 @@
 
     <!-- JavaScript -->
     <script type="module" src="assets/js/script.js"></script>
-    <script>
-        function handleStartNow() {
-            window.location.href = 'multi-learn-test-hub.html';
-        }
-
-        function handleSampleAnswer(index) {
-            const feedback = document.getElementById('feedback');
-            const options = document.querySelectorAll('.sample-option');
-            
-            // Reset styles
-            options.forEach(opt => {
-                opt.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
-                opt.querySelector('.w-2.5').classList.remove('opacity-100');
-            });
-            
-            const selected = options[index];
-            selected.querySelector('.w-2.5').classList.add('opacity-100');
-            
-            if (index === 1) { // Correct answer: Decreases
-                selected.classList.add('bg-green-100', 'border-green-500', 'dark:bg-green-900/30');
-                feedback.innerHTML = '<span class="text-green-600 font-bold">Correct!</span> Light slows down in a denser medium, reducing its wavelength.';
-            } else {
-                selected.classList.add('bg-red-100', 'border-red-500', 'dark:bg-red-900/30');
-                feedback.innerHTML = '<span class="text-red-600 font-bold">Incorrect.</span> Try again! Hint: v = fλ.';
-            }
-            feedback.classList.remove('hidden');
-        }
-
-        function scrollSection(containerId, direction) {
-            const container = document.getElementById(containerId);
-            const scrollAmount = 300;
-            if (direction === 'left') {
-                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            } else {
-                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }
-        }
-    </script>
 </body>
 </html>

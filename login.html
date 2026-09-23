@@ -19,16 +19,17 @@
             theme: {
                 extend: {
                     colors: {
-                        background: 'hsl(var(--background))',
-                        foreground: 'hsl(var(--foreground))',
-                        accent: 'hsl(var(--accent))',
-                        'accent-foreground': 'hsl(var(--accent-foreground))',
-                        muted: 'hsl(var(--muted))',
-                        'muted-foreground': 'hsl(var(--muted-foreground))',
+                        background: 'var(--background)',
+                        foreground: 'var(--foreground)',
+                        accent: 'var(--accent)',
+                        'accent-foreground': 'var(--accent-foreground)',
+                        muted: 'var(--muted)',
+                        'muted-foreground': 'var(--muted-foreground)',
+                        border: 'var(--border)',
                     }
                 }
             }
-        }
+        };
     </script>
     
     <!-- Custom CSS -->
@@ -148,11 +149,11 @@
                         </span>
                         <span class="flex items-center">
                             <div class="w-2 h-2 bg-accent rounded-full mr-2"></div>
-                            500+ practice questions
+                            2000+ practice questions
                         </span>
                         <span class="flex items-center">
                             <div class="w-2 h-2 bg-accent rounded-full mr-2"></div>
-                            100+ expert videos
+                            200+ expert videos
                         </span>
                         <span class="flex items-center">
                             <div class="w-2 h-2 bg-accent rounded-full mr-2"></div>
@@ -166,5 +167,12 @@
 
     <!-- JavaScript -->
     <script type="module" src="assets/js/script.js"></script>
+    <script>
+        // Make navigation functions available even before module loads if necessary, 
+        // though script.js module will eventually provide them.
+        function navigateToHome() { window.location.href = 'home.html'; }
+        function navigateToDemo() { window.location.href = 'demo.html'; }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    </script>
 </body>
 </html>

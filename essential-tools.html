@@ -19,13 +19,13 @@
             theme: {
                 extend: {
                     colors: {
-                        background: 'hsl(var(--background))',
-                        foreground: 'hsl(var(--foreground))',
-                        accent: 'hsl(var(--accent))',
-                        'accent-foreground': 'hsl(var(--accent-foreground))',
-                        muted: 'hsl(var(--muted))',
-                        'muted-foreground': 'hsl(var(--muted-foreground))',
-                        border: 'hsl(var(--border))',
+                        background: 'var(--background)',
+                        foreground: 'var(--foreground)',
+                        accent: 'var(--accent)',
+                        'accent-foreground': 'var(--accent-foreground)',
+                        muted: 'var(--muted)',
+                        'muted-foreground': 'var(--muted-foreground)',
+                        border: 'var(--border)',
                     }
                 }
             }
@@ -173,6 +173,22 @@
                         <div>
                             <h3 class="font-bold text-lg">Formula Sheet</h3>
                             <p class="text-xs text-muted-foreground">Equations & formulae</p>
+                        </div>
+                        <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
+                            OPEN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 9: Test Page -->
+                <div class="glass-card-apple rounded-2xl p-4 flex flex-col gap-4 group cursor-pointer hover:bg-white/50 transition-all" onclick="navigateToTestPage()">
+                    <div class="w-full h-48 rounded-xl overflow-hidden relative bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
+                        <svg class="w-20 h-20 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 011-1V4z"></path></svg>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="font-bold text-lg">Test Page</h3>
+                            <p class="text-xs text-muted-foreground">Internal testing environment</p>
                         </div>
                         <button class="bg-gray-100 dark:bg-white/10 text-accent px-5 py-1.5 rounded-full text-sm font-bold hover:bg-accent hover:text-white transition-all">
                             OPEN

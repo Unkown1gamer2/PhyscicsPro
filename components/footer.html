@@ -1,23 +1,23 @@
-<footer class="bg-foreground text-background py-16">
+<footer class="bg-white dark:bg-background text-foreground dark:text-white py-16 border-t border-border dark:border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-4 gap-8">
             <!-- Quick Links -->
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold" data-testid="footer-quicklinks-title">Quick Links</h3>
                 <div class="space-y-2">
-                    <button onclick="navigateToNotes()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-notes">
+                    <button onclick="navigateToNotes()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-notes">
                         Notes
                     </button>
-                    <button onclick="navigateToVideos()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-videos">
+                    <button onclick="navigateToVideos()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-videos">
                         Video Tutorials
                     </button>
-                    <button onclick="navigateToPastPapers()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-papers">
+                    <button onclick="navigateToPastPapers()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-papers">
                         Past Papers
                     </button>
-                    <button onclick="navigateToMultiLearn()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-multilearn">
+                    <button onclick="navigateToMultiLearn()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-multilearn">
                         Multi Learn
                     </button>
-                    <button onclick="navigateToExamQuestions()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-questions">
+                    <button onclick="navigateToExamQuestions()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-questions">
                         Exam Questions
                     </button>
                 </div>
@@ -27,19 +27,19 @@
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold" data-testid="footer-resources-title">Resources</h3>
                 <div class="space-y-2">
-                    <button onclick="openSpecificationGuide()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-specification">
+                    <button onclick="openSpecificationGuide()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-specification">
                         Specification Guide
                     </button>
-                    <button onclick="openDataSheet()" class="block text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-link-data">
+                    <button onclick="openDataSheet()" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-link-data">
                         Data Booklet
                     </button>
-                    <a href="#" class="block text-background/70 hover:text-background transition-colors duration-200" data-testid="footer-link-formula">
+                    <a href="#" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200" data-testid="footer-link-formula">
                         Formula Sheet
                     </a>
-                    <a href="#" class="block text-background/70 hover:text-background transition-colors duration-200" data-testid="footer-link-planner">
+                    <a href="#" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200" data-testid="footer-link-planner">
                         Study Planner
                     </a>
-                    <a href="#" class="block text-background/70 hover:text-background transition-colors duration-200" data-testid="footer-link-tracker">
+                    <a href="#" class="block text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200" data-testid="footer-link-tracker">
                         Progress Tracker
                     </a>
                 </div>
@@ -49,26 +49,26 @@
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold" data-testid="footer-contact-title">Contact</h3>
                 <div class="space-y-2">
-                    <div class="text-background/70" data-testid="footer-email">Give Us Feedback</div>
-                    <div class="text-background/70" data-testid="footer-help">Help Center</div>
-                    <div class="text-background/70" data-testid="footer-forum">Email:</div>
-                    <div class="text-background/70" data-testid="footer-hours">Scottlucey@outlook.com</div>
+                    <div class="text-muted-foreground dark:text-white/70" data-testid="footer-email">Give Us Feedback</div>
+                    <button onclick="navigateToCoffee()" class="text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left" data-testid="footer-help">Buy me a coffee</button>
+                    <div class="text-muted-foreground dark:text-white/70" data-testid="footer-forum">Email:</div>
+                    <div class="text-muted-foreground dark:text-white/70 font-medium" data-testid="footer-hours">Official.slucey@gmail.com</div>
                 </div>
             </div>
             
             <!-- User Resources -->
             <div class="space-y-4">
                 <h3 class="text-lg font-semibold" data-testid="footer-user-resources-title">Your Account</h3>
-                <div class="space-y-2">
-                    <div class="text-background/70" data-testid="footer-profile">My Profile</div>
-                    <button onclick="navigateToProgress()" class="text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-progress">Study Progress</button>
-                    <div class="text-background/70" data-testid="footer-settings">Settings</div>
-                    <button onclick="navigateToLogin()" class="text-background/70 hover:text-background transition-colors duration-200 text-left" data-testid="footer-logout">Log Out</button>
+                <div class="flex flex-col space-y-2">
+                    <div class="text-muted-foreground dark:text-white/70" data-testid="footer-profile">My Profile</div>
+                    <button onclick="navigateToProgress()" class="text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left w-full" data-testid="footer-progress">Study Progress</button>
+                    <button onclick="navigateToSettings()" class="text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left w-full" data-testid="footer-settings">Settings</button>
+                    <button onclick="navigateToLogin()" class="text-muted-foreground hover:text-foreground dark:text-white/70 dark:hover:text-white transition-colors duration-200 text-left w-full" data-testid="footer-logout">Log Out</button>
                 </div>
             </div>
         </div>
         
-        <div class="border-t border-background/20 mt-12 pt-8 flex justify-between text-background/70">
+        <div class="border-t border-border dark:border-white/10 mt-12 pt-8 flex justify-between text-muted-foreground dark:text-white/50 text-sm">
             <p data-testid="footer-copyright-left">© 2025 PhysicsPro.</p>
             <p data-testid="footer-copyright-right">All rights reserved.</p>
         </div>

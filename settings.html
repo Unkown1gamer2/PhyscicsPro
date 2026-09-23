@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Physics Pro</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'var(--background)',
+                        foreground: 'var(--foreground)',
+                        accent: 'var(--accent)',
+                        'accent-foreground': 'var(--accent-foreground)',
+                        muted: 'var(--muted)',
+                        'muted-foreground': 'var(--muted-foreground)',
+                        border: 'var(--border)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* New Checkbox Styling */
+        .custom-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+        }
+        .dark .custom-checkbox {
+            background: #1e293b;
+            border-color: #475569;
+        }
+        #privacy-toggle:checked + .custom-checkbox {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        #privacy-toggle:checked + .custom-checkbox::after {
+            content: "✓";
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Settings Page Dark Mode Text Refinements */
+        .dark .text-muted-foreground {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .dark h1, .dark h2, .dark .font-bold {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground antialiased transition-colors duration-300">
+    <div class="max-w-2xl mx-auto px-6 py-20">
+        <!-- Back Button -->
+        <button onclick="history.back()" class="mb-8 flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
+            <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="font-medium">Back</span>
+        </button>
+
+        <h1 class="text-4xl font-black mb-12">Settings</h1>
+
+        <div class="space-y-10">
+            <!-- Appearance Section -->
+            <section>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">Appearance</h2>
+                <div class="glass-card-apple rounded-2xl p-6 space-y-6">
+                    <!-- Theme Toggle -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="font-bold">Dark Mode</div>
+                            <div class="text-sm text-muted-foreground">Adjust the app's appearance</div>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="dark-mode-toggle" class="sr-only peer">
+                            <div class="w-14 h-8 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-blue-500"></div>
+                        </label>
+                    </div>
+
+                    <!-- Animation Slider -->
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="font-bold">Animations</div>
+                                <div class="text-sm text-muted-foreground">Adjust the intensity of interface animations</div>
+                            </div>
+                            <span id="animation-label" class="text-sm font-mono text-blue-500">Normal</span>
+                        </div>
+                        <div class="relative px-2">
+                            <input type="range" id="animation-slider" min="0" max="2" step="1" value="1" class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+                            <div class="flex justify-between mt-2 px-1 text-[10px] text-muted-foreground font-bold uppercase tracking-tighter">
+                                <span>None</span>
+                                <span>Normal</span>
+                                <span>Full</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Section -->
+            <section>
+                <h2 class="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">Videos & Privacy</h2>
+                <div class="glass-card-apple rounded-2xl p-6">
+                    <div class="flex items-center justify-between">
+                        <div class="pr-8">
+                            <div class="font-bold">YouTube Privacy (Nocookie)</div>
+                            <div class="text-sm text-muted-foreground">Disable the enhanced privacy mode and allow default YouTube tracking for smoother playback</div>
+                        </div>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="checkbox" id="privacy-toggle" class="hidden">
+                            <div class="custom-checkbox"></div>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script type="module">
+        import { toggleTheme } from './assets/js/script.js';
+
+        const html = document.documentElement;
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+        function updateToggleState() {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (darkModeToggle) {
+                darkModeToggle.checked = currentTheme === 'dark';
+            }
+            // Always ensure class matches localStorage on load/update
+            if (currentTheme === 'dark') {
+                html.classList.add('dark');
+                html.setAttribute('data-theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                html.setAttribute('data-theme', 'light');
+            }
+        }
+
+        // Initial state sync
+        updateToggleState();
+
+        // Dark Mode Toggle Logic
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('change', () => {
+                toggleTheme(); // This handles class, data-theme, and localStorage
+            });
+        }
+
+        // Sync with global storage changes (like theme icon click)
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                updateToggleState();
+            }
+        });
+
+        // Also check if theme changed via script.js (which doesn't trigger storage event in same tab)
+        const observer = new MutationObserver(() => {
+            const currentTheme = html.getAttribute('data-theme') || 'light';
+            if (darkModeToggle) {
+                darkModeToggle.checked = currentTheme === 'dark';
+            }
+        });
+        observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+
+        // Privacy Toggle logic (default OFF in localStorage)
+        const privacyToggle = document.getElementById('privacy-toggle');
+        
+        // Load initial state (if null, defaults to false)
+        const savedPrivacy = localStorage.getItem('youtubeDisablePrivacy') === 'true';
+        if (privacyToggle) {
+            privacyToggle.checked = savedPrivacy;
+            
+            privacyToggle.addEventListener('change', () => {
+                localStorage.setItem('youtubeDisablePrivacy', privacyToggle.checked);
+            });
+        }
+
+        // Animation slider logic
+        const animationSlider = document.getElementById('animation-slider');
+        const animationLabel = document.getElementById('animation-label');
+        const labels = ['None', 'Normal', 'Full'];
+
+        if (animationSlider && animationLabel) {
+            animationSlider.addEventListener('input', () => {
+                const value = animationSlider.value;
+                animationLabel.textContent = labels[value];
+            });
+        }
+    </script>
+</body>
+</body>
+</html>

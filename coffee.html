@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy me a coffee - Physics Pro</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'var(--background)',
+                        foreground: 'var(--foreground)',
+                        accent: 'var(--accent)',
+                        'accent-foreground': 'var(--accent-foreground)',
+                        muted: 'var(--muted)',
+                        'muted-foreground': 'var(--muted-foreground)',
+                        border: 'var(--border)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Theme Check Script (Immediate) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+</head>
+<body class="bg-background text-foreground antialiased transition-colors duration-300">
+    <div class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <div id="navigation"></div>
+        
+        <!-- Main Content -->
+        <main class="flex-grow flex items-center justify-center pt-32 pb-20 px-4">
+            <div class="max-w-md w-full text-center space-y-8">
+                <!-- Coffee Icon -->
+                <div class="flex justify-center">
+                    <div class="w-32 h-32 bg-orange-100 dark:bg-orange-500/10 rounded-full flex items-center justify-center text-orange-600 dark:text-orange-400 shadow-sm transition-colors">
+                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM12 8a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8h11a2 2 0 012 2v6a2 2 0 01-2 2H3a2 2 0 01-2-2v-6a2 2 0 012-2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10v4M6 10v4M10 10v4"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-4xl font-black tracking-tight">Support Physics Pro</h1>
+                    <p class="text-muted-foreground text-lg">If you find this project helpful, consider buying me a coffee! ☕</p>
+                </div>
+
+                <!-- Donation Input -->
+                <div class="max-w-xs mx-auto">
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span class="text-muted-foreground font-bold text-2xl transition-colors group-focus-within:text-accent">£</span>
+                        </div>
+                        <input type="number" step="0.50" min="1" placeholder="5.00" class="block w-full pl-12 pr-4 py-4 bg-muted/30 dark:bg-white/5 border border-border rounded-2xl focus:ring-4 focus:ring-accent/20 focus:border-accent transition-all text-2xl font-bold text-foreground placeholder:text-muted-foreground/50">
+                    </div>
+                    <button class="w-full mt-6 bg-accent hover:bg-accent/90 text-white py-4 rounded-2xl font-bold text-lg transition-all shadow-lg hover:shadow-xl active:scale-[0.98] focus:ring-4 focus:ring-accent/20">
+                        Support with Coffee
+                    </button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
